@@ -1,0 +1,115 @@
+
+
+body {
+    font-size: 1em;
+}
+.todo {
+    margin-bottom: 1rem;
+
+}
+
+.todo span.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.todo label {
+     width: 100%;
+    /*display:flex;
+    align-items:center;
+    justify-content:space-between;
+    cursor: pointer;
+    background: #f3f3f3;
+    padding: 1rem; */
+    
+}
+
+.todo i {
+    z-index: 2;
+}
+ 
+.todo div {
+    display: flex;
+}
+input[type=checkbox], input[type=radio]{
+    opacity: 1;
+}
+h1{
+    font-size: 3em;
+}
+h2{
+    font-size: 2em;	
+}
+h3{
+    font-size: 1.17em;
+}
+a, nav ul a{
+ font-size: 1.5em; 
+}
+p{
+    font-size: 1.5em;
+}
+td{
+    font-size: 1.6em;  
+ }
+ th{
+  font-size: 1.8em; 
+ }
+ a:focus, a:hover {
+     color: #fff;
+     text-decoration: none;
+ }
+     .modal{
+         background: transparent;
+         box-shadow:none;
+     }
+     [type="checkbox"]:not(:checked), [type="checkbox"]:checked{
+         opacity: 1;
+     }
+.bcm-navbar{
+    background-color: #E30613;
+}
+.bcm-navbar .navbar-toggle .icon-bar {
+    background-color: #000;
+}
+.bcm-navbar .navbar-toggle {
+    border-color: #fff;
+    border: 1px solid #fff;
+    background: #fff;
+}
+.navbar-collapse>.pullright {
+    float:right;
+}
+.navbar-collapse.in>.pullright {
+    float:left;
+}
+.bcm-navbar .navbar-nav>li>a, .bcm-navbar .navbar-header>a{
+    color:#fff;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
+    color: #fff;
+    background-color: #000;
+    line-height: 19px;
+}
+.bcm-btn-red{
+    background-color: #E30613;
+    color: #fff;
+}
+/*Default Table CSS*/
+.table{width:100%;max-width:100%;margin-bottom:20px;}
+table{background-color:transparent;}
+table{border-spacing:0;border-collapse:collapse;}
+thead{display:table-header-group}
+.table>thead>tr>th{vertical-align:bottom;border-bottom:2px solid #ddd;}
+.table>thead>tr>th,.table>tbody>tr>th,.table>tfoot>tr>th,.table>thead>tr>td,.table > tbody > tr > td,.table > tfoot > tr > td {
+padding:8px;line-height: 1.42857143;  vertical-align: top;  border-top: 1px solid #ddd;}
+
+.bcm_view-recipt ul{
+    padding-inline-start: 0px;
+}
+.bcm_view-recipt ul li{
+    list-style-type: none;
+}
+label{
+  font-size: 1.5em;
+}
