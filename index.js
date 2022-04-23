@@ -12,6 +12,15 @@ const PORT = process.env.PORT || 5000
 
 const app = express()
 const hbs = exphbs.create({
+    helpers:{
+        ifEquals: function(a, b, options) {
+            if (a === b) {
+              return options.fn(this);
+            }
+          
+            return options.inverse(this);
+        },
+    },
     defaultLayout: 'main',
     extname: 'hbs'
 })
@@ -30,7 +39,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(session({
     secret: process.env.jwt_secret,
     saveUninitialized:true,
-    resave: true
+    resave: false,
+    cookie: { maxAge: 60 * 60 * 1000 } // 1 hour
 }));
 
 app.use(passport.initialize());
@@ -40,6 +50,8 @@ app.use(function(req,res,next){
     res.locals.user = req.user || null;
     next();
 })
+
+
 
 app.use(todoRoutes)
 app.use(authRoutes)

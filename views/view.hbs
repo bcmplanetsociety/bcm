@@ -1,0 +1,108 @@
+
+
+<div class="bcm_view-recipt">
+<h2>View Receipts:</h2>
+
+{{#if todos.length}}
+<ul>
+    {{#each todos}}
+    <li class="todo">
+        <label>
+            <table class="table table-responsive table-bordered">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Full Name</th>
+                            <th>Amount</th>
+                            <th>Phone</th>
+                            <th>Address</th>
+                            <th>Occasion</th>
+                            <th>image</th>
+                            <th>Completed</th>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        <tr>
+            <form action="/complete" method="POST">
+                
+                        {{#if completed}}
+                            <td>
+                                <input type="checkbox" checked name="completed" class="completed">
+                            </td>
+                        
+                            <td>
+                                
+                                <span class="completed">{{fullName}}</span>
+                            </td>
+                            <td>
+                                <span class="completed">{{amount}}</span>
+                            </td>
+                             <td>
+                                
+                                <span class="completed">{{phone}}</span>
+                            </td>
+                            <td>
+                                <span class="completed">{{address}}</span>
+                            </td>
+                            <td>
+                                <span class="completed">{{occasion}}</span>
+                            </td>
+                            
+                            <td>
+                                <span class="completed"><img src="{{{image}}}"  class="img-responsive" id="image"></span>
+                            </td>
+
+                            {{else}}
+                            <td> 
+                                <input type="checkbox" name="completed"> 
+                            </td>
+                            <td> 
+                                <span>{{fullName}}</span>
+                            </td>
+                            <td> 
+                                <span>{{amount}}</span>
+                            </td>
+                            <td> 
+                                <span>{{phone}}</span>
+                            </td>
+                            <td> 
+                                <span>{{address}}</span>
+                            </td>
+                            <td> 
+                                <span>{{occasion}}</span>
+                            </td>
+                            
+                            <td>
+                               <span><img src="{{{image}}}"  class="img-responsive" id="image"></span>
+                            </td>
+
+                            {{/if}}
+
+                            <td><input type="hidden" value="{{_id}}" name="id">
+                                 <button class="btn btn-small bcm-btn-red"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button>
+                            </td>
+                        
+               
+
+            </form>
+          
+            
+            </tr>
+             </tbody>
+                </table>
+
+                
+        </label>
+ 
+    </li>
+    {{/each}}
+</ul>
+{{else}}
+<p>No task!</p>
+{{/if}}
+
+
+
+
+</div>
