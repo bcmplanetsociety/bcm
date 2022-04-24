@@ -13,12 +13,17 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="/index.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+<script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
+<link rel="stylesheet" href="./css/common.css">
+     <link rel="stylesheet" href="./css/partials.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <%- include('../partials/navbar'); %>
-    <div class="container">
-        <%-body%>
+    <div class="bcm">
+        <%- body %>
     </div>
+    <%- include('../partials/footer'); %>
 </body>
 </html>

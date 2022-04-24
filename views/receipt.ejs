@@ -1,11 +1,12 @@
 <div class="bcm_view-recipt">
+   <div class="container">
     <h2>View Receipts:</h2>
     <% if (todos.length) { %>
     <ul>
        <% todos.map((result)=>{%>
        <li class="todo">
-          <label>
-             <table class="table table-responsive table-bordered">
+          <label class="table-responsive">
+             <table class="table table-bordered">
                 <thead>
                    <tr>
                       <th></th>
@@ -148,5 +149,7 @@
              </div>
           </div>
        </div>
+      </div>
        <% }) %>
     </div>
+   </div>

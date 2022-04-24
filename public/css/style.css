@@ -1,0 +1,205 @@
+
+ a:focus, a:hover {
+     color: #fff;
+     text-decoration: none;
+ }
+     .modal{
+         background: transparent;
+         box-shadow:none;
+     }
+     [type="checkbox"]:not(:checked), [type="checkbox"]:checked{
+         opacity: 1;
+     }
+
+.bcm_view-recipt ul{
+    padding-inline-start: 0px;
+}
+.bcm_view-recipt ul li{
+    list-style-type: none;
+}
+.bcm_register{
+    
+}
+/*------Banner---------*/
+.banner {
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100vh
+}
+
+.carousel-caption {
+    padding-bottom: 250px;
+    font-family: poppins
+}
+
+.carousel-caption h2 {
+    font-size: 70px;
+    text-transform: uppercase;
+    font-weight: bold
+}
+
+.carousel-caption h2 span {
+    color: #E30613;
+}
+
+.carousel-caption a {
+    background: #E30613;
+    padding: 15px 35px;
+    display: inline-block;
+    ;
+    margin-top: 15px;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 25px
+}
+
+.carousel-control.right {
+    background-image: none
+}
+
+.carousel-control.left {
+    background-image: none
+}
+
+.carousel-indicators .active {
+    background-color: #E30613;
+    border-color: #E30613;
+}
+
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .navbar-collapse.in>.pullright {
+        float:left;
+        width: 100%;
+    }
+    .navbar-collapse {
+        margin: 0;
+        padding: 0;
+    }
+    .navbar-nav {
+        margin: 0;
+    }
+    .carousel-caption {
+        padding-bottom: 120px
+    }
+
+    .carousel-caption h2 {
+        font-size: 25px
+    }
+
+    .carousel-caption h3 {
+        font-size: 18px
+    }
+
+    .carousel-caption a {
+        padding: 10px 25px
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .navbar-collapse.in>.pullright {
+        float:left;
+        width: 100%;
+    }
+    .navbar-collapse {
+        margin: 0;
+        padding: 0;
+    }
+    .navbar-nav {
+        margin: 0;
+    }
+    .carousel-caption {
+        padding-bottom: 120px
+    }
+
+    .carousel-caption h2 {
+        font-size: 25px
+    }
+
+    .carousel-caption h3 {
+        font-size: 18px
+    }
+
+    .carousel-caption a {
+        padding: 10px 25px
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .navbar-collapse.in>.pullright {
+        float:left;
+        width: 100%;
+    }
+    .navbar-collapse {
+        margin: 0;
+        padding: 0;
+    }
+    .navbar-nav {
+        margin: 0;
+    }
+    .carousel-caption {
+        padding-bottom: 350px
+    }
+
+    .carousel-caption h2 {
+        font-size: 50px
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .navbar-collapse>.pullright {
+        float:right;
+    }
+    .carousel-caption {
+        padding-bottom: 350px
+    }
+
+    .carousel-caption h2 {
+        font-size: 50px
+    }
+  
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .navbar-collapse>.pullright {
+        float:right;
+    } 
+    .carousel-caption {
+        padding-bottom: 350px
+    }
+
+    .carousel-caption h2 {
+        font-size: 50px
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
