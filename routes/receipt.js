@@ -79,7 +79,7 @@ router.post('/update', ensureAuthenticated, async (req, res) => {
     const todo = await Todo.findByIdAndUpdate(req.body.id,{$set:req.body},{new:true}, function(err, result){
         try {
             if (!err) {
-                res.redirect('/')
+                res.redirect('/receipt')
             }
           } catch (error) {
             console.error(error);

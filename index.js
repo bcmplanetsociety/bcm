@@ -1,76 +1,65 @@
-const express = require('express')
-const mongoose = require('mongoose')
-const exphbs = require('express-handlebars')
-const path = require('path')
-const authRoutes = require('./routes/authRoutes')
-const todoRoutes = require('./routes/receipt')
-require('dotenv').config()
-var session = require('express-session');
-var passport = require('passport');
+const express = require("express");
+const mongoose = require("mongoose");
+const path = require("path");
+const authRoutes = require("./routes/authRoutes");
+const todoRoutes = require("./routes/receipt");
+require("dotenv").config();
+var session = require("express-session");
+var passport = require("passport");
+const expressLayouts = require("express-ejs-layouts");
 
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 5000;
 
-const app = express()
-const hbs = exphbs.create({
-    helpers:{
-        ifEquals: function(a, b, options) {
-            if (a === b) {
-              return options.fn(this);
-            }
-          
-            return options.inverse(this);
-        },
-    },
-    defaultLayout: 'main',
-    extname: 'hbs'
-})
+const app = express();
 
-app.engine('hbs', hbs.engine)
-app.set('view engine', 'hbs')
-app.set('views', 'views')
+app.use(expressLayouts);
+//setting template engine
+app.set("view engine", "ejs");
 
-app.use(express.urlencoded({extended: true}))
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, "public")));
 
-// Set 'views' directory for any views 
+// Set 'views' directory for any views
 // being rendered res.render()
-app.set('views', path.join(__dirname, 'views'));
+app.set("views", path.join(__dirname, "views"));
+app.set("layout", "./layouts/main");
 
-app.use(session({
+app.use(
+  session({
     secret: process.env.jwt_secret,
-    saveUninitialized:true,
+    saveUninitialized: true,
     resave: false,
-    cookie: { maxAge: 60 * 60 * 1000 } // 1 hour
-}));
+    cookie: { maxAge: 60 * 60 * 1000 }, // 1 hour
+  })
+);
 
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use(function(req,res,next){
-    res.locals.user = req.user || null;
-    next();
-})
-
-
-
-app.use(todoRoutes)
-app.use(authRoutes)
+app.use(function (req, res, next) {
+  res.locals.user = req.user || null;
+  next();
+});
+app.use(todoRoutes);
+app.use(authRoutes);
 async function start() {
-    try {
-        await mongoose.connect(process.env.DBUri ||'mongodb+srv://bcmplanetsociety:bcmplanetsociety@bcm.klhw7.mongodb.net/bcmPlanet?retryWrites=true&w=majority', {
-            useNewUrlParser: true,
-            useFindAndModify: false,
-            useUnifiedTopology: true,
-            useCreateIndex:true,
-        })
-        app.listen(PORT, () => {
-            console.log('Server has been started...at http://localhost:5000')
-        })
-
-    } catch (e) {
-        console.log(e)
-    }
+  try {
+    await mongoose.connect(
+      process.env.DBUri ||
+        "mongodb+srv://bcmplanetsociety:bcmplanetsociety@bcm.klhw7.mongodb.net/bcmPlanet?retryWrites=true&w=majority",
+      {
+        useNewUrlParser: true,
+        useFindAndModify: false,
+        useUnifiedTopology: true,
+        useCreateIndex: true,
+      }
+    );
+    app.listen(PORT, () => {
+      console.log("Server has been started...at http://localhost:5000");
+    });
+  } catch (e) {
+    console.log(e);
+  }
 }
 
-
-start()
+start();
