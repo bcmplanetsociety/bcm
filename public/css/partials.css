@@ -20,6 +20,13 @@
     background-color: #000;
     line-height: 19px;
 }
+.navbar-brand{
+    padding: 5px 15px;
+}
+.bcm-brand-logo{
+    max-width: 30%;
+    height: auto;
+}
 
 
 /*-------Footer----------*/
