@@ -15,7 +15,8 @@ const schema = new Schema({
     },
     image: {
         type: String,
-        required: true,
+        //required: true,
+        required: [true, 'Receipt image required']
     },
     phone: {
         type: Number,
