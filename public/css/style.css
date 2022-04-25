@@ -186,12 +186,12 @@
         font-size: 50px
     }
     .footer-center ul {
-        display: flex;
+        display: content;
         justify-content: end;
         padding-top: 1em;
     }
     .footer-right {
-        display: block;
+        display: flex;
         padding-top: 1em;
     }
 }
