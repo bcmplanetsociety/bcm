@@ -30,6 +30,10 @@ const schema = new Schema({
         type: Boolean,
         default: false
     },
+    public_id: {
+        type: String,
+       required: true,
+    }
     
 })
 
