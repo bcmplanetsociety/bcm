@@ -67,10 +67,24 @@
     background-color: #E30613;
     border-color: #E30613;
 }
+.active>a {
+    color: #fff !important;
+    background: #000!important;
+  }
+  .change-role 
+  {
+      margin-top: 2rem;
+  }
+  .change-role h2
+  {
+      margin-bottom: 2rem;
+  }
+  .add_role-table th, .add_role-table td {
+max-width: 20px;
+  }
 
 
-
-
+/*---------------Media Query----------------------*/
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     .navbar-collapse.in>.pullright {
@@ -83,6 +97,17 @@
     }
     .navbar-nav {
         margin: 0;
+    }
+    a.navbar-brand {
+        margin-top: -2.5rem;
+        height: 20px;
+    }
+    .bcm-navbar .navbar-nav>li>a, .bcm-navbar .navbar-header>a {
+        padding-left: 1rem;
+    }
+    .bcm-brand-logo {
+        max-width: 40%;
+        margin-top: -1rem;
     }
     .carousel-caption {
         /* padding-bottom: 120px */
@@ -131,6 +156,17 @@
     .navbar-nav {
         margin: 0;
     }
+    a.navbar-brand {
+        margin-top: -2.5rem;
+        height: 20px;
+    }
+    .bcm-navbar .navbar-nav>li>a, .bcm-navbar .navbar-header>a {
+        padding-left: 1rem;
+    }
+    .bcm-brand-logo {
+        max-width: 40%;
+        margin-top: -1rem;
+    }
     .carousel-caption {
         /* padding-bottom: 120px */
     }
@@ -171,6 +207,10 @@
         float:left;
         width: 100%;
     }
+    .bcm-brand-logo{
+        max-width: 25%;
+        height: auto;
+    }
     .navbar-collapse {
         margin: 0;
         padding: 0;
@@ -201,6 +241,13 @@
     .navbar-collapse>.pullright {
         float:right;
     }
+    .bcm-brand-logo{
+        max-width: 25%;
+        height: auto;
+        margin: 0;
+        position: relative;
+        top: 130%;
+    }
     .carousel-caption {
         padding-bottom: 350px
     }
@@ -225,6 +272,13 @@
     .navbar-collapse>.pullright {
         float:right;
     } 
+    .bcm-brand-logo{
+        max-width: 25%;
+        height: auto;
+        margin: 0;
+        position: relative;
+        top: 130%;
+    }
     .carousel-caption {
         padding-bottom: 350px
     }

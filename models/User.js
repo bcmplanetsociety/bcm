@@ -19,6 +19,12 @@ var UserSchema = mongoose.Schema({
         type: Number,
         default: 2
     },
+    profile_img:{
+        type: String,
+        default: "https://i.ibb.co/CskQ1h8/profile1.png",
+        //default: "https://i.ibb.co/pyYyC4B/profile2.png"
+    },
+    
     Date : { type : Date, default: Date.now }
 });
 

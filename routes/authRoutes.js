@@ -7,12 +7,14 @@ var User = require('../models/User');
 
 
 router.get('/register', function(req, res){
-    res.render('register');
+    res.render('register',{
+    });
 });
 
 
 router.get('/login', function(req, res){
-    res.render('login');
+    res.render('login',{
+    });
 });
 
 
@@ -96,6 +98,7 @@ router.post('/login',
             username:  req.user.username,
             role: req.user.role,
             email: req.user.email,
+            profile_img: req.user.profile_img,
         }
         );
     });
@@ -106,6 +109,31 @@ router.get('/logout', function(req, res){
     res.redirect('/login');
   });
 });
+
+
+router.get('/usersList', async (req, res) => {
+    const users = await User.find({}, {
+      _id: 1,
+      name:1,
+      role:1     
+    });
+    res.render('usersList', {
+        users
+        }) 
+    });
+
+    router.post('/updateUserRole', async (req, res) => {  
+        const todo = await User.findByIdAndUpdate(req.body.id,{$set:req.body},{new:true}, function(err, result){
+            try {
+                if (!err) {
+                    res.redirect('/usersList')
+                }
+              } catch (error) {
+                console.error(error);
+              }
+        });
+        });
+
 
 function ensureAuthenticated(req, res, next){
     if(req.isAuthenticated()){

@@ -21,10 +21,11 @@
     line-height: 19px;
 }
 .navbar-brand{
-    padding: 5px 15px;
+    /* padding: 5px 15px; */
+    padding: 0;
 }
 .bcm-brand-logo{
-    max-width: 30%;
+    max-width: 25%;
     height: auto;
 }
 

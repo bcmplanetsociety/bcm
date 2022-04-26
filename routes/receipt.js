@@ -6,7 +6,7 @@ const Upload  = require("../helpers/upload");
 const cloudinary = require("../helpers/cloudinary");
 
 router.get('/', async (req, res) => {
-    res.render('index')
+    res.render('index',{page:'Home', menuId:'home'})
 
 })
 router.get('/receipt', ensureAuthenticated, async (req, res) => {
@@ -16,7 +16,8 @@ router.get('/receipt', ensureAuthenticated, async (req, res) => {
     fullName: 'Tasks list page...',
     fname: 'Tasks list page...',
     isIndex: true,
-    todos
+    todos,
+    page:'Receipt', menuId:'receipt'
     })
 
 })
@@ -27,7 +28,8 @@ router.get('/view',ensureAuthenticated, async (req, res) => {
     fullName: 'Tasks list page...',
     fname: 'Tasks list page...',
     isIndex: true,
-    todos
+    todos,
+    page:'View', menuId:'view'
     })
 
 })
@@ -36,7 +38,8 @@ router.get('/create', ensureAuthenticated,(req, res) => {
     res.render('create', {
     fullName: 'Create a new task page...',
     fname: 'Create a new task page...',
-    isCreate: true
+    isCreate: true,
+    page:'Create', menuId:'create'
     })
 })
 
