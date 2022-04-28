@@ -1,320 +1,448 @@
+a:focus,
+a:hover {
+   color: #fff;
+   text-decoration: none;
+}
 
- a:focus, a:hover {
-     color: #fff;
-     text-decoration: none;
- }
-     .modal{
-         background: transparent;
-         box-shadow:none;
-     }
-     [type="checkbox"]:not(:checked), [type="checkbox"]:checked{
-         opacity: 1;
-     }
+.modal {
+   background: transparent;
+   box-shadow: none;
+}
 
-.bcm_view-recipt ul{
-    padding-inline-start: 0px;
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+   opacity: 1;
 }
-.bcm_view-recipt ul li{
-    list-style-type: none;
+
+.bcm_view-recipt ul {
+   padding-inline-start: 0px;
 }
-.bcm_register{
-    
+
+.bcm_view-recipt ul li {
+   list-style-type: none;
 }
+
+.bcm_register {}
+
 /*------Banner---------*/
 .banner {
-    -webkit-background-size: cover;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    height: 100vh
+   -webkit-background-size: cover;
+   background-size: cover;
+   background-position: center center;
+   background-repeat: no-repeat;
+   height: 100vh
 }
 
 .carousel-caption {
-    padding-bottom: 250px;
-    font-family: poppins
+   padding-bottom: 250px;
+   font-family: poppins
 }
 
 .carousel-caption h2 {
-    font-size: 70px;
-    text-transform: uppercase;
-    font-weight: bold
+   font-size: 70px;
+   text-transform: uppercase;
+   font-weight: bold
 }
 
 .carousel-caption h2 span {
-    color: #E30613;
+   color: #E30613;
 }
 
 .carousel-caption a {
-    background: #E30613;
-    padding: 15px 35px;
-    display: inline-block;
-    ;
-    margin-top: 15px;
-    color: #fff;
-    text-transform: uppercase;
-    border-radius: 25px
+   background: #E30613;
+   padding: 15px 35px;
+   display: inline-block;
+   ;
+   margin-top: 15px;
+   color: #fff;
+   text-transform: uppercase;
+   border-radius: 25px
 }
 
 .carousel-control.right {
-    background-image: none
+   background-image: none
 }
 
 .carousel-control.left {
-    background-image: none
+   background-image: none
 }
 
 .carousel-indicators .active {
-    background-color: #E30613;
-    border-color: #E30613;
+   background-color: #E30613;
+   border-color: #E30613;
 }
+
 .active>a {
-    color: #fff !important;
-    background: #000!important;
-  }
-  .change-role 
-  {
-      margin-top: 2rem;
-  }
-  .change-role h2
-  {
-      margin-bottom: 2rem;
-  }
-  .add_role-table th, .add_role-table td {
-max-width: 20px;
-  }
+   color: #fff !important;
+   background: #000 !important;
+}
+
+.change-role {
+   margin-top: 2rem;
+}
+
+.change-role h2 {
+   margin-bottom: 2rem;
+}
+
+.add_role-table th,
+.add_role-table td {
+   max-width: 20px;
+}
+
+/* =========Usr Profile============*/
+.user-profile {}
+
+.userImage-container {
+   /* text-align: -webkit-center; */
+   text-align: -webkit-right;
+}
+
+img#userimage {
+   max-height: 30rem;
+}
+
+.user-details {
+   margin-top: 3rem;
+}
+
+.user-details p b {
+   line-height: 3rem;
+   font-size: 2rem;
+   font-family: monospace;
+   min-width: 12rem;
+   display: inline-block;
+   padding-right: 1rem;
+}
+
+/*===========Contact Us================*/
+section.contact-us {
+   background-color: #E30613;
+}
+
+.countact-us_header {
+   color: #fff;
+}
+
+section.contact-us .bcm-contact-form {}
+
+.bcm-contact-form label {
+   color: #fff;
+}
+
+/*===========================*/
+/*-------------------------------------------
+01. Our Program
+---------------------------------------------*/
+#our-program {
+   padding: 70px 0;
+   background: #fff;
+}
+
+#our-program .top {
+   margin-bottom: 50px;
+}
+
+.card {
+   overflow: hidden;
+   border-radius: 0 0 10px 10px;
+   position: relative;
+   font-family: 'lato';
+   background: #fff;
+   text-align: center;
+   -webkit-box-shadow: -4px 2px 10px 3px rgba(0, 0, 0, 0.50);
+   -moz-box-shadow: -4px 2px 10px 3px rgba(0, 0, 0, 0.50);
+   box-shadow: -4px 2px 10px 3px rgba(0, 0, 0, 0.50);
+   margin-bottom: 30px;
+}
+
+.card-img-top {
+   max-height: 250px;
+   overflow: hidden;
+}
+
+.card-img-top img {
+   width: 100%;
+   transition: .3s all;
+}
+
+.card:hover .card-img-top img {
+   transform: scale(1.2);
+}
+
+.card img {
+   width: 110%;
+   height: 100%;
+}
+
+.card h4 {
+   padding-top: 25px;
+   font-weight: 700;
+}
+
+.card .card-text {
+   width: 80%;
+   margin: 0 auto;
+   font-weight: 700;
+   margin-bottom: 10px;
+}
+
+.card-footer {
+   background: #E30613;
+   padding: 10px 30px;
+   font-weight: 700;
+   font-size: 15px;
+   display: inline-block;
+   color: #fff;
+   margin-bottom: 1em;
+}
 
 
 /*---------------Media Query----------------------*/
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    .navbar-collapse.in>.pullright {
-        float:left;
-        width: 100%;
-    }
-    .navbar-collapse {
-        margin: 0;
-        padding: 0;
-    }
-    .navbar-nav {
-        margin: 0;
-    }
-    a.navbar-brand {
-        margin-top: -2.5rem;
-        height: 20px;
-    }
-    .bcm-navbar .navbar-nav>li>a, .bcm-navbar .navbar-header>a {
-        padding-left: 1rem;
-    }
-    .bcm-brand-logo {
-        max-width: 40%;
-        margin-top: -1rem;
-    }
-    .carousel-caption {
-        /* padding-bottom: 120px */
-    }
+   .navbar-collapse.in>.pullright {
+      float: left;
+      width: 100%;
+   }
 
-    .carousel-caption h2 {
-        font-size: 25px
-    }
+   .navbar-collapse {
+      margin: 0;
+      padding: 0;
+   }
 
-    .carousel-caption h3 {
-        font-size: 18px
-    }
+   .navbar-nav {
+      margin: 0;
+   }
 
-    .carousel-caption a {
-        padding: 10px 25px
-    }
-    .footer-right {
-        display: flex;
-        justify-content: center;
-    }
-    .footer-center ul {
-        display: contents;
-    }
-    .footer-center ul li p{
-        line-height: 1.2em;
-        padding-top: 1em;
-        text-align: center;
-        padding-bottom: 1em;
-    }
-    .footer-right ul {
-        padding-inline-start: 0px;
-        padding-bottom: 1em;
-    }
+   a.navbar-brand {
+      margin-top: -2.5rem;
+      height: 20px;
+   }
+
+   .bcm-navbar .navbar-nav>li>a,
+   .bcm-navbar .navbar-header>a {
+      padding-left: 1rem;
+   }
+
+   .bcm-brand-logo {
+      max-width: 40%;
+      margin-top: -1rem;
+   }
+
+   .carousel-caption {
+      /* padding-bottom: 120px */
+   }
+
+   .carousel-caption h2 {
+      font-size: 25px
+   }
+
+   .carousel-caption h3 {
+      font-size: 18px
+   }
+
+   .carousel-caption a {
+      padding: 10px 25px
+   }
+
+   .footer-right {
+      display: flex;
+      justify-content: center;
+   }
+
+   .footer-center ul {
+      display: contents;
+   }
+
+   .footer-center ul li p {
+      line-height: 1.2em;
+      padding-top: 1em;
+      text-align: center;
+      padding-bottom: 1em;
+   }
+
+   .footer-right ul {
+      padding-inline-start: 0px;
+      padding-bottom: 1em;
+   }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-    .navbar-collapse.in>.pullright {
-        float:left;
-        width: 100%;
-    }
-    .navbar-collapse {
-        margin: 0;
-        padding: 0;
-    }
-    .navbar-nav {
-        margin: 0;
-    }
-    a.navbar-brand {
-        margin-top: -2.5rem;
-        height: 20px;
-    }
-    .bcm-navbar .navbar-nav>li>a, .bcm-navbar .navbar-header>a {
-        padding-left: 1rem;
-    }
-    .bcm-brand-logo {
-        max-width: 40%;
-        margin-top: -1rem;
-    }
-    .carousel-caption {
-        /* padding-bottom: 120px */
-    }
+   .navbar-collapse.in>.pullright {
+      float: left;
+      width: 100%;
+   }
 
-    .carousel-caption h2 {
-        font-size: 25px
-    }
+   .navbar-collapse {
+      margin: 0;
+      padding: 0;
+   }
 
-    .carousel-caption h3 {
-        font-size: 18px
-    }
+   .navbar-nav {
+      margin: 0;
+   }
 
-    .carousel-caption a {
-        padding: 10px 25px
-    }
-    .footer-right {
-        display: flex;
-        justify-content: center;
-    }
-    .footer-center ul {
-        display: contents;
-    }
-    .footer-right ul {
-        padding-inline-start: 0px;
-        padding-bottom: 1em;
-    }
-    .footer-center ul li p{
-        line-height: 1.2em;
-        padding-top: 1em;
-        text-align: center;
-        padding-bottom: 1em;
-    }
+   a.navbar-brand {
+      margin-top: -2.5rem;
+      height: 20px;
+   }
+
+   .bcm-navbar .navbar-nav>li>a,
+   .bcm-navbar .navbar-header>a {
+      padding-left: 1rem;
+   }
+
+   .bcm-brand-logo {
+      max-width: 40%;
+      margin-top: -1rem;
+   }
+
+   .carousel-caption {
+      /* padding-bottom: 120px */
+   }
+
+   .carousel-caption h2 {
+      font-size: 25px
+   }
+
+   .carousel-caption h3 {
+      font-size: 18px
+   }
+
+   .carousel-caption a {
+      padding: 10px 25px
+   }
+
+   .footer-right {
+      display: flex;
+      justify-content: center;
+   }
+
+   .footer-center ul {
+      display: contents;
+   }
+
+   .footer-right ul {
+      padding-inline-start: 0px;
+      padding-bottom: 1em;
+   }
+
+   .footer-center ul li p {
+      line-height: 1.2em;
+      padding-top: 1em;
+      text-align: center;
+      padding-bottom: 1em;
+   }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-    .navbar-collapse.in>.pullright {
-        float:left;
-        width: 100%;
-    }
-    .bcm-brand-logo{
-        max-width: 25%;
-        height: auto;
-    }
-    .navbar-collapse {
-        margin: 0;
-        padding: 0;
-    }
-    .navbar-nav {
-        margin: 0;
-    }
-    .carousel-caption {
-        padding-bottom: 350px
-    }
+   .navbar-collapse.in>.pullright {
+      float: left;
+      width: 100%;
+   }
 
-    .carousel-caption h2 {
-        font-size: 50px
-    }
-    .footer-center ul {
-        display: content;
-        justify-content: end;
-        padding-top: 1em;
-    }
-    .footer-right {
-        display: flex;
-        padding-top: 1em;
-    }
+   .bcm-brand-logo {
+      max-width: 25%;
+      height: auto;
+   }
+
+   .navbar-collapse {
+      margin: 0;
+      padding: 0;
+   }
+
+   .navbar-nav {
+      margin: 0;
+   }
+
+   .carousel-caption {
+      padding-bottom: 350px
+   }
+
+   .carousel-caption h2 {
+      font-size: 50px
+   }
+
+   .footer-center ul {
+      display: content;
+      justify-content: end;
+      padding-top: 1em;
+   }
+
+   .footer-right {
+      display: flex;
+      padding-top: 1em;
+   }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-    .navbar-collapse>.pullright {
-        float:right;
-    }
-    .bcm-brand-logo{
-        max-width: 25%;
-        height: auto;
-        margin: 0;
-        position: relative;
-        top: 130%;
-    }
-    .carousel-caption {
-        padding-bottom: 350px
-    }
+   .navbar-collapse>.pullright {
+      float: right;
+   }
 
-    .carousel-caption h2 {
-        font-size: 50px
-    }
-    .footer-center ul {
-        display: flex;
-        justify-content: end;
-        padding-top: 1em;
-    }
-    .footer-right {
-        display: block;
-        padding-top: 1em;
-    }
-  
+   .bcm-brand-logo {
+      max-width: 25%;
+      height: auto;
+      margin: 0;
+      position: relative;
+      top: 130%;
+   }
+
+   .carousel-caption {
+      padding-bottom: 350px
+   }
+
+   .carousel-caption h2 {
+      font-size: 50px
+   }
+
+   .footer-center ul {
+      display: flex;
+      justify-content: end;
+      padding-top: 1em;
+   }
+
+   .footer-right {
+      display: block;
+      padding-top: 1em;
+   }
+
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-    .navbar-collapse>.pullright {
-        float:right;
-    } 
-    .bcm-brand-logo{
-        max-width: 25%;
-        height: auto;
-        margin: 0;
-        position: relative;
-        top: 130%;
-    }
-    .carousel-caption {
-        padding-bottom: 350px
-    }
+   .navbar-collapse>.pullright {
+      float: right;
+   }
 
-    .carousel-caption h2 {
-        font-size: 50px
-    }
-    .footer-center ul {
-        display: flex;
-        justify-content: end;
-        padding-top: 1em;
-    }
-    .footer-right {
-        display: block;
-        padding-top: 1em;
-    }
+   .bcm-brand-logo {
+      max-width: 25%;
+      height: auto;
+      margin: 0;
+      position: relative;
+      top: 130%;
+   }
+
+   .carousel-caption {
+      padding-bottom: 350px
+   }
+
+   .carousel-caption h2 {
+      font-size: 50px
+   }
+
+   .footer-center ul {
+      display: flex;
+      justify-content: end;
+      padding-top: 1em;
+   }
+
+   .footer-right {
+      display: block;
+      padding-top: 1em;
+   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    

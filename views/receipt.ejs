@@ -1,196 +1,195 @@
 <div class="bcm_view-recipt">
    <div class="container">
-    <h2>View Receipts:</h2>
-    <% if (todos.length) { %>
-    <ul>
-       <% todos.map((result)=>{%>
-       <li class="todo">
-          <label class="table-responsive">
-             <table class="table table-bordered">
-                <thead>
-                   <tr>
-                      <th></th>
-                      <th>Full Name</th>
-                      <th>Amount</th>
-                      <th>Phone</th>
-                      <th>Address</th>
-                      <th>Occasion</th>
-                      <th>image</th>
-                      <th>Completed</th>
-                      <th>Update</th>
-                      <th>Delete</th>
-                   </tr>
-                </thead>
-                <tbody>
-                   <tr>
-                      <form action="/complete" method="POST">
-                         <% if (result.completed) { %>
-                         <td>
-                            <input type="checkbox" checked name="completed" class="completed">
-                         </td>
-                         <td>
-                            <span class="completed">
-                            <%=result.fullName%>
-                            </span>
-                         </td>
-                         <td>
-                            <span class="completed">
-                            <%=result.amount%>
-                            </span>
-                         </td>
-                         <td>
-                            <span class="completed">
-                            <%=result.phone%>
-                            </span>
-                         </td>
-                         <td>
-                            <span class="completed">
-                            <%=result.address%>
-                            </span>
-                         </td>
-                         <td>
-                            <span class="completed">
-                            <%=result.occasion%>
-                            </span>
-                         </td>
-                         <td>
-                            <span class="completed"><img src="<%=result.image%>"
-                               class="img-responsive" id="image"></span>
-                         </td>
-                         <% } else { %>
-                         <td>
-                            <input type="checkbox" name="completed">
-                         </td>
-                         <td>
-                            <span>
-                            <%=result.fullName%>
-                            </span>
-                         </td>
-                         <td>
-                            <span>
-                            <%=result.amount%>
-                            </span>
-                         </td>
-                         <td>
-                            <span>
-                            <%=result.phone%>
-                            </span>
-                         </td>
-                         <td>
-                            <span>
-                            <%=result.address%>
-                            </span>
-                         </td>
-                         <td>
-                            <span>
-                            <%=result.occasion%>
-                            </span>
-                         </td>
-                         <td>
-                            <span><img src="<%=result.image%>" class="img-responsive"
-                               id="image"></span>
-                         </td>
-                         <% } %>
-                         <td><input type="hidden" value="<%=result._id%>" name="id">
-                            <button class="btn btn-small bcm-btn-red"><span
-                               class="glyphicon glyphicon-ok"
-                               aria-hidden="true"></span></button>
-                         </td>
-                      </form>
-                      <td>
-                         <button class="btn btn-small bcm-btn-red" data-toggle="modal" data-target="#myModal<%=result._id%>"> <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </button>
-
-                         <div id="myModal<%=result._id%>" class="modal fade" role="dialog">
-                           <div class="modal-dialog">
-                              <div class="modal-content">
-                                 <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Update Data</h4>
-                                 </div>
-                                 <div class="modal-body">
-                                    <form action="/update" method="POST" enctype='multipart/form-data'>
-                                       <div class="form-group">
-                                          <input type="text" class="form-control" placeholder="Full Name" name="fullName" value="<%=result.fullName%>" required>
-                                       </div>
-                                       <div class="form-group">
-                                          <input type="text" class="form-control" placeholder="Amount" name="amount" value="<%=result.amount%>" required>
-                                       </div>
-                                       <div class="form-group">
-                                          <input type="text" class="form-control" placeholder="Phone" name="phone" value="<%=result.phone%>" required>
-                                       </div>
-                                       <div class="form-group">
-                                          <input type="text" class="form-control" placeholder="Address" name="address" value="<%=result.address%>" required> 
-                                       </div>
-                                       <div class="form-group">
-                                          <input type="text" class="form-control" placeholder="Occasion" name="occasion" value="<%=result.occasion%>" required>
-                                       </div>
-                                       <div class="form-group">
-                                         <input class="form-control" type="file" name="image" id="image" required>
-                                     </div>
-                                       <div class="form-group">
-                                          <input type="hidden" value="<%=result._id%>" name="id">
-                                          <button class="btn btn-small bcm-btn-red"  type="submit">update</button>
-                                       </div>
-                                    </form>
+      <h2>View Receipts:</h2>
+      <% if (todos.length) { %>
+      <ul>
+         <% todos.map((result)=>{%>
+         <li class="todo">
+            <label class="table-responsive">
+               <table class="table table-bordered">
+                  <thead>
+                     <tr>
+                        <th></th>
+                        <th>Full Name</th>
+                        <th>Amount</th>
+                        <th>Phone</th>
+                        <th>Address</th>
+                        <th>Occasion</th>
+                        <th>image</th>
+                        <th>Completed</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <form action="/complete" method="POST">
+                           <% if (result.completed) { %>
+                           <td>
+                              <input type="checkbox" checked name="completed" class="completed">
+                           </td>
+                           <td>
+                              <span class="completed">
+                              <%=result.fullName%>
+                              </span>
+                           </td>
+                           <td>
+                              <span class="completed">
+                              <%=result.amount%>
+                              </span>
+                           </td>
+                           <td>
+                              <span class="completed">
+                              <%=result.phone%>
+                              </span>
+                           </td>
+                           <td>
+                              <span class="completed">
+                              <%=result.address%>
+                              </span>
+                           </td>
+                           <td>
+                              <span class="completed">
+                              <%=result.occasion%>
+                              </span>
+                           </td>
+                           <td>
+                              <span class="completed"><img src="<%=result.image%>"
+                                 class="img-responsive" id="image"></span>
+                           </td>
+                           <% } else { %>
+                           <td>
+                              <input type="checkbox" name="completed">
+                           </td>
+                           <td>
+                              <span>
+                              <%=result.fullName%>
+                              </span>
+                           </td>
+                           <td>
+                              <span>
+                              <%=result.amount%>
+                              </span>
+                           </td>
+                           <td>
+                              <span>
+                              <%=result.phone%>
+                              </span>
+                           </td>
+                           <td>
+                              <span>
+                              <%=result.address%>
+                              </span>
+                           </td>
+                           <td>
+                              <span>
+                              <%=result.occasion%>
+                              </span>
+                           </td>
+                           <td>
+                              <span><img src="<%=result.image%>" class="img-responsive"
+                                 id="image"></span>
+                           </td>
+                           <% } %>
+                           <td><input type="hidden" value="<%=result._id%>" name="id">
+                              <button class="btn btn-small bcm-btn-red"><span
+                                 class="glyphicon glyphicon-ok"
+                                 aria-hidden="true"></span></button>
+                           </td>
+                        </form>
+                        <td>
+                           <button class="btn btn-small bcm-btn-red" data-toggle="modal" data-target="#myModal<%=result._id%>"> <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> </button>
+                           <div id="myModal<%=result._id%>" class="modal fade" role="dialog">
+                              <div class="modal-dialog">
+                                 <div class="modal-content">
+                                    <div class="modal-header">
+                                       <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                       <h4 class="modal-title">Update Data</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                       <form action="/update" method="POST" enctype='multipart/form-data'>
+                                          <div class="form-group">
+                                             <input type="text" class="form-control" placeholder="Full Name" name="fullName" value="<%=result.fullName%>" required>
+                                          </div>
+                                          <div class="form-group">
+                                             <input type="text" class="form-control" placeholder="Amount" name="amount" value="<%=result.amount%>" required>
+                                          </div>
+                                          <div class="form-group">
+                                             <input type="text" class="form-control" placeholder="Phone" name="phone" value="<%=result.phone%>" required>
+                                          </div>
+                                          <div class="form-group">
+                                             <input type="text" class="form-control" placeholder="Address" name="address" value="<%=result.address%>" required> 
+                                          </div>
+                                          <div class="form-group">
+                                             <input type="text" class="form-control" placeholder="Occasion" name="occasion" value="<%=result.occasion%>" required>
+                                          </div>
+                                          <div class="form-group">
+                                             <input class="form-control" type="file" name="image" id="image" required>
+                                          </div>
+                                          <div class="form-group">
+                                             <input type="hidden" value="<%=result._id%>" name="id">
+                                             <button class="btn btn-small bcm-btn-red"  type="submit">update</button>
+                                          </div>
+                                       </form>
+                                    </div>
                                  </div>
                               </div>
                            </div>
-                          </div>
-                      </td>
-                      <td>
-                         <form action="/delete" method="POST">
-                            <input type="hidden" value="<%=result._id%>" name="id">
-                            <button class="btn btn-small bcm-btn-red" type="submit"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
-                         </form>
-                      </td>
-                   </tr>
-                </tbody>
-             </table>
-          </label>
-       </li>
-       <% }) %>
-    </ul>
-    <% } else { %>
-    <p>No Receipts!</p>
-    <% } %>
-    <% todos.map((result2)=>{%>
-    <!-- Modal -->
-    <!-- <div id="myModal" class="modal fade" role="dialog">
-       <div class="modal-dialog">
-          <div class="modal-content">
-             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Update Data</h4>
-             </div>
-             <div class="modal-body">
-                <form action="/update" method="POST">
-                   <div class="form-group">
-                      <input type="text" class="form-control" placeholder="Full Name" name="fullName" value="<%=result2.fullName%>" required>
+                        </td>
+                        <td>
+                           <form action="/delete" method="POST">
+                              <input type="hidden" value="<%=result._id%>" name="id">
+                              <button class="btn btn-small bcm-btn-red" type="submit"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                           </form>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </label>
+         </li>
+         <% }) %>
+      </ul>
+      <% } else { %>
+      <p>No Receipts!</p>
+      <% } %>
+      <% todos.map((result2)=>{%>
+      <!-- Modal -->
+      <!-- <div id="myModal" class="modal fade" role="dialog">
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Update Data</h4>
+               </div>
+               <div class="modal-body">
+                  <form action="/update" method="POST">
+                     <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Full Name" name="fullName" value="<%=result2.fullName%>" required>
+                     </div>
+                     <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Amount" name="amount" value="<%=result2.amount%>" required>
+                     </div>
+                     <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Phone" name="phone" value="<%=result2.phone%>" required>
+                     </div>
+                     <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Address" name="address" value="<%=result2.address%>" required> 
+                     </div>
+                     <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Occasion" name="occasion" value="<%=result2.occasion%>" required>
+                     </div>
+                     <div class="form-group">
+                       <input class="form-control" type="file" name="image" id="image" required>
                    </div>
-                   <div class="form-group">
-                      <input type="text" class="form-control" placeholder="Amount" name="amount" value="<%=result2.amount%>" required>
-                   </div>
-                   <div class="form-group">
-                      <input type="text" class="form-control" placeholder="Phone" name="phone" value="<%=result2.phone%>" required>
-                   </div>
-                   <div class="form-group">
-                      <input type="text" class="form-control" placeholder="Address" name="address" value="<%=result2.address%>" required> 
-                   </div>
-                   <div class="form-group">
-                      <input type="text" class="form-control" placeholder="Occasion" name="occasion" value="<%=result2.occasion%>" required>
-                   </div>
-                   <div class="form-group">
-                     <input class="form-control" type="file" name="image" id="image" required>
-                 </div>
-                   <div class="form-group">
-                      <input type="hidden" value="<%=result2._id%>" name="id">
-                      <button class="btn btn-small bcm-btn-red"  type="submit">update</button>
-                   </div>
-                </form>
-             </div>
-          </div>
-       </div>
-      </div> -->
-       <% }) %>
-    </div>
+                     <div class="form-group">
+                        <input type="hidden" value="<%=result2._id%>" name="id">
+                        <button class="btn btn-small bcm-btn-red"  type="submit">update</button>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+         </div> -->
+      <% }) %>
    </div>
+</div>

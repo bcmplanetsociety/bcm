@@ -2,7 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
 const authRoutes = require("./routes/authRoutes");
-const todoRoutes = require("./routes/receipt");
+const receiptRoutes = require("./routes/receipt");
+const userProfileRoutes = require("./routes/userProfile");
 require("dotenv").config();
 var session = require("express-session");
 var passport = require("passport");
@@ -40,8 +41,10 @@ app.use(function (req, res, next) {
   res.locals.user = req.user || null;
   next();
 });
-app.use(todoRoutes);
+app.use(receiptRoutes);
 app.use(authRoutes);
+app.use(userProfileRoutes);
+
 async function start() {
   try {
     await mongoose.connect(

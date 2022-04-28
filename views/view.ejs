@@ -1,109 +1,109 @@
 <div class="bcm_view-recipt">
    <div class="container">
-    <h2>View Receipts:</h2>
-    <% if (todos.length) { %>
-    <ul>
-       <% todos.map((result)=>{%>
-       <li class="todo">
-          <label>
-             <table class="table table-responsive table-bordered">
-                <thead>
-                   <tr>
-                      <th></th>
-                      <th>Full Name</th>
-                      <th>Amount</th>
-                      <th>Phone</th>
-                      <th>Address</th>
-                      <th>Occasion</th>
-                      <th>image</th>
-                      <th>Completed</th>
-                   </tr>
-                </thead>
-                <tbody>
-                   <tr>
-                      <form action="/complete" method="POST">
-                         <% if (result.completed) { %>
-                         <td>
-                            <input type="checkbox" checked name="completed" class="completed">
-                         </td>
-                         <td>
-                            <span class="completed">
-                            <%=result.fullName%>
-                            </span>
-                         </td>
-                         <td>
-                            <span class="completed">
-                            <%=result.amount%>
-                            </span>
-                         </td>
-                         <td>
-                            <span class="completed">
-                            <%=result.phone%>
-                            </span>
-                         </td>
-                         <td>
-                            <span class="completed">
-                            <%=result.address%>
-                            </span>
-                         </td>
-                         <td>
-                            <span class="completed">
-                            <%=result.occasion%>
-                            </span>
-                         </td>
-                         <td>
-                            <span class="completed"><img src="<%=result.image%>"
-                               class="img-responsive" id="image"></span>
-                         </td>
-                         <% } else { %>
-                         <td>
-                            <input type="checkbox" name="completed">
-                         </td>
-                         <td>
-                            <span>
-                            <%=result.fullName%>
-                            </span>
-                         </td>
-                         <td>
-                            <span>
-                            <%=result.amount%>
-                            </span>
-                         </td>
-                         <td>
-                            <span>
-                            <%=result.phone%>
-                            </span>
-                         </td>
-                         <td>
-                            <span>
-                            <%=result.address%>
-                            </span>
-                         </td>
-                         <td>
-                            <span>
-                            <%=result.occasion%>
-                            </span>
-                         </td>
-                         <td>
-                            <span><img src="<%=result.image%>" class="img-responsive"
-                               id="image"></span>
-                         </td>
-                         <% } %>
-                         <td><input type="hidden" value="<%=result._id%>" name="id">
-                            <button class="btn btn-small bcm-btn-red"><span
-                               class="glyphicon glyphicon-ok"
-                               aria-hidden="true"></span></button>
-                         </td>
-                      </form>
-                   </tr>
-                </tbody>
-             </table>
-          </label>
-       </li>
-       <% }) %>
-    </ul>
-    <% } else { %>
-    <p>No Receipts!</p>
-    <% } %>
- </div>
+      <h2>View Receipts:</h2>
+      <% if (todos.length) { %>
+      <ul>
+         <% todos.map((result)=>{%>
+         <li class="todo">
+            <label>
+               <table class="table table-responsive table-bordered">
+                  <thead>
+                     <tr>
+                        <th></th>
+                        <th>Full Name</th>
+                        <th>Amount</th>
+                        <th>Phone</th>
+                        <th>Address</th>
+                        <th>Occasion</th>
+                        <th>image</th>
+                        <th>Completed</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <form action="/complete" method="POST">
+                           <% if (result.completed) { %>
+                           <td>
+                              <input type="checkbox" checked name="completed" class="completed">
+                           </td>
+                           <td>
+                              <span class="completed">
+                              <%=result.fullName%>
+                              </span>
+                           </td>
+                           <td>
+                              <span class="completed">
+                              <%=result.amount%>
+                              </span>
+                           </td>
+                           <td>
+                              <span class="completed">
+                              <%=result.phone%>
+                              </span>
+                           </td>
+                           <td>
+                              <span class="completed">
+                              <%=result.address%>
+                              </span>
+                           </td>
+                           <td>
+                              <span class="completed">
+                              <%=result.occasion%>
+                              </span>
+                           </td>
+                           <td>
+                              <span class="completed"><img src="<%=result.image%>"
+                                 class="img-responsive" id="image"></span>
+                           </td>
+                           <% } else { %>
+                           <td>
+                              <input type="checkbox" name="completed">
+                           </td>
+                           <td>
+                              <span>
+                              <%=result.fullName%>
+                              </span>
+                           </td>
+                           <td>
+                              <span>
+                              <%=result.amount%>
+                              </span>
+                           </td>
+                           <td>
+                              <span>
+                              <%=result.phone%>
+                              </span>
+                           </td>
+                           <td>
+                              <span>
+                              <%=result.address%>
+                              </span>
+                           </td>
+                           <td>
+                              <span>
+                              <%=result.occasion%>
+                              </span>
+                           </td>
+                           <td>
+                              <span><img src="<%=result.image%>" class="img-responsive"
+                                 id="image"></span>
+                           </td>
+                           <% } %>
+                           <td><input type="hidden" value="<%=result._id%>" name="id">
+                              <button class="btn btn-small bcm-btn-red"><span
+                                 class="glyphicon glyphicon-ok"
+                                 aria-hidden="true"></span></button>
+                           </td>
+                        </form>
+                     </tr>
+                  </tbody>
+               </table>
+            </label>
+         </li>
+         <% }) %>
+      </ul>
+      <% } else { %>
+      <p>No Receipts!</p>
+      <% } %>
+   </div>
 </div>

@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+var UserProfile = require('../models/Profile');
 
 var User = require('../models/User');
 
@@ -91,7 +92,9 @@ router.post('/login',
         res.redirect('/login');
     });
 
-    router.get('/profile', ensureAuthenticated, function(req, res){
+    router.get('/profile', ensureAuthenticated, async (req, res) =>{
+        const profile = await UserProfile.find({ uid: req.user._id});
+
         res.render('profile',
         { 
             id: req.user._id,
@@ -99,6 +102,8 @@ router.post('/login',
             role: req.user.role,
             email: req.user.email,
             profile_img: req.user.profile_img,
+            name: req.user.name,
+            profile
         }
         );
     });
