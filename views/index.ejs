@@ -3,46 +3,74 @@
    <div class="container">
       <div class="row">
          <div class="col-md-8 col-sm-12">
-            <div class="">
-               <section id="our-program">
+            <div class="main-body">
+               <section class="our-amenities-section">
                   <div class="container">
-                     <div class="top text-center">
-                        <h1 style="color:#E30613">OUR AMENITIES</h1>
-                     </div>
                      <div class="row">
-                        <div class="col-md-4">
-                           <div class="card">
-                              <div class="card-img-top">
-                                 <img src="https://4.imimg.com/data4/IA/CR/MY-4062718/society-gym-setup-500x500.jpg" alt="">
-                              </div>
-                              <div class="card-block">
-                                 <h4 class="card-title">Gym</h4>
-                                 <p class="card-text">There are many variations of passages of Lorem Ipsum available...There are many variations of passages of Lorem Ipsum available...</p>
-                                 <a href="#" class="card-footer">Read More</a>
-                              </div>
-                           </div>
+                        <div class="col-md-12 text-center amenities-heading">
+                           <h1>OUR AMENITIES</h1>
                         </div>
-                        <div class="col-md-4">
-                           <div class="card">
-                              <div class="card-img-top">
-                                 <img src="https://taylormgt.ahn6.com/societyhilljcii/picture/dsc01063.jpg" alt=""> 
+                        <div class="col-md-12">
+                           <div class="featured-carousel owl-carousel">
+                              <div class="item">
+                                 <div class="card">
+                                    <div class="card-img-top">
+                                       <img src="./images/owl/society-gym.jpg" alt="">
+                                    </div>
+                                    <div class="card-block">
+                                       <h4 class="card-title">Gym</h4>
+                                       <p class="card-text">There are many variations of passages of Lorem Ipsum available...There are many variations of passages of Lorem Ipsum available...</p>
+                                       <a href="#" class="card-footer">Read More</a>
+                                    </div>
+                                 </div>
                               </div>
-                              <div class="card-block">
-                                 <h4 class="card-title">Swimming Pool</h4>
-                                 <p class="card-text">There are many variations of passages of Lorem Ipsum available...There are many variations of passages of Lorem Ipsum available...</p>
-                                 <a href="#" class="card-footer">Read More</a>
+                              <div class="item">
+                                 <div class="card">
+                                    <div class="card-img-top">
+                                       <img src="./images/owl/swimming-pool.jpg" alt=""> 
+                                    </div>
+                                    <div class="card-block">
+                                       <h4 class="card-title">Swimming Pool</h4>
+                                       <p class="card-text">There are many variations of passages of Lorem Ipsum available...There are many variations of passages of Lorem Ipsum available...</p>
+                                       <a href="#" class="card-footer">Read More</a>
+                                    </div>
+                                 </div>
                               </div>
-                           </div>
-                        </div>
-                        <div class="col-md-4">
-                           <div class="card">
-                              <div class="card-img-top">                               
-                                 <img src="https://wonderfulengineering.com/wp-content/uploads/2014/08/25-Garden-Design-Ideas-For-Your-Home-14.jpg" alt="">
+                              <div class="item">
+                                 <div class="card">
+                                    <div class="card-img-top">                               
+                                       <img src="./images/owl/home-garden.jpg" alt="">
+                                    </div>
+                                    <div class="card-block">
+                                       <h4 class="card-title">Garden</h4>
+                                       <p class="card-text">There are many variations of passages of Lorem Ipsum available...There are many variations of passages of Lorem Ipsum available...</p>
+                                       <a href="#" class="card-footer">Read More</a>
+                                    </div>
+                                 </div>
                               </div>
-                              <div class="card-block">
-                                 <h4 class="card-title">Garden</h4>
-                                 <p class="card-text">There are many variations of passages of Lorem Ipsum available...There are many variations of passages of Lorem Ipsum available...</p>
-                                 <a href="#" class="card-footer">Read More</a>
+                              <div class="item">
+                                 <div class="card">
+                                    <div class="card-img-top">                               
+                                       <img src="./images/owl/club-house.jpg" alt="">
+                                    </div>
+                                    <div class="card-block">
+                                       <h4 class="card-title">Club House</h4>
+                                       <p class="card-text">There are many variations of passages of Lorem Ipsum available...There are many variations of passages of Lorem Ipsum available...</p>
+                                       <a href="#" class="card-footer">Read More</a>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="item">
+                                 <div class="card">
+                                    <div class="card-img-top">                               
+                                       <img src="./images/owl/kids-play-area.jpg" alt="">
+                                    </div>
+                                    <div class="card-block">
+                                       <h4 class="card-title">Kids Play Area</h4>
+                                       <p class="card-text">There are many variations of passages of Lorem Ipsum available...There are many variations of passages of Lorem Ipsum available...</p>
+                                       <a href="#" class="card-footer">Read More</a>
+                                    </div>
+                                 </div>
                               </div>
                            </div>
                         </div>
@@ -70,24 +98,24 @@
          </div>
          <br />
          <div class="col-md-6">
-            <form class="bcm-contact-form">
+            <form class="bcm-contact-form" action="/contact" method="post" enctype="multipart/form-data" id="contact-form">
                <div class="form-group">
                   <label for="form-name">Name</label>
-                  <input type="email" class="form-control" id="form-name" placeholder="Name">
+                  <input type="text" class="form-control" id="form-name" name="name" placeholder="Name">
                </div>
                <div class="form-group">
                   <label for="form-email">Email Address</label>
-                  <input type="email" class="form-control" id="form-email" placeholder="Email Address">
+                  <input type="email" class="form-control" id="form-email" name="email" placeholder="Email Address">
                </div>
                <div class="form-group">
-                  <label for="form-subject">Telephone</label>
-                  <input type="text" class="form-control" id="form-subject" placeholder="Subject">
+                  <label for="form-subject">Subject</label>
+                  <input type="text" class="form-control" id="form-subject" name="subject" placeholder="subject">
                </div>
                <div class="form-group">
                   <label for="form-message">Email your Message</label>
-                  <textarea class="form-control" id="form-message" placeholder="Message"></textarea>
+                  <textarea class="form-control" id="form-message" name="message" placeholder="Message"></textarea>
                </div>
-               <button class="btn btn-default" type="submit">Contact Us</button>                
+               <button class="btn bcm-btn-black" type="submit">Contact Us</button>                
             </form>
          </div>
       </div>

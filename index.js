@@ -4,6 +4,7 @@ const path = require("path");
 const authRoutes = require("./routes/authRoutes");
 const receiptRoutes = require("./routes/receipt");
 const userProfileRoutes = require("./routes/userProfile");
+const indexRoute = require("./routes/index");
 require("dotenv").config();
 var session = require("express-session");
 var passport = require("passport");
@@ -44,6 +45,7 @@ app.use(function (req, res, next) {
 app.use(receiptRoutes);
 app.use(authRoutes);
 app.use(userProfileRoutes);
+app.use(indexRoute);
 
 async function start() {
   try {

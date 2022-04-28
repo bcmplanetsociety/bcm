@@ -45,6 +45,10 @@ body {
     background-color: #E30613;
     color: #fff;
  }
+ .bcm-btn-black, .bcm-btn-black:hover {
+   background-color: #000000;
+   color: #fff;
+}
  
  /*Default Table CSS*/
  .table {
