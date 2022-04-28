@@ -1,3 +1,6 @@
+.bcm {
+    margin-bottom: 11rem;
+}
 a:focus,
 a:hover {
    color: #fff;
@@ -94,8 +97,8 @@ a:hover {
 .user-profile {}
 
 .userImage-container {
-   /* text-align: -webkit-center; */
-   text-align: -webkit-right;
+   text-align: -webkit-center;
+   /* text-align: -webkit-right; */
 }
 
 img#userimage {
@@ -118,6 +121,7 @@ img#userimage {
 /*===========Contact Us================*/
 section.contact-us {
    background-color: #E30613;
+   padding-bottom: 2rem;
 }
 
 .countact-us_header {
