@@ -4,6 +4,10 @@ const nodemailer = require("nodemailer");
 const multiparty = require("multiparty");
 require("dotenv").config();
 
+router.get('/', async (req, res) => {
+  res.render('index')
+})
+
 const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com", //replace with your email provider
     port: 587,

@@ -5,14 +5,11 @@ const path = require('path')
 const Upload  = require("../helpers/upload");
 const cloudinary = require("../helpers/cloudinary");
 
-router.get('/', async (req, res) => {
-    res.render('index',{page:'Home', menuId:'home'})
 
-})
 router.get('/receipt', ensureAuthenticated, async (req, res) => {
     const todos = await Todo.find({}).lean()
     
-    res.render('receipt', {
+    res.render('pages/receipt/receipt', {
     fullName: 'Tasks list page...',
     fname: 'Tasks list page...',
     isIndex: true,
@@ -23,7 +20,7 @@ router.get('/receipt', ensureAuthenticated, async (req, res) => {
 router.get('/view',ensureAuthenticated, async (req, res) => {
     const todos = await Todo.find({}).lean()
     
-    res.render('view', {
+    res.render('pages/receipt/view', {
     fullName: 'Tasks list page...',
     fname: 'Tasks list page...',
     isIndex: true,
@@ -33,11 +30,10 @@ router.get('/view',ensureAuthenticated, async (req, res) => {
 })
 
 router.get('/create', ensureAuthenticated,(req, res) => {
-    res.render('create', {
+    res.render('pages/receipt/create', {
     fullName: 'Create a new task page...',
     fname: 'Create a new task page...',
     isCreate: true,
-    page:'Create', menuId:'create'
     })
 })
 
@@ -55,7 +51,7 @@ router.post('/create',ensureAuthenticated, Upload.single("image"), async (req, r
         public_id: geturl.public_id     
     })
     await todo.save()
-    res.redirect('/')
+    res.redirect('/receipt')
      } catch (error) {
             console.error(error);
           }
