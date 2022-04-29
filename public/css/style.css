@@ -552,6 +552,10 @@ svg:not(:root).svg-inline--fa{
       margin-top: 0rem;
       margin-bottom: 2rem;
   }
+  .bcm-navbar .navbar-collapse .navbar-nav .open .bcm-dropdown-menu {
+   padding-bottom: 1rem;
+   font-size: 1.1rem;
+ }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -626,6 +630,10 @@ svg:not(:root).svg-inline--fa{
       margin-top: 0rem;
       margin-bottom: 2rem;
   }
+  .bcm-navbar .navbar-collapse .navbar-nav .open .bcm-dropdown-menu {
+   padding-bottom: 1rem;
+   font-size: 1.1rem;
+ }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
