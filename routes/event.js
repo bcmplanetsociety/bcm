@@ -9,13 +9,20 @@ router.get('/event', ensureAuthenticated, async (req, res) => {
     event
     })
 })
-router.get('/userView', ensureAuthenticated, async (req, res) => {
-    const event = await Event.find({}).lean()  
+router.get('/userView', async (req, res) => { 
     res.render('pages/event/userView', {
-    isIndex: true,
-    event
-    })
+             isIndex: true,
+             })
 })
+
+// router.get('/ViewEvents', ensureAuthenticated, async (req, res) => {
+//     console.log(req.body); 
+//     const event = await Event.find({}).lean()  
+//     res.render('pages/event/userView', {
+//     isIndex: true,
+//     event
+//     })
+// })
 
 router.get('/viewEvent',ensureAuthenticated, async (req, res) => {
     const event = await Event.find({}).lean()  
@@ -30,6 +37,16 @@ router.get('/createEvent', ensureAuthenticated,(req, res) => {
     isCreate: true,
     })
 })
+
+router.post('/userView', async(req, res) => {
+    //console.log(req.body.id);
+    const eventbyId = await Event.findById(req.body.id)
+     res.render('./pages/event/userView', {
+     isCreate: true,
+     eventbyId
+     })
+})
+
 
 
 router.post('/createEvent',ensureAuthenticated, async (req, res) => {

@@ -247,6 +247,35 @@ span.ion-ios-arrow-back {
 /*--------------------------------------------------------------------*/
                             /*Event*/
 /*--------------------------------------------------------------------*/
+.show-events{
+   background-color: #000;
+   min-height: 50rem;
+   margin-top: 13rem;
+   padding: 1rem;
+   border-radius: 10px;
+}
+.show-events h2{
+   text-align: center;
+   margin-bottom: 3rem;
+}
+
+.show-events ul{
+   padding-inline-start: 0px;
+    padding: 0rem 1rem;
+}
+
+.eventIndex{
+   background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    line-height: 1rem;
+    padding-bottom: 1rem;
+    color: #fff;
+}
+hr.dotted-border {
+   border-top: 2px dotted #fff;
+   margin-top: 5px;
+}
 
 .light {
    background: #f3f5f7;
@@ -518,6 +547,11 @@ svg:not(:root).svg-inline--fa{
       padding-inline-start: 0px;
       padding-bottom: 1em;
    }
+   .show-events {
+      min-height: 35rem;
+      margin-top: 0rem;
+      margin-bottom: 2rem;
+  }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -587,6 +621,11 @@ svg:not(:root).svg-inline--fa{
       text-align: center;
       padding-bottom: 1em;
    }
+   .show-events {
+      min-height: 35rem;
+      margin-top: 0rem;
+      margin-bottom: 2rem;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -628,6 +667,10 @@ svg:not(:root).svg-inline--fa{
       display: flex;
       padding-top: 1em;
    }
+   .show-events {
+      min-height: 50rem;
+      margin-top: 13rem;
+  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -662,6 +705,10 @@ svg:not(:root).svg-inline--fa{
       display: block;
       padding-top: 1em;
    }
+   .show-events {
+      min-height: 50rem;
+      margin-top: 13rem;
+  }
 
 }
 
@@ -697,4 +744,8 @@ svg:not(:root).svg-inline--fa{
       display: block;
       padding-top: 1em;
    }
+   .show-events {
+      min-height: 50rem;
+      margin-top: 13rem;
+  }
 }

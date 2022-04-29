@@ -3,9 +3,15 @@ var router = express.Router();
 const nodemailer = require("nodemailer");
 const multiparty = require("multiparty");
 require("dotenv").config();
+const Event = require('../models/Event');
+
 
 router.get('/', async (req, res) => {
-  res.render('index')
+  const event = await Event.find({}).lean()  
+  res.render('index', {
+  isIndex: true,
+  event
+  })
 })
 
 const transporter = nodemailer.createTransport({

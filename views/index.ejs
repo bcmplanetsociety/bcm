@@ -1,6 +1,15 @@
+<style>
+   @media (min-width: 1500px) {
+  .bcm-container {
+    width: 1400px;
+    padding-left: 0;
+    /* margin-right: 0; */
+  }
+}
+</style>
 <%- include('./components/homeSlider'); %>
 <section class="">
-   <div class="container-fluid">
+   <div class="container-fluid bcm-container">
       <div class="row">
          <div class="col-md-9 col-sm-12">
             <div class="main-body">
@@ -73,8 +82,24 @@
                </section>
             </div>
          </div>
-         <div class="col-md-1 col-sm-12"></div>
-         <div class="col-md-2 col-sm-12"></div>
+         <div class="col-md-3 col-sm-12">
+            <div class="show-events">
+               <h2 class="bcm-heading-red">Upcomming Events</h2>
+               <% if (event.length) { %>
+                  <ul>
+                     <% event.map((result)=>{%>
+                        <form action="/userView" method="POST">
+                           <input type="hidden" value="<%=result._id%>" name="id">
+                           <button class="eventIndex"><%=result.name%></button>
+                           <hr class="dotted-border">
+                       </form>
+                       <% }) %>
+         </ul>
+         <% } else { %>
+         <p>No Events Currently!</p>
+         <% } %>
+            </div>
+         </div>
       </div>
    </div>
 </section>
