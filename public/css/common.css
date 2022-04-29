@@ -31,6 +31,7 @@ body {
  
  td {
     font-size: 1.2em;
+    font-weight: normal;
  }
  
  th {
@@ -94,3 +95,6 @@ body {
  ul {
     margin: 0;
  }
+ .bcm-heading-red{
+   color: #E30613;
+}

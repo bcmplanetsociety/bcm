@@ -59,11 +59,16 @@ router.post('/create',ensureAuthenticated, Upload.single("image"), async (req, r
 
 router.post('/complete', ensureAuthenticated,async (req, res) => {
     const todo = await Todo.findById(req.body.id)
-
-    todo.completed = !!req.body.completed
-    await todo.save()
-
-    res.redirect('/receipt')
+    if(req.user.role === 0){
+        todo.completed = !!req.body.completed
+        await todo.save()
+          return res.redirect('/receipt');
+        }
+        else{
+            todo.completed = !!req.body.completed
+           await todo.save()
+              return res.redirect('/view');
+        }
 })
 
 router.post('/delete', ensureAuthenticated, async (req, res) => {

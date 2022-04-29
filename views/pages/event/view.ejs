@@ -1,59 +1,58 @@
 <div class="bcm_view-recipt">
    <div class="container">
-      <h2>View Receipts:</h2>
-      <% if (todos.length) { %>
+      <h2>View Events:</h2>
+      <% if (event.length) { %>
       <ul>
-         <% todos.map((result)=>{%>
+         <% event.map((result)=>{%>
          <li class="todo">
             <label>
                <table class="table table-responsive table-bordered">
                   <thead>
                      <tr>
                         <th></th>
-                        <th>Full Name</th>
-                        <th>Amount</th>
-                        <th>Phone</th>
-                        <th>Address</th>
-                        <th>Occasion</th>
-                        <th>image</th>
+                        <th>Evant Name</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Location</th>
+                        <th>Contact Person</th>
+                        <th>time</th>
                         <th>Completed</th>
                      </tr>
                   </thead>
                   <tbody>
                      <tr>
-                        <form action="/complete" method="POST">
+                        <form action="/completeEvent" method="POST">
                            <% if (result.completed) { %>
                            <td>
                               <input type="checkbox" checked name="completed" class="completed">
                            </td>
                            <td>
                               <span class="completed">
-                              <%=result.fullName%>
+                              <%=result.name%>
                               </span>
                            </td>
                            <td>
                               <span class="completed">
-                              <%=result.amount%>
+                              <%=result.description%>
                               </span>
                            </td>
                            <td>
                               <span class="completed">
-                              <%=result.phone%>
-                              </span>
-                           </td>
-                           <td style="max-width:200px;">
-                              <span class="completed" style="max-width:200px;">
-                              <%=result.address%>
+                              <%=result.price%>
                               </span>
                            </td>
                            <td>
                               <span class="completed">
-                              <%=result.occasion%>
+                              <%=result.location%>
                               </span>
                            </td>
                            <td>
-                              <span class="completed"><img src="<%=result.image%>"
-                                 class="img-responsive" id="image"></span>
+                              <span class="completed">
+                              <%=result.arragedBy%>
+                              </span>
+                           </td>
+                           <td>
+                              <span class="completed"><%=result.time%></span>
                            </td>
                            <% } else { %>
                            <td>
@@ -61,32 +60,31 @@
                            </td>
                            <td>
                               <span>
-                              <%=result.fullName%>
+                              <%=result.name%>
                               </span>
                            </td>
                            <td>
                               <span>
-                              <%=result.amount%>
+                              <%=result.description%>
                               </span>
                            </td>
                            <td>
                               <span>
-                              <%=result.phone%>
-                              </span>
-                           </td>
-                           <td style="max-width:200px;">
-                              <span style="max-width:200px;">
-                              <%=result.address%>
+                              <%=result.price%>
                               </span>
                            </td>
                            <td>
                               <span>
-                              <%=result.occasion%>
+                              <%=result.location%>
                               </span>
                            </td>
                            <td>
-                              <span><img src="<%=result.image%>" class="img-responsive"
-                                 id="image"></span>
+                              <span>
+                              <%=result.arragedBy%>
+                              </span>
+                           </td>
+                           <td>
+                              <span><%=result.time%></span>
                            </td>
                            <% } %>
                            <td><input type="hidden" value="<%=result._id%>" name="id">
@@ -103,7 +101,7 @@
          <% }) %>
       </ul>
       <% } else { %>
-      <p>No Receipts!</p>
+      <p>No Events Currently!</p>
       <% } %>
    </div>
 </div>

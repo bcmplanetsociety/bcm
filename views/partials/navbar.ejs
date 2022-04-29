@@ -17,19 +17,24 @@
            <% if (user.role === 0) { %>
            <li id="home"><a href="/">Home</a></li>
            <li class="receipt"><a href="/receipt">Receipts</a></li>
-           <li class="create"><a href="/create">Submit Receipts</a></li>
+           <li class="create"><a href="/create">Create Receipts</a></li>
+           <li class="receipt"><a href="/event">Events</a></li>
+           <li class="create"><a href="/createEvent">Create Events</a></li>
            <li class="usersList"><a href="/usersList">Change Role</a></li>
            <li class="profile"><a href="/profile">Profile</a></li>
            <li class="logout"><a href="/logout">Logout</a></li>
            <% } else if (user.role === 1) { %>
            <li id="home"><a href="/">Home</a></li>
            <li class="view"><a href="/view">View Receipts</a></li>
-           <li class="create"><a href="/create">Submit Receipts</a></li>
+           <li class="create"><a href="/create">Create Receipts</a></li>
+           <li class="create"><a href="/createEvent">Create Events</a></li>
+           <li class="receipt"><a href="/viewEvent">Events</a></li>
            <li class="profile"><a href="/profile">Profile</a></li>
            <li class="logout"><a href="/logout">Logout</a></li>
            <% } else { %>
            <li id="home"><a href="/">Home</a></li>
-           <li class="create"><a href="/create">Submit Receipts</a></li>
+           <li class="create"><a href="/create">Create Receipts</a></li>
+           <li class="event"><a href="/userView">Events</a></li>
            <li class="profile"><a href="/profile">Profile</a></li>
            <li class="logout"><a href="/logout">Logout</a></li>
            <% } %>

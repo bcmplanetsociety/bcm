@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const path = require("path");
 const authRoutes = require("./routes/authRoutes");
 const receiptRoutes = require("./routes/receipt");
-// const userProfileRoutes = require("./routes/userProfile");
+const eventRoutes = require("./routes/event");
 const indexRoute = require("./routes/index");
 require("dotenv").config();
 var session = require("express-session");
@@ -44,7 +44,7 @@ app.use(function (req, res, next) {
 });
 app.use(receiptRoutes);
 app.use(authRoutes);
-// app.use(userProfileRoutes);
+app.use(eventRoutes);
 app.use(indexRoute);
 
 async function start() {
