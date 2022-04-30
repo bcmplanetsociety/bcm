@@ -1,3 +1,14 @@
+<% if (alerts.error) { %>
+   <% alerts.error.forEach(function(msg) { %>
+     <div class="alert alert-danger" id="alertMessage">
+        <%= msg %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+         <span aria-hidden="true">×</span>
+       </button>
+      </div>
+   <% }); %>
+ <% } %>
+
 <div class="bcm_login">
     <div class="container">
        <h2 class="page-header">Account Login</h2>
@@ -14,3 +25,9 @@
        </form>
     </div>
  </div>
+ <script type="text/javascript">
+   setTimeout(function () {
+       // Closing the alert
+       $(' #alertMessage').alert('close');
+   }, 2000);
+</script>

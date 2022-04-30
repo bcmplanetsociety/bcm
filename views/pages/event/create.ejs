@@ -1,24 +1,36 @@
 <div class="create_receipt">
     <div class="container">
-       <form action="/createEvent" method="POST">
+      <% if(typeof alert != 'undefined') { %>
+         <% alert.forEach(function(error) { %>
+             <div class="alert alert-warning" role="alert">
+                 <%= error.msg %>
+                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                   <span aria-hidden="true">×</span>
+                 </button>
+               </div>
+         <% }) %>
+      <% } %>
+        
+      
+      <form action="/createEvent" method="POST">
           <h2>Create a new Event:</h2>
           <div class="form-group">
-             <input type="text" class="form-control" placeholder="Event Name" name="name" required>
+             <input type="text" class="form-control" placeholder="Event Name" name="name">
           </div>
           <div class="form-group">
-             <input type="text" class="form-control" placeholder="Description" name="description" required>
+             <input type="text" class="form-control" placeholder="Description" name="description">
           </div>
           <div class="form-group">
-             <input type="text" class="form-control" placeholder="Amount" name="price" required>
+             <input type="text" class="form-control" placeholder="Amount" name="price">
           </div>
           <div class="form-group">
-             <input type="text" class="form-control" placeholder="Location" name="location" required> 
+             <input type="text" class="form-control" placeholder="Location" name="location" > 
           </div>
           <div class="form-group">
-             <input type="text" class="form-control" placeholder="Contact Person" name="arragedBy" required>
+             <input type="text" class="form-control" placeholder="Contact Person" name="arragedBy">
           </div>
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Time" name="time" required>
+            <input type="text" class="form-control" placeholder="Time" name="time">
          </div>
           <button type="submit" class="btn bcm-btn-red">Create</button>
        </form>

@@ -21,6 +21,10 @@ const schema = new Schema({
     phone: {
         type: Number,
         required: true,
+        isMobilePhone: {
+            options: ['en-IN'],
+            errorMessage: 'Must provide a valid India phone number.'
+          },
     },
     occasion:{
        type: String,

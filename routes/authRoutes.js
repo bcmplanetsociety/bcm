@@ -7,7 +7,7 @@ const User = require('../models/User');
 const path = require('path')
 const Upload  = require("../helpers/upload");
 const cloudinary = require("../helpers/cloudinary");
-
+const { check, validationResult } = require('express-validator');
 
 router.get('/register', function(req, res){
     res.render('pages/user/register',{
@@ -15,13 +15,34 @@ router.get('/register', function(req, res){
 });
 
 
-router.get('/login', function(req, res){
-    res.render('pages/user/login',{
-    });
+router.get('/login', function(req, res)
+{ 
+
+     res.render('pages/user/login',{});
 });
 
 
-router.post('/register', function(req, res){
+router.post('/register', 
+[
+    check('name', 'The Name must have atleast 3 characters').exists().isLength({ min: 3 }),
+    check('email', 'The Email must have atleast 3 characters & in valid formate').exists().isLength({ min: 3 }).isEmail(),
+    check('username', 'The username must have atleast 3 characters').exists().isLength({ min: 3 }),
+    check('password').custom(password => {
+        if(password && password.match(/^(?=.{5,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$/)) {
+          return true;
+        }
+      }).withMessage("Password must contain 5 characters and atleast 1 number, 1 uppercase and lowercase letter."),
+    ],
+function(req, res){
+    const errors = validationResult(req)
+    if(!errors.isEmpty()) {
+        // return res.status(422).jsonp(errors.array())
+        const alert = errors.array()
+        res.render('pages/user/register', {
+            alert
+        })
+    }
+    try{
     var name = req.body.name;
     var email = req.body.email;
     var username = req.body.username;
@@ -55,6 +76,9 @@ router.post('/register', function(req, res){
         })
 
     }
+}catch (error) {
+    console.error(error);
+  }
 });
 
 passport.use(new LocalStrategy(
@@ -88,9 +112,14 @@ passport.deserializeUser(function(id, done) {
     });
 });
 
-router.post('/login',
-    passport.authenticate('local', {successRedirect:'/', failureRedirect:'/login'}),
+router.post('/login',passport.authenticate('local', {
+    successRedirect:'/', 
+    failureRedirect:'/login',
+    failureFlash: 'Invalid username and/or password',
+    successFlash: 'You have logged in'
+}),
     function(req, res) {
+        req.flash('message', 'No user found')
         res.redirect('/login');
     });
 

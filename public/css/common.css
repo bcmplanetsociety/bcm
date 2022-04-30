@@ -98,3 +98,17 @@ body {
  .bcm-heading-red{
    color: #E30613;
 }
+.alert {
+   margin-bottom: 0px;
+}
+
+form label:after {
+   display: inline;
+   float: none;
+   color: red !important;
+   font-weight: bold;
+   margin: 0;
+   padding: 0;
+   content: '*';
+   padding-left: 0.2rem;
+}

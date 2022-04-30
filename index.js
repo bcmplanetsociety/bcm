@@ -6,9 +6,10 @@ const receiptRoutes = require("./routes/receipt");
 const eventRoutes = require("./routes/event");
 const indexRoute = require("./routes/index");
 require("dotenv").config();
-var session = require("express-session");
-var passport = require("passport");
+const session = require("express-session");
+const passport = require("passport");
 const expressLayouts = require("express-ejs-layouts");
+const flash = require('connect-flash');
 
 const PORT = process.env.PORT || 5000;
 
@@ -37,6 +38,14 @@ app.use(
 
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
+
+app.use(function(req, res, next) {
+  // before every route, attach the flash messages and current user to res.locals
+  res.locals.alerts = req.flash();
+  res.locals.currentUser = req.user;
+  next();
+});
 
 app.use(function (req, res, next) {
   res.locals.user = req.user || null;

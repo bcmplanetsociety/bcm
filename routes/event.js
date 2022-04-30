@@ -1,6 +1,7 @@
 const { Router } = require('express')
 const router = Router()
 const Event = require('../models/Event');
+const { check, validationResult } = require('express-validator');
 
 router.get('/event', ensureAuthenticated, async (req, res) => {
     const event = await Event.find({}).lean()  
@@ -49,7 +50,28 @@ router.post('/userView', async(req, res) => {
 
 
 
-router.post('/createEvent',ensureAuthenticated, async (req, res) => {
+router.post('/createEvent',ensureAuthenticated, 
+
+[
+    check('name', 'The Name must have atleast 3 characters').exists().isLength({ min: 3 }),
+    check('description', 'The description must have atleast 3 characters').exists().isLength({ min: 3 }),
+    check('price', 'The price must have atleast 3 numbers numbers only').exists().isLength({ min: 3 }).isNumeric(),
+    check('location', 'The location must have atleast 3 characters').exists().isLength({ min: 3 }),
+    check('arragedBy', 'The Contact persont name must have atleast 3 characters').exists().isLength({ min: 3 }),
+    check('time', 'The time must have atleast 3 characters').exists().isLength({ min: 3 }),
+    ],
+
+async (req, res) => {
+
+    const errors = validationResult(req)
+    if(!errors.isEmpty()) {
+        // return res.status(422).jsonp(errors.array())
+        const alert = errors.array()
+        res.render('pages/event/create', {
+            alert
+        })
+    }
+
     try {
     const event = new Event({
         name: req.body.name,

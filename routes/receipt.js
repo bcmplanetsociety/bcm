@@ -4,6 +4,7 @@ const Todo = require('../models/Receipt')
 const path = require('path')
 const Upload  = require("../helpers/upload");
 const cloudinary = require("../helpers/cloudinary");
+const { check, validationResult } = require('express-validator');
 
 
 router.get('/receipt', ensureAuthenticated, async (req, res) => {
@@ -37,9 +38,31 @@ router.get('/create', ensureAuthenticated,(req, res) => {
     })
 })
 
-router.post('/create',ensureAuthenticated, Upload.single("image"), async (req, res) => {
+router.post('/create',ensureAuthenticated, Upload.single("image"),
+[
+check('fullName', 'The Full Name must have atleast 3 characters').exists().isLength({ min: 3 }),
+check('address', 'The address must have atleast 3 characters').exists().isLength({ min: 3 }),
+check('amount', 'The amount must have atleast 3 numbers numbers only').exists().isLength({ min: 3 }).isNumeric(),
+check('occasion', 'The occasion must have atleast 3 characters').exists().isLength({ min: 3 }),
+check('phone').custom(phone => {
+    if(phone.match(/^^[6-9]\d{9}$$/)) {
+      return true;
+    }
+  }).withMessage("Please enter valid phone number."),
+
+],
+async (req, res) => {
+    const errors = validationResult(req)
+    if(!errors.isEmpty()) {
+        // return res.status(422).jsonp(errors.array())
+        const alert = errors.array()
+        res.render('pages/receipt/create', {
+            alert
+        })
+    }
     try {
     const geturl = await cloudinary.uploader.upload(req.file.path);
+    
     console.log(geturl);
     const todo = new Todo({
         fullName: req.body.fullName,
@@ -81,6 +104,7 @@ router.post('/delete', ensureAuthenticated, async (req, res) => {
 })
 
 router.post('/update', ensureAuthenticated, Upload.single("image"), async (req, res) => {
+    
     try {
         if (!req.file){return res.send('Please upload a file')} 
         let receipt = await Todo.findById(req.body.id);

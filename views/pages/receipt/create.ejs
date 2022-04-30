@@ -1,24 +1,36 @@
+<% if(typeof alert != 'undefined') { %>
+   <% alert.forEach(function(error) { %>
+       <div class="alert alert-warning" role="alert">
+           <%= error.msg %>
+           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+             <span aria-hidden="true">×</span>
+           </button>
+         </div>
+   <% }) %>
+<% } %>
+
 <div class="create_receipt">
     <div class="container">
        <form action="/create" method="POST" enctype="multipart/form-data">
           <h2>Create a new Recipt:</h2>
           <div class="form-group">
-             <input type="text" class="form-control" placeholder="Full Name" name="fullName" required>
+             <input type="text" class="form-control" placeholder="Full Name" name="fullName" >
           </div>
           <div class="form-group">
-             <input type="text" class="form-control" placeholder="Amount" name="amount" required>
+             <input type="text" class="form-control" placeholder="Amount" name="amount" >
           </div>
           <div class="form-group">
-             <input type="text" class="form-control" placeholder="Phone" name="phone" required>
+             <input type="text" class="form-control" placeholder="Phone" name="phone" >
           </div>
           <div class="form-group">
-             <input type="text" class="form-control" placeholder="Address" name="address" required> 
+             <input type="text" class="form-control" placeholder="Address" name="address" > 
           </div>
           <div class="form-group">
-             <input type="text" class="form-control" placeholder="Occasion" name="occasion" required>
+             <input type="text" class="form-control" placeholder="Occasion" name="occasion" >
           </div>
-          <div class="form-group">
-             <input class="form-control" type="file" name="image" id="image" required>
+          <div class="form-group from-group-label-right">
+             <input class="form-control" type="file" name="image" id="image"required>
+             <label for="image">Only png & jpg is allowed</label>
           </div>
           <button type="submit" class="btn bcm-btn-red">Create</button>
        </form>

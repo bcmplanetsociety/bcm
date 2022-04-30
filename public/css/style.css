@@ -136,6 +136,17 @@ section.contact-us .bcm-contact-form {}
 .bcm-contact-form label {
    color: #fff;
 }
+.from-group-label-right{
+display: flex;
+}
+.from-group-label-right label{
+   width: 20%;
+   margin: 0;
+   padding: 0;
+   position: relative;
+   left: 1rem;
+   font-size: 1.4rem;
+}
 
 /*===========================*/
 /*-------------------------------------------
