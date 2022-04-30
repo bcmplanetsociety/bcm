@@ -10,8 +10,7 @@
                </div>
          <% }) %>
       <% } %>
-        
-      
+          
       <form action="/createEvent" method="POST">
           <h2>Create a new Event:</h2>
           <div class="form-group">
@@ -32,30 +31,24 @@
           <!-- <div class="form-group">
             <input type="text" class="form-control" placeholder="Time" name="time">
          </div> -->
+
          <div class="form-group">
-            <div class='input-group date' id='datetimepicker5'>
-               <input type='text' class="form-control" name="time"/>
-               <span class="input-group-addon">
-               <span class="glyphicon glyphicon-calendar"></span>
-               </span>
+            <div class="datetimepicker">
+               <input type="date" class="form-control" name="time" id="date" value="2018-07-03">
+               <span></span>
+               <input type="time" class="form-control" name="time" id="time" value="08:00">
             </div>
+            
          </div>
+
           <button type="submit" class="btn bcm-btn-red">Create</button>
        </form>
     </div>
  </div>
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-      <script type="text/javascript">
-        $(function () {
-             $('#datetimepicker5').datetimepicker({
-                 defaultDate: "11/1/2013",
-                 disabledDates: [
-                     moment("12/25/2013"),
-                     new Date(2013, 11 - 1, 21),
-                     "11/22/2013 00:53"
-                 ]
-             });
-         });
-      </script>
-  
+ <script>
+    var dateEl = document.getElementById('date');
+var timeEl = document.getElementById('time');
+
+document.getElementById('date-output').innerHTML = dateEl.type === 'date';
+document.getElementById('time-output').innerHTML = timeEl.type === 'time';
+ </script>

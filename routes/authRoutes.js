@@ -11,13 +11,12 @@ const { check, validationResult } = require('express-validator');
 const {superAdminAuthenticated, adminAuthenticated, ensureAuthenticated} = require('../middleware/auth');
 
 router.get('/register', function(req, res){
-    res.render('pages/user/register',{
-    });
+    res.render('pages/user/register',{message: req.flash('signupMessage')});
 });
 
 router.get('/login', function(req, res)
 { 
-     res.render('pages/user/login',{});
+    res.render('pages/user/login',{});
 });
 
 router.post('/register', 
@@ -25,22 +24,32 @@ router.post('/register',
     check('name', 'The Name must have atleast 3 characters').exists().isLength({ min: 3 }),
     check('email', 'The Email must have atleast 3 characters & in valid formate').exists().isLength({ min: 3 }).isEmail(),
     check('username', 'The username must have atleast 3 characters').exists().isLength({ min: 3 }),
-    check('password').custom(password => {
-        if(password && password.match(/^(?=.{5,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$/)) {
-          return true;
-        }
-      }).withMessage("Password must contain 5 characters and atleast 1 number, 1 uppercase and lowercase letter."),
+   
+    check('password').trim().notEmpty().withMessage('Password required') 
+    .isLength({ min: 5 }).withMessage('password must be minimum 5 length')
+    .matches (/(?=.*?[A-Z])/).withMessage('At least one Uppercase')
+    .matches (/(?=.*?[a-z])/).withMessage('At least one Lowercase') 
+    .matches (/(?=.*?[0-9])/).withMessage('At least one Number')
+    .matches (/(?=.*?[#?!@$%^&*-])/).withMessage('At least one special character')
+    .not().matches(/^$|\s+/).withMessage('White space not allowed'),
+    // confirm password validation 
+    check('password2').custom((value, { req}) => { if (value !== req.body.password) {
+throw new Error('Password Confirmation does not match password');
+    }
+return true;
+    })
     ],
 function(req, res){
-    const errors = validationResult(req)
-    if(!errors.isEmpty()) {
-        // return res.status(422).jsonp(errors.array())
-        const alert = errors.array()
-        res.render('pages/user/register', {
-            alert
-        })
-    }
     try{
+        const errors = validationResult(req)
+        if(!errors.isEmpty()) {
+            // return res.status(422).jsonp(errors.array())
+            const alert = errors.array()
+            res.render('pages/user/register', {
+                alert
+            })
+        }
+
     var name = req.body.name;
     var email = req.body.email;
     var username = req.body.username;
