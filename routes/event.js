@@ -2,8 +2,9 @@ const { Router } = require('express')
 const router = Router()
 const Event = require('../models/Event');
 const { check, validationResult } = require('express-validator');
+const {superAdminAuthenticated, adminAuthenticated, ensureAuthenticated} = require('../middleware/auth');
 
-router.get('/event', ensureAuthenticated, async (req, res) => {
+router.get('/event', adminAuthenticated, async (req, res) => {
     const event = await Event.find({}).lean()  
     res.render('pages/event/event', {
     isIndex: true,
@@ -25,7 +26,7 @@ router.get('/userView', async (req, res) => {
 //     })
 // })
 
-router.get('/viewEvent',ensureAuthenticated, async (req, res) => {
+router.get('/viewEvent',adminAuthenticated, async (req, res) => {
     const event = await Event.find({}).lean()  
     res.render('pages/event/view', {
     isIndex: true,
@@ -33,7 +34,7 @@ router.get('/viewEvent',ensureAuthenticated, async (req, res) => {
     })
 })
 
-router.get('/createEvent', ensureAuthenticated,(req, res) => {
+router.get('/createEvent', adminAuthenticated,(req, res) => {
     res.render('pages/event/create', {
     isCreate: true,
     })
@@ -50,7 +51,7 @@ router.post('/userView', async(req, res) => {
 
 
 
-router.post('/createEvent',ensureAuthenticated, 
+router.post('/createEvent',adminAuthenticated, 
 
 [
     check('name', 'The Name must have atleast 3 characters').exists().isLength({ min: 3 }),
@@ -89,7 +90,7 @@ async (req, res) => {
           }
 })
 
-router.post('/completeEvent', ensureAuthenticated,async (req, res) => {
+router.post('/completeEvent', adminAuthenticated,async (req, res) => {
     const event = await Event.findById(req.body.id)
     if(req.user.role === 0){
     event.completed = !!req.body.completed
@@ -106,14 +107,14 @@ router.post('/completeEvent', ensureAuthenticated,async (req, res) => {
 })
 
 
-router.post('/deleteEvent', ensureAuthenticated, async (req, res) => {
+router.post('/deleteEvent', adminAuthenticated, async (req, res) => {
 
     const event = await Event.findByIdAndDelete(req.body.id);
 
     res.redirect('/event')
 })
 
-router.post('/updateEvent', ensureAuthenticated, async (req, res) => {
+router.post('/updateEvent', adminAuthenticated, async (req, res) => {
     try {
         let event = await Event.findById(req.body.id);
   
@@ -139,14 +140,5 @@ router.post('/updateEvent', ensureAuthenticated, async (req, res) => {
       }
 
     });
-
-function ensureAuthenticated(req, res, next){
-    if(req.isAuthenticated()){
-        return next();
-    } else {
-        //req.flash('error_msg','You are not logged in');
-        res.redirect('/login');
-    }
-}
 
 module.exports = router;

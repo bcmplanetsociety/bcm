@@ -5,9 +5,9 @@ const path = require('path')
 const Upload  = require("../helpers/upload");
 const cloudinary = require("../helpers/cloudinary");
 const { check, validationResult } = require('express-validator');
+const {superAdminAuthenticated, adminAuthenticated, ensureAuthenticated} = require('../middleware/auth');
 
-
-router.get('/receipt', ensureAuthenticated, async (req, res) => {
+router.get('/receipt', adminAuthenticated, async (req, res) => {
     const todos = await Todo.find({}).lean()
     
     res.render('pages/receipt/receipt', {
@@ -18,7 +18,7 @@ router.get('/receipt', ensureAuthenticated, async (req, res) => {
     })
 
 })
-router.get('/view',ensureAuthenticated, async (req, res) => {
+router.get('/view',adminAuthenticated, async (req, res) => {
     const todos = await Todo.find({}).lean()
     
     res.render('pages/receipt/view', {
@@ -80,7 +80,7 @@ async (req, res) => {
           }
 })
 
-router.post('/complete', ensureAuthenticated,async (req, res) => {
+router.post('/complete', adminAuthenticated,async (req, res) => {
     const todo = await Todo.findById(req.body.id)
     if(req.user.role === 0){
         todo.completed = !!req.body.completed
@@ -94,7 +94,7 @@ router.post('/complete', ensureAuthenticated,async (req, res) => {
         }
 })
 
-router.post('/delete', ensureAuthenticated, async (req, res) => {
+router.post('/delete', adminAuthenticated, async (req, res) => {
 
     const todo = await Todo.findByIdAndDelete(req.body.id);
     let receipt = await Todo.findById(req.body.id);
@@ -103,7 +103,7 @@ router.post('/delete', ensureAuthenticated, async (req, res) => {
     res.redirect('/receipt')
 })
 
-router.post('/update', ensureAuthenticated, Upload.single("image"), async (req, res) => {
+router.post('/update', adminAuthenticated, Upload.single("image"), async (req, res) => {
     
     try {
         if (!req.file){return res.send('Please upload a file')} 
@@ -135,14 +135,5 @@ router.post('/update', ensureAuthenticated, Upload.single("image"), async (req, 
       }
 
     });
-
-    function ensureAuthenticated(req, res, next){
-        if(req.isAuthenticated()){
-            return next();
-        } else {
-            //req.flash('error_msg','You are not logged in');
-            res.redirect('/login');
-        }
-    }
 
 module.exports = router

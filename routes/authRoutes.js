@@ -8,19 +8,17 @@ const path = require('path')
 const Upload  = require("../helpers/upload");
 const cloudinary = require("../helpers/cloudinary");
 const { check, validationResult } = require('express-validator');
+const {superAdminAuthenticated, adminAuthenticated, ensureAuthenticated} = require('../middleware/auth');
 
 router.get('/register', function(req, res){
     res.render('pages/user/register',{
     });
 });
 
-
 router.get('/login', function(req, res)
 { 
-
      res.render('pages/user/login',{});
 });
-
 
 router.post('/register', 
 [
@@ -207,7 +205,7 @@ router.post('/updateProfile', ensureAuthenticated, Upload.single("image"), async
     });
 
 
-router.get('/usersList', async (req, res) => {
+router.get('/usersList', superAdminAuthenticated, async (req, res) => {
     const users = await User.find({}, {
       _id: 1,
       name:1,
@@ -218,7 +216,7 @@ router.get('/usersList', async (req, res) => {
         }) 
     });
 
-    router.post('/updateUserRole', async (req, res) => {  
+    router.post('/updateUserRole', superAdminAuthenticated, async (req, res) => {  
         const todo = await User.findByIdAndUpdate(req.body.id,{$set:req.body},{new:true}, function(err, result){
             try {
                 if (!err) {
@@ -229,15 +227,5 @@ router.get('/usersList', async (req, res) => {
               }
         });
         });
-
-
-function ensureAuthenticated(req, res, next){
-    if(req.isAuthenticated()){
-        return next();
-    } else {
-        //req.flash('error_msg','You are not logged in');
-        res.redirect('/login');
-    }
-}
 
 module.exports = router;
