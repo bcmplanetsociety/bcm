@@ -817,6 +817,18 @@ svg:not(:root).svg-inline--fa {
 	width: 50%;
 	display: inline-block;
 }
+.note-heading em{
+	line-height: 3rem;
+    float: right;
+    font-size: 1.2rem;
+}
+.profile-note {
+    text-align: right;
+    padding-top: 1rem;
+}
+.profile-note em span {
+    color:red;
+}
 
 /*---------------Media Query----------------------*/
 /* Extra small devices (phones, 600px and down) */

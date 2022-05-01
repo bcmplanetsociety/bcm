@@ -6,6 +6,7 @@ const Upload  = require("../helpers/upload");
 const cloudinary = require("../helpers/cloudinary");
 const { check, validationResult } = require('express-validator');
 const {superAdminAuthenticated, adminAuthenticated, ensureAuthenticated} = require('../middleware/auth');
+const UserProfile = require('../models/Profile');
 
 router.get('/receipt', adminAuthenticated, async (req, res) => {
     const todos = await Todo.find({}).lean()
@@ -30,11 +31,13 @@ router.get('/view',adminAuthenticated, async (req, res) => {
 
 })
 
-router.get('/create', ensureAuthenticated,(req, res) => {
+router.get('/create', ensureAuthenticated, async(req, res) => {
+    const profile = await UserProfile.find({ uid: req.user._id});
     res.render('pages/receipt/create', {
     fullName: 'Create a new task page...',
     fname: 'Create a new task page...',
     isCreate: true,
+    profile
     })
 })
 

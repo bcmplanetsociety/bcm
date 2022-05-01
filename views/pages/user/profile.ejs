@@ -1,5 +1,6 @@
 <% if (profile.length >0) { %>
    <% profile.map((result)=>{%>
+   <p class="profile-note"><em><span>*</span> Don't worry this details is visible to you only.</em></p>
    <div class="user-profile">
       <div class="container">
          <div class="container">
@@ -14,7 +15,7 @@
                      <p><b>Username:</b><span><%=result.username%></span></p>
                      <p><b>Full Name:</b><span><%=result.name%></span></p>
                      <p><b>Email:</b><span><%=result.email%></span></p>
-                     <p><b>Address:</b><span><%=result.address%></span></p>
+                     <p><b>Block & Flat No.:</b><span><%=result.address%></span></p>
                      <p><b>Phone:</b><span><%=result.phone%></span></p>
                      <input type="hidden" value="<%=result.role%>" name="role">
                      <input type="hidden" value="<%=result.uid%>" name="uid">
@@ -28,7 +29,6 @@
                                  <h4 class="modal-title">Update Profile</h4>
                               </div>
                               <div class="modal-body">
-                                 <p><%=result._id%></p>
                                  <form action="/updateProfile" method="POST" enctype='multipart/form-data'>
                                     <div class="form-group">
                                        <input type="text" class="form-control" placeholder="Username" name="username" value="<%=result.username%>" required>
@@ -41,7 +41,7 @@
                                     </div>
                                     <input type="hidden" value="<%=role%>" name="role">
                                     <div class="form-group">
-                                       <input type="text" class="form-control" placeholder="Address" name="address" value="<%=result.address%>" required>
+                                       <span class="note-heading"><input type="text" class="form-control" placeholder="Block & Flat No." name="address" value="<%=result.address%>" required><em>Please enter block number & flat no.(example B-402)</em></span>
                                     </div>
                                     <div class="form-group">
                                        <input type="text" class="form-control" placeholder="Phone No." name="phone" value="<%=result.phone%>" required>
@@ -67,6 +67,7 @@
    </div>
    <% }) %>
    <% } else { %>
+      <p class="profile-note"><em><span>*</span> Don't worry this details is visible to you only.</em></p>
    <div class="user-profile">
       <div class="container">
          <div class="container">
@@ -103,7 +104,7 @@
                                     </div>
                                     <input type="hidden" value="<%=role%>" name="role">
                                     <div class="form-group">
-                                       <input type="text" class="form-control" placeholder="Address" name="address" value="" required>
+                                    <span class="note-heading"><input type="text" class="form-control" placeholder="Block & Flat No." name="address" value="" required><em>Please enter block number & flat no.(example B-402)</em></span>
                                     </div>
                                     <div class="form-group">
                                        <input type="text" class="form-control" placeholder="Phone No." name="phone" value="" required>
