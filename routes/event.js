@@ -52,7 +52,6 @@ router.post('/userView', async(req, res) => {
 
 
 router.post('/createEvent',adminAuthenticated, 
-
 [
     check('name', 'The Name must have atleast 3 characters').exists().isLength({ min: 3 }),
     check('description', 'The description must have atleast 3 characters').exists().isLength({ min: 3 }),
@@ -114,7 +113,26 @@ router.post('/deleteEvent', adminAuthenticated, async (req, res) => {
     res.redirect('/event')
 })
 
-router.post('/updateEvent', adminAuthenticated, async (req, res) => {
+router.post('/updateEvent', adminAuthenticated, 
+// [
+//     check('name', 'The Name must have atleast 3 characters').exists().isLength({ min: 3 }),
+//     check('description', 'The description must have atleast 3 characters').exists().isLength({ min: 3 }),
+//     check('price', 'The price must have atleast 3 numbers numbers only').exists().isLength({ min: 3 }).isNumeric(),
+//     check('location', 'The location must have atleast 3 characters').exists().isLength({ min: 3 }),
+//     check('arragedBy', 'The Contact persont name must have atleast 3 characters').exists().isLength({ min: 3 }),
+//     check('time', 'The time must have atleast 3 characters').exists().isLength({ min: 3 }),
+//     ],
+async (req, res) => {
+
+    // const errors = validationResult(req)
+    // if(!errors.isEmpty()) {
+    //     // return res.status(422).jsonp(errors.array())
+    //     const alert = errors.array()
+    //     res.render('pages/event/event', {
+    //         alert
+    //     })
+    // }
+
     try {
         let event = await Event.findById(req.body.id);
   
