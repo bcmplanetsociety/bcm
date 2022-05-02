@@ -14,8 +14,12 @@ router.get('/event', adminAuthenticated, async (req, res) => {
     })
 })
 router.get('/userView', async (req, res) => { 
+    const eventbyId = await Event.findById(req.body.id)
+    console.log(eventbyId);
     res.render('pages/event/userView', {
              isIndex: true,
+             moment,
+             eventbyId
              })
 })
 
@@ -47,7 +51,8 @@ router.post('/userView', async(req, res) => {
     const eventbyId = await Event.findById(req.body.id)
      res.render('./pages/event/userView', {
      isCreate: true,
-     eventbyId
+     eventbyId,
+     moment
      })
 })
 

@@ -4,13 +4,14 @@ const nodemailer = require("nodemailer");
 const multiparty = require("multiparty");
 require("dotenv").config();
 const Event = require('../models/Event');
-
+const moment = require('moment');
 
 router.get('/', async (req, res) => {
   const event = await Event.find({}).lean()  
   res.render('index', {
   isIndex: true,
-  event
+  event,
+  moment
   })
 })
 

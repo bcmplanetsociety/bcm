@@ -805,7 +805,10 @@ hr.dotted-border {
 	}
 
 }
-
+.single-event-view svg:not(:root).svg-inline--fa {
+	margin-right: .5rem!important;
+	vertical-align: 0em;
+}
 svg:not(:root).svg-inline--fa {
 	/* margin-right: .5rem!important; */
 	vertical-align: 0em;
