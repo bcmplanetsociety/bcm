@@ -65,7 +65,7 @@ router.post('/createEvent',adminAuthenticated,
     check('price', 'The price must have atleast 3 numbers numbers only').exists().isLength({ min: 3 }).isNumeric(),
     check('location', 'The location must have atleast 3 characters').exists().isLength({ min: 3 }),
     check('arragedBy', 'The Contact persont name must have atleast 3 characters').exists().isLength({ min: 3 }),
-    //check('time', 'The time must have atleast 3 characters').not().isEmpty(),
+    check('time', 'The time must have atleast 3 characters').not().isEmpty(),
     ],
 
 async (req, res) => {
