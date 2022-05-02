@@ -86,7 +86,9 @@
                               </span>
                            </td>
                            <td style="min-width:200px">
-                              <span><%=result.time%></span>
+                              <!-- <span><%=result.time%></span> -->
+                              <span><%= moment(result.time).format('DD MMM YYYY hh:mm a') %></span>
+                       
                            </td>
                            <% } %>
                            <td><input type="hidden" value="<%=result._id%>" name="id">

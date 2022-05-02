@@ -22,7 +22,7 @@ const schema = new Schema({
        required: true,
     },
     time:{
-        type: String,
+        type: Date,
         required: true,
      },
     completed: {
@@ -30,7 +30,6 @@ const schema = new Schema({
         default: false
     },
     Date : { type : Date, default: Date.now }
-    
 })
 
 module.exports = model('Event', schema)

@@ -3,12 +3,14 @@ const router = Router()
 const Event = require('../models/Event');
 const { check, validationResult } = require('express-validator');
 const {superAdminAuthenticated, adminAuthenticated, ensureAuthenticated} = require('../middleware/auth');
+const moment = require('moment');
 
 router.get('/event', adminAuthenticated, async (req, res) => {
     const event = await Event.find({}).lean()  
     res.render('pages/event/event', {
     isIndex: true,
-    event
+    event,
+    moment
     })
 })
 router.get('/userView', async (req, res) => { 
@@ -58,7 +60,7 @@ router.post('/createEvent',adminAuthenticated,
     check('price', 'The price must have atleast 3 numbers numbers only').exists().isLength({ min: 3 }).isNumeric(),
     check('location', 'The location must have atleast 3 characters').exists().isLength({ min: 3 }),
     check('arragedBy', 'The Contact persont name must have atleast 3 characters').exists().isLength({ min: 3 }),
-    check('time', 'The time must have atleast 3 characters').exists().isLength({ min: 3 }),
+    check('time', 'The time must have atleast 3 characters').not().isEmpty(),
     ],
 
 async (req, res) => {
