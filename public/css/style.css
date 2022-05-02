@@ -356,7 +356,7 @@ img#userimage {
 	z-index: 1;
 	height: auto;
 	overflow: hidden;
-	padding: 100px 0 100px 0;
+	padding: 80px 0 100px 0;
 	background: url(../images/bg_parallax.jpg) 50% 0 fixed;
 	background-size: cover;
 	background-position: center center;
