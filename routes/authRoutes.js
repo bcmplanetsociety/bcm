@@ -130,11 +130,12 @@ router.post('/login',passport.authenticate('local', {
         res.redirect('/login');
     });
 
-router.get('/logout', function(req, res){
-    req.logout();
-  req.session.destroy(()=>{
-    res.redirect('/login');
-  });
+router.get('/logout', async function(req, res){
+    await  req.logout();
+    req.session = null;
+    res.clearCookie("test")
+    res.clearCookie("test.sig")
+    return res.redirect('/login')
 });
 
 /*------Users------*/
