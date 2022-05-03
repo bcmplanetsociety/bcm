@@ -2,14 +2,10 @@
    <div class="container">
       <h2>View Receipts:</h2>
       <% if (userReceipt.length) { %>
-      <ul>
          <% userReceipt.map((result)=>{%>
-         <li class="todo">
-            <label>
                <table class="table table-responsive table-bordered">
                   <thead>
                      <tr>
-                        <th></th>
                         <th>Full Name</th>
                         <th>Amount</th>
                         <th>Phone</th>
@@ -22,9 +18,6 @@
                   <tbody>
                      <tr>
                            <td>
-                              <input type="checkbox" name="completed">
-                           </td>
-                           <td style="max-width:150px;">
                               <span>
                               <%=result.fullName%>
                               </span>
@@ -39,8 +32,8 @@
                               <%=result.phone%>
                               </span>
                            </td>
-                           <td style="max-width:200px;">
-                              <span style="max-width:200px;">
+                           <td>
+                              <span>
                               <%=result.address%>
                               </span>
                            </td>
@@ -58,14 +51,10 @@
                               <span><img src="<%=result.image%>" class="img-responsive"
                                  id="image"></span>
                            </td>
-
                      </tr>
                   </tbody>
                </table>
-            </label>
-         </li>
          <% }) %>
-      </ul>
       <% } else { %>
       <p>No Receipts!</p>
       <% } %>
