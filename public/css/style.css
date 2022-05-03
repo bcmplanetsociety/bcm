@@ -8,7 +8,7 @@ a:hover {
 	text-decoration: none;
 }
 
-span.completed {
+span.completed, span.completed img {
 	text-decoration: line-through;
 	opacity: 0.5;
 }
@@ -177,7 +177,7 @@ span.completed {
 	transition: 0.3s;
 }
 
-.about .icon-box .icon svg {
+.about .icon-box .icon i {
 	color: #E30613;
 	font-size: 32px;
 }
@@ -426,7 +426,7 @@ img#userimage {
 			display: inline-block; }
 			.team-bg .team-members .team-desc .team-socials li a {
 			  text-decoration: none; }
-			  .team-bg .team-members .team-desc .team-socials li a svg {
+			  .team-bg .team-members .team-desc .team-socials li a i {
 				font-size: 20px;
 				color: #fff; }
 				.team-bg .team-members .team-desc .team-socials li a i:hover {
@@ -522,6 +522,22 @@ section.contact-us .bcm-contact-form {}
 	position: relative;
 	left: 1rem;
 	font-size: 1.4rem;
+}
+.contact-info{
+	margin-top: 2rem;
+}
+.contact-info ul{
+	list-style-type: none;
+	padding-inline-start: 0px;
+}
+.contact-info ul li{
+	font-size: 2rem;
+    color: #fff;
+    line-height: 3rem;
+}
+.contact-info ul li span i{
+    color: #000;
+	min-width: 3rem;
 }
 
 /*===========================*/
@@ -951,11 +967,11 @@ hr.dotted-border {
 	}
 
 }
-.single-event-view svg:not(:root).svg-inline--fa {
+.single-event-view i:not(:root).svg-inline--fa {
 	margin-right: .5rem!important;
 	vertical-align: 0em;
 }
-svg:not(:root).svg-inline--fa {
+i:not(:root).svg-inline--fa {
 	/* margin-right: .5rem!important; */
 	vertical-align: 0em;
 }
@@ -981,7 +997,7 @@ svg:not(:root).svg-inline--fa {
 
 /*---------------Media Query----------------------*/
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 360px) {
 	.navbar-collapse.in>.pullright {
 		float: left;
 		width: 100%;
@@ -1081,7 +1097,7 @@ svg:not(:root).svg-inline--fa {
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 361px) {
 	.navbar-collapse.in>.pullright {
 		float: left;
 		width: 100%;
@@ -1160,7 +1176,7 @@ svg:not(:root).svg-inline--fa {
 	}
 
 	.about .video-box img {
-		width: 30rem;
+		width: 33rem;
 	}
 
 	.about .video-box {

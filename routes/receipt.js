@@ -52,7 +52,7 @@ check('phone').custom(phone => {
       return true;
     }
   }).withMessage("Please enter valid phone number."),
-
+  check('familyMembers').not().isEmpty() 
 ],
 async (req, res) => {
     const errors = validationResult(req)
@@ -66,7 +66,6 @@ async (req, res) => {
     try {
     const geturl = await cloudinary.uploader.upload(req.file.path);
     
-    console.log(geturl);
     const todo = new Todo({
         fullName: req.body.fullName,
         address: req.body.address,
@@ -74,6 +73,8 @@ async (req, res) => {
         image: geturl.secure_url,
         phone: req.body.phone,  
         occasion: req.body.occasion,
+        familyMembers: req.body.familyMembers,
+        uid:req.user._id,
         public_id: geturl.public_id     
     })
     await todo.save()

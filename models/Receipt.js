@@ -30,6 +30,13 @@ const schema = new Schema({
        type: String,
        required: true,
     },
+    familyMembers:{
+        type: Number,
+        required: true,
+     },
+     uid:{
+        type: String,
+     },
     completed: {
         type: Boolean,
         default: false

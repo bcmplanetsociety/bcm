@@ -15,6 +15,7 @@
                         <th>Phone</th>
                         <th>Address</th>
                         <th>Occasion</th>
+                        <th>familyMembers</th>
                         <th>image</th>
                         <th>Completed</th>
                      </tr>
@@ -52,6 +53,11 @@
                               </span>
                            </td>
                            <td>
+                              <span class="completed">
+                              <%=result.familyMembers%>
+                              </span>
+                           </td>
+                           <td>
                               <span class="completed"><img src="<%=result.image%>"
                                  class="img-responsive" id="image"></span>
                            </td>
@@ -82,6 +88,11 @@
                            <td>
                               <span>
                               <%=result.occasion%>
+                              </span>
+                           </td>
+                           <td>
+                              <span>
+                              <%=result.familyMembers%>
                               </span>
                            </td>
                            <td>
