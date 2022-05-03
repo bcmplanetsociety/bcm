@@ -418,15 +418,12 @@ img#userimage {
 }
 
 .team-bg .team-members .team-desc .team-details h4 {
-	font-size: 22px;
 	font-weight: 600;
-	margin: 0 0 10px;
 	color: #fff;
 }
 
 .team-bg .team-members .team-desc .team-details span {
 	display: block;
-	font-size: 13px;
 	font-weight: 600;
 	text-transform: uppercase;
 	color: #fff;
@@ -1166,13 +1163,24 @@ i:not(:root).svg-inline--fa {
 	}
 
 	.mobile-view .col-xs-6 {
-		padding-right: 10px;
-		padding-left: 10px;
+		padding-right: 5px;
+		padding-left: 5px;
 	}
 
 	.mobile-view .heading-light {
 		margin-bottom: 70px;
 	}
+
+	.mobile-view .team-details h4 {
+		font-size: 14px;
+		 margin: 0 0 4px;
+	 }
+	 .mobile-view .team-details span {
+		 font-size: 9px;
+	 }
+	 .mobile-view .team-socials {
+		 display: none;
+	 }
 
 }
 
@@ -1289,13 +1297,23 @@ i:not(:root).svg-inline--fa {
 	}
 
 	.mobile-view .col-xs-6 {
-		padding-right: 10px;
-		padding-left: 10px;
+		padding-right: 5px;
+		padding-left: 5px;
 	}
 
 	.mobile-view .heading-light {
 		margin-bottom: 70px;
 	}
+	.mobile-view .team-details h4 {
+		font-size: 14px;
+		 margin: 0 0 4px;
+	 }
+	 .mobile-view .team-details span {
+		 font-size: 9px;
+	 }
+	 .mobile-view .team-socials {
+		 display: none;
+	 }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -1372,6 +1390,16 @@ i:not(:root).svg-inline--fa {
 	.mobile-view {
 		display: none;
 	}
+	.desktop-view .team-details h4 {
+		font-size: 22px;
+		margin: 0 0 10px;
+	}
+	.desktop-view .team-details span {
+		font-size: 13px;
+	}
+	.desktop-view .team-socials {
+		display: none;
+	}
 
 }
 
@@ -1441,6 +1469,16 @@ i:not(:root).svg-inline--fa {
 	.mobile-view {
 		display: none;
 	}
+	.desktop-view .team-details h4 {
+		font-size: 22px;
+		margin: 0 0 10px;
+	}
+	.desktop-view .team-details span {
+		font-size: 13px;
+	}
+	.desktop-view .team-socials {
+		display: block;
+	}
 
 }
 
@@ -1509,5 +1547,15 @@ i:not(:root).svg-inline--fa {
 
 	.mobile-view {
 		display: none;
+	}
+	.desktop-view .team-details h4 {
+		font-size: 22px;
+		margin: 0 0 10px;
+	}
+	.desktop-view .team-details span {
+		font-size: 13px;
+	}
+	.desktop-view .team-socials {
+		display: block;
 	}
 }
