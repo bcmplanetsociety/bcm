@@ -159,6 +159,14 @@
             </label>
          </li>
          <% }) %>
+
+            <% getAllCount.map((count)=>{%>
+               <p><b>Total Amount: </b><%=count.TotalSum%></p>
+            <% }) %>
+            <% getNotCompletedCount.map((count)=>{%>
+               <p><b>Remaining Amount: </b><%=count.TotalSum%></p>
+            <% }) %>
+         
       </ul>
       <% } else { %>
       <p>No Receipts!</p>

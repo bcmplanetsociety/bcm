@@ -5,6 +5,7 @@ const multiparty = require("multiparty");
 require("dotenv").config();
 const Event = require('../models/Event');
 const moment = require('moment');
+moment.suppressDeprecationWarnings = true;
 
 router.get('/', async (req, res) => {
   const event = await Event.find({}).lean()  

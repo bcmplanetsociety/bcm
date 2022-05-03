@@ -4,6 +4,7 @@ const Event = require('../models/Event');
 const { check, validationResult } = require('express-validator');
 const {superAdminAuthenticated, adminAuthenticated, ensureAuthenticated} = require('../middleware/auth');
 const moment = require('moment');
+moment.suppressDeprecationWarnings = true;
 
 router.get('/event', adminAuthenticated, async (req, res) => {
     const event = await Event.find({}).lean()  

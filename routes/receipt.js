@@ -10,25 +10,35 @@ const UserProfile = require('../models/Profile');
 
 router.get('/receipt', adminAuthenticated, async (req, res) => {
     const todos = await Todo.find({}).lean()
-    
+    const getNotCompletedCount =  await Todo.aggregate([{ $match: {completed:false} }, { $group: { _id: null, TotalSum: { $sum: "$amount" } } } ]);
+    const getAllCount =  await Todo.aggregate([ { $group: { _id: null, TotalSum: { $sum: "$amount" } } } ]); 
     res.render('pages/receipt/receipt', {
     fullName: 'Tasks list page...',
     fname: 'Tasks list page...',
     isIndex: true,
-    todos
+    todos,
+    getNotCompletedCount,
+    getAllCount
     })
-
 })
 router.get('/view',adminAuthenticated, async (req, res) => {
-    const todos = await Todo.find({}).lean()
-    
+    const todos = await Todo.find({}).lean()  
     res.render('pages/receipt/view', {
     fullName: 'Tasks list page...',
     fname: 'Tasks list page...',
     isIndex: true,
     todos
     })
+})
 
+router.get('/userReceipt',adminAuthenticated, async (req, res) => {
+    const userReceipt = await Todo.find({ uid: req.user._id}).lean()  
+    res.render('pages/receipt/userReceipt', {
+    fullName: 'Tasks list page...',
+    fname: 'Tasks list page...',
+    isIndex: true,
+    userReceipt
+    })
 })
 
 router.get('/create', ensureAuthenticated, async(req, res) => {
