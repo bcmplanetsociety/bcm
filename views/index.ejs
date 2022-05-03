@@ -78,9 +78,9 @@
             <div class="col-md-3 col-sm-12">
                <div class="show-events">
                   <h2 class="bcm-heading-red">Upcoming Events</h2>
-                  <% if (event.length) { %>
+                  <% if (upcomingEvent.length) { %>
                   <ul>
-                     <% event.map((result)=>{%>
+                     <% upcomingEvent.map((result)=>{%>
                      <form action="/userView" method="POST">
                         <input type="hidden" value="<%=result._id%>" name="id">
                         <button class="eventIndex"><%=result.name%></button>
@@ -90,6 +90,22 @@
                   </ul>
                   <% } else { %>
                   <p>No Events Currently!</p>
+                  <% } %>
+                  <!-------Old Events----------->
+                  <img class="img-responsive dividerline-img" src="./images/divider2.png" />
+                  <h2 class="bcm-heading-red">Old Events</h2>
+                  <% if (OldEvent.length) { %>
+                  <ul>
+                     <% OldEvent.map((result)=>{%>
+                     <form action="/userView" method="POST">
+                        <input type="hidden" value="<%=result._id%>" name="id">
+                        <button class="eventIndex"><%=result.name%></button>
+                        <hr class="dotted-border">
+                     </form>
+                     <% }) %>
+                  </ul>
+                  <% } else { %>
+                  <p>No Any old Events!</p>
                   <% } %>
                </div>
             </div>

@@ -5,6 +5,7 @@ const authRoutes = require("./routes/authRoutes");
 const receiptRoutes = require("./routes/receipt");
 const eventRoutes = require("./routes/event");
 const indexRoute = require("./routes/index");
+//const testRoute = require("./routes/test");
 require("dotenv").config();
 // const session = require("express-session");
 const session = require('cookie-session');
@@ -56,6 +57,7 @@ app.use(receiptRoutes);
 app.use(authRoutes);
 app.use(eventRoutes);
 app.use(indexRoute);
+//app.use(testRoute);
 
 async function start() {
   try {

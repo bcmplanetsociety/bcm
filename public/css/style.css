@@ -1048,6 +1048,9 @@ i:not(:root).svg-inline--fa {
 .profile-note em span {
 	color: red;
 }
+img.img-responsive.dividerline-img {
+    margin: 3rem 0rem;
+}
 
 /*---------------Media Query----------------------*/
 /* Extra small devices (phones, 600px and down) */

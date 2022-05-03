@@ -8,10 +8,26 @@ const moment = require('moment');
 moment.suppressDeprecationWarnings = true;
 
 router.get('/', async (req, res) => {
-  const event = await Event.find({}).lean()  
+  //for Current Date
+  var LocalStart_Date =  moment().endOf('day').format("YYYY-MM-DD");
+  var Start_Date =  LocalStart_Date + "T02:30:00.000Z";
+
+  //for Upcoming Date
+  var LocalUpcoming_Date = moment().add(31 ,'days').format("YYYY-MM-DD");
+  var Upcoming_Date = LocalUpcoming_Date + "T02:30:00.000Z";
+
+  //for Old Date
+  var LocalOld_Date = moment().subtract(31 ,'days').format("YYYY-MM-DD");
+  var Old_Date = LocalOld_Date + "T02:30:00.000Z";
+
+  const upcomingEvent = await Event.find({ $and: [ {"time": {$gt: Start_Date}}, {"time": {$lt: Upcoming_Date}} ] });
+  const OldEvent = await Event.find({ time : { $gte :  Old_Date, $lte : Start_Date}});
+  
+  
   res.render('index', {
   isIndex: true,
-  event,
+  upcomingEvent,
+  OldEvent,
   moment
   })
 })
