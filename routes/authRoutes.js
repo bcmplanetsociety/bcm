@@ -241,11 +241,17 @@ router.post('/activeUser', superAdminAuthenticated, async function (req, res) {
 
 
 router.get('/logout', async function (req, res) {
-   await req.logout();
-   req.session = null;
-   res.clearCookie("test")
-   res.clearCookie("test.sig")
-   return res.redirect('/login')
+    try{
+         await req.logout();
+        // req.session = null;
+        // res.clearCookie("test")
+        // res.clearCookie("test.sig")
+        // //req.flash('success','Now logged out');
+         return res.redirect('/login')
+    }
+    catch(error){
+      console.log(error);
+    }
 });
 
 /*------Users------*/

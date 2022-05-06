@@ -22,13 +22,14 @@ router.get('/', async (req, res) => {
 
   const upcomingEvent = await Event.find({ $and: [ {"time": {$gt: Start_Date}}, {"time": {$lt: Upcoming_Date}} ] });
   const OldEvent = await Event.find({ time : { $gte :  Old_Date, $lte : Start_Date}});
-  
-  
+
+  const success = req.flash('You are login Successfully');
   res.render('index', {
   isIndex: true,
   upcomingEvent,
   OldEvent,
-  moment
+  moment,
+  success
   })
 })
 
