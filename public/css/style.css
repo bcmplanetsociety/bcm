@@ -1051,7 +1051,17 @@ i:not(:root).svg-inline--fa {
 img.img-responsive.dividerline-img {
     margin: 3rem 0rem;
 }
-
+.Active-user{
+	margin:4rem 0rem;
+}
+.user-token-form h1{
+	color: red;
+	margin-bottom: 2rem;
+}
+.activation-block h1{
+	color: red;
+	text-align: center;
+}
 
 /*---------------Media Query----------------------*/
 /* Extra small devices (phones, 600px and down) */
