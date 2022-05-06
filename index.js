@@ -8,7 +8,6 @@ const indexRoute = require("./routes/index");
 //const testRoute = require("./routes/test");
 require("dotenv").config();
 const session = require("express-session");
-//const session = require('cookie-session');
 const passport = require("passport");
 const expressLayouts = require("express-ejs-layouts");
 const flash = require('connect-flash');
