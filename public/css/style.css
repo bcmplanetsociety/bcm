@@ -1048,6 +1048,13 @@ i:not(:root).svg-inline--fa {
 .profile-note em span {
 	color: red;
 }
+.register-note{
+	text-align: left;
+	padding-bottom: 1rem;
+}
+.register-note em span{
+	color: red;
+}
 img.img-responsive.dividerline-img {
     margin: 3rem 0rem;
 }

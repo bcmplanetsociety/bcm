@@ -31,7 +31,7 @@ router.get('/view',adminAuthenticated, async (req, res) => {
     })
 })
 
-router.get('/userReceipt',adminAuthenticated, async (req, res) => {
+router.get('/userReceipt',ensureAuthenticated, async (req, res) => {
     const userReceipt = await Todo.find({ uid: req.user._id}).lean()  
     res.render('pages/receipt/userReceipt', {
     fullName: 'Tasks list page...',

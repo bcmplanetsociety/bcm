@@ -80,7 +80,7 @@ router.post('/register',
                alert
             })
          }
-
+         else{
          var name = req.body.name;
          var email = req.body.email;
          var username = req.body.username;
@@ -116,6 +116,7 @@ router.post('/register',
             })
 
          }
+        }
       } catch (error) {
          console.error(error);
       }
