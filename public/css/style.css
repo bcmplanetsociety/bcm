@@ -156,13 +156,30 @@ span.completed img {
 .about .icon-box:hover .icon i {
 	color: #fff;
 }
+.about-section-title{
+	position: relative;
+}
 
-.about h2 {
+.about-section-title h1 {
 	font-size: 32px;
-	font-weight: 600;
+	font-weight: 500;
 	margin-bottom: 20px;
 	padding-bottom: 0;
-	color: #E30613;
+	color: #000;
+}
+.about-section-title h1:after {
+	left: 50%;
+    height: 3px;
+    width: 100px;
+    content: " ";
+    top: 5rem;
+    margin-left: -19rem;
+    position: absolute;
+    background: #E30613;
+}
+.about-section-title p{
+	margin-top: 4rem;
+	margin-bottom: 3rem;
 }
 
 .about .icon-box .title {
@@ -497,7 +514,7 @@ img#userimage {
 }
 
 .heading-light {
-	z-index: 1;
+	/* z-index: 1; */
 	position: relative;
 	text-align: center;
 	margin-bottom: 100px;
@@ -665,10 +682,23 @@ section.contact-us .bcm-contact-form {}
 .our-amenities-section {
 	padding: 4em 0;
 }
+.amenities-heading{
+	position: relative;
+}
 
 .amenities-heading h1 {
-	color: #E30613;
+	color: #000;
 	margin-bottom: 4rem;
+}
+.amenities-heading h1:after {
+    left: 50%;
+    height: 3px;
+    width: 100px;
+    content: " ";
+    bottom: -20px;
+    margin-left: -55px;
+    position: absolute;
+    background: #E30613;
 }
 
 .item {
