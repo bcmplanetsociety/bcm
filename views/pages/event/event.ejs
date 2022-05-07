@@ -1,3 +1,10 @@
+<% if(message.eventSuccess){ %>
+   <div class="alert alert-success" role="alert" id="successMessage">
+       <%= message.eventSuccess %>
+       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+         <span aria-hidden="true">×</span>
+   </div>
+   <% } %>
 <div class="bcm_view-recipt">
    <div class="container">
       <h2>View Event:</h2>
@@ -162,4 +169,10 @@ var timeEl = document.getElementById('time');
 
 document.getElementById('date-output').innerHTML = dateEl.type === 'date';
 document.getElementById('time-output').innerHTML = timeEl.type === 'time';
+</script>
+<script type="text/javascript">
+   setTimeout(function () {
+       // Closing the alert
+       $(' #successMessage').alert('close');
+   },3000);
 </script>

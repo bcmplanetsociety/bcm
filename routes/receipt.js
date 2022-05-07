@@ -65,6 +65,7 @@ check('phone').custom(phone => {
   check('familyMembers').not().isEmpty() 
 ],
 async (req, res) => {
+    try {
     const errors = validationResult(req)
     if(!errors.isEmpty()) {
         // return res.status(422).jsonp(errors.array())
@@ -73,7 +74,7 @@ async (req, res) => {
             alert
         })
     }
-    try {
+    else{
     const geturl = await cloudinary.uploader.upload(req.file.path);
     
     const todo = new Todo({
@@ -88,7 +89,9 @@ async (req, res) => {
         public_id: geturl.public_id     
     })
     await todo.save()
-    res.redirect('/receipt')
+    req.flash('rceiptSuccess', 'Receipt created successfully!');
+    res.redirect('/userReceipt')
+}
      } catch (error) {
             console.error(error);
           }

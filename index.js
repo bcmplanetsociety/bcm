@@ -42,12 +42,17 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
-app.use(function(req, res, next) {
-  // before every route, attach the flash messages and current user to res.locals
-  res.locals.alerts = req.flash();
-  res.locals.currentUser = req.user;
+app.use(function(req, res, next){
+  res.locals.message = req.flash();
   next();
 });
+
+// app.use(function(req, res, next) {
+//   // before every route, attach the flash messages and current user to res.locals
+//   res.locals.alerts = req.flash();
+//   res.locals.currentUser = req.user;
+//   next();
+// });
 
 app.use(function (req, res, next) {
   res.locals.user = req.user || null;

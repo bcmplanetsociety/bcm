@@ -1,3 +1,10 @@
+<% if(message.rceiptSuccess){ %>
+   <div class="alert alert-success" role="alert" id="successMessage">
+       <%= message.rceiptSuccess %>
+       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+         <span aria-hidden="true">×</span>
+   </div>
+   <% } %>
 <div class="bcm_view-recipt">
    <div class="container">
       <h2>View Receipts:</h2>
@@ -60,3 +67,9 @@
       <% } %>
    </div>
 </div>
+<script type="text/javascript">
+   setTimeout(function () {
+       // Closing the alert
+       $(' #successMessage').alert('close');
+   },3000);
+</script>

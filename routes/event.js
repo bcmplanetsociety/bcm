@@ -91,6 +91,7 @@ async (req, res) => {
         uRole: req.user.role
     })
     await event.save()
+    req.flash('eventSuccess', 'Event is created successfully!');
     res.redirect('/event')
      } catch (error) {
             console.error(error);

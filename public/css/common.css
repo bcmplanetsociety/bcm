@@ -122,3 +122,6 @@ form label:after {
    width: 55px;
    height: 55px;
 }
+#successMessage{
+   font-size: 1.4rem;
+}

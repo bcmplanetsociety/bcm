@@ -110,7 +110,7 @@ router.post('/register',
                      if (err) throw err;
                      //console.log(user);
                   })
-
+                  req.flash('signupSuccess', 'Your Details sent to admin, you have to wait untill admin approved!');
                   res.redirect('/activation');
                }
             })
@@ -212,6 +212,8 @@ router.post('/login', async (req, res, next) => {
          failureRedirect: '/login',
          failureFlash: true
       })(req, res, next)
+      req.flash('loginSuccess', 'Welcome to BCM!!');
+      req.flash('loginFails', 'Your username or password is wrong');
    }
 
 })
@@ -243,6 +245,7 @@ router.post('/activeUser', superAdminAuthenticated, async function (req, res) {
 router.get('/logout', async function (req, res) {
     try{
          await req.logout();
+         req.flash('logoutSuccess', 'Successfully Logout');
          return res.redirect('/login')
     }
     catch(error){
@@ -271,7 +274,6 @@ router.get('/profile', ensureAuthenticated, async (req, res) => {
 router.post('/createProfile', ensureAuthenticated, Upload.single("image"), async (req, res) => {
    try {
       const geturl = await cloudinary.uploader.upload(req.file.path);
-      console.log(geturl);
       const profile = new UserProfile({
          username: req.body.username,
          name: req.body.name,
@@ -283,8 +285,8 @@ router.post('/createProfile', ensureAuthenticated, Upload.single("image"), async
          uid: req.user._id,
          public_id: geturl.public_id,
       })
-      console.log(profile);
       await profile.save()
+      req.flash('profileSuccess', 'Your Profile Upadated successfully!');
       res.redirect('/profile')
    } catch (error) {
       console.error(error);
@@ -350,6 +352,7 @@ router.post('/updateUserRole', superAdminAuthenticated, async (req, res) => {
    }, function (err, result) {
       try {
          if (!err) {
+            req.flash('roleUpdateSuccess', 'User Role Upadated successfully!');
             res.redirect('/usersList')
          }
       } catch (error) {

@@ -1,15 +1,17 @@
-
-<% if (alerts.error) { %>
-   <% alerts.error.forEach(function(msg) { %>
-     <div class="alert alert-danger" id="alertMessage">
-        <%= msg %>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+<% if(message.logoutSuccess){ %>
+   <div class="alert alert-success" role="alert" id="successMessage">
+       <%= message.logoutSuccess %>
+       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
          <span aria-hidden="true">×</span>
-       </button>
+   </div>
+   <% } %>
+   <% if(message.loginFails){ %>
+      <div class="alert alert-danger" role="alert" id="errorMessage">
+          <%= message.loginFails %>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">×</span>
       </div>
-   <% }); %>
- <% } %>
-
+      <% } %>
 <div class="bcm_login">
     <div class="container">
        <h2 class="page-header">Account Login</h2>
@@ -29,6 +31,12 @@
  <script type="text/javascript">
    setTimeout(function () {
        // Closing the alert
-       $(' #alertMessage').alert('close');
+       $(' #successMessage').alert('close');
+   },3000);
+</script>
+<script type="text/javascript">
+   setTimeout(function () {
+       // Closing the alert
+       $(' #errorMessage').alert('close');
    },3000);
 </script>
