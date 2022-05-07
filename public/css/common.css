@@ -1,141 +1,166 @@
 body {
-    font-size: 1em;
-    font-family: "Raleway", sans-serif;
-    font-family: sans-serif;
- }
- 
- input[type=checkbox],
- input[type=radio] {
-    opacity: 1;
- }
- h1{
+	font-size: 1em;
+	font-family: "Raleway", sans-serif;
+	font-family: sans-serif;
+}
+
+input[type=checkbox],
+input[type=radio] {
+	opacity: 1;
+}
+
+h1 {
 	font-weight: 500;
 	line-height: 1.2
- }
+}
 
 h2,
 h3,
 h4,
 h5,
 h6 {
-   margin: 2rem 0rem 4rem 0rem;
+	margin: 2rem 0rem 4rem 0rem;
 	font-weight: 500;
 	line-height: 1.2
 }
 
-h1 { font-size: 3rem; }
-h2 { font-size: 2.5rem; }
-h3 { font-size: 2rem; }
-h4 { font-size: 1.5rem; }
-h5 { font-size: 1.25rem; }
-h6 { font-size: 1rem; }
+h1 {
+	font-size: 3rem;
+}
 
- 
- a,
- nav ul a {
-     font-size: 1.45em;
- }
- 
- p {
-    font-size: 1.5em;
-    margin: auto;
- }
- 
- td {
-    font-size: 1.2em;
-    font-weight: normal;
- }
- 
- th {
-    font-size: 1.4em;
- }
- 
- label {
-    font-size: 1.5em;
- }
- 
- .bcm-btn-red {
-    background-color: #E30613;
-    color: #fff;
- }
- .bcm-btn-black, .bcm-btn-black:hover {
-   background-color: #000000;
-   color: #fff;
+h2 {
+	font-size: 2.5rem;
 }
- 
- /*Default Table CSS*/
- .table {
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: 20px;
- }
- 
- table {
-    background-color: transparent;
- }
- 
- table {
-    border-spacing: 0;
-    border-collapse: collapse;
- }
- 
- thead {
-    display: table-header-group
- }
- 
- .table>thead>tr>th {
-    vertical-align: bottom;
-    border-bottom: 2px solid #ddd;
- }
- 
- .table>thead>tr>th,
- .table>tbody>tr>th,
- .table>tfoot>tr>th,
- .table>thead>tr>td,
- .table>tbody>tr>td,
- .table>tfoot>tr>td {
-    padding: 8px;
-    line-height: 1.42857143;
-    vertical-align: top;
-    border-top: 1px solid #ddd;
- }
- 
- td span #image {
-    width: 200px;
- }
- 
- ul {
-    margin: 0;
- }
- .bcm-heading-red{
-   color: #E30613;
+
+h3 {
+	font-size: 2rem;
 }
+
+h4 {
+	font-size: 1.5rem;
+}
+
+h5 {
+	font-size: 1.25rem;
+}
+
+h6 {
+	font-size: 1rem;
+}
+
+
+a,
+nav ul a {
+	font-size: 1.45em;
+}
+
+p {
+	font-size: 1.5em;
+	margin: auto;
+}
+
+td {
+	font-size: 1.2em;
+	font-weight: normal;
+}
+
+th {
+	font-size: 1.4em;
+}
+
+label {
+	font-size: 1.5em;
+}
+
+.bcm-btn-red {
+	background-color: #E30613;
+	color: #fff;
+}
+
+.bcm-btn-black,
+.bcm-btn-black:hover {
+	background-color: #000000;
+	color: #fff;
+}
+
+/*Default Table CSS*/
+.table {
+	width: 100%;
+	max-width: 100%;
+	margin-bottom: 20px;
+}
+
+table {
+	background-color: transparent;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+thead {
+	display: table-header-group
+}
+
+.table>thead>tr>th {
+	vertical-align: bottom;
+	border-bottom: 2px solid #ddd;
+}
+
+.table>thead>tr>th,
+.table>tbody>tr>th,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>tbody>tr>td,
+.table>tfoot>tr>td {
+	padding: 8px;
+	line-height: 1.42857143;
+	vertical-align: top;
+	border-top: 1px solid #ddd;
+}
+
+td span #image {
+	width: 200px;
+}
+
+ul {
+	margin: 0;
+}
+
+.bcm-heading-red {
+	color: #E30613;
+}
+
 .alert {
-   margin-bottom: 0px;
+	margin-bottom: 0px;
 }
 
 form label:after {
-   display: inline;
-   float: none;
-   color: red !important;
-   font-weight: bold;
-   margin: 0;
-   padding: 0;
-   content: '*';
-   padding-left: 0.2rem;
+	display: inline;
+	float: none;
+	color: red !important;
+	font-weight: bold;
+	margin: 0;
+	padding: 0;
+	content: '*';
+	padding-left: 0.2rem;
 }
-.ptsBox .arrowUp{
-   /* background: #e30613; */
-   background: #000;
-   width: 55px;
-   height: 55px;
+
+.ptsBox .arrowUp {
+	background: #000;
+	width: 55px;
+	height: 55px;
 }
-#successMessage{
-   font-size: 1.4rem;
+
+#successMessage {
+	font-size: 1.4rem;
 }
-.section-margin{
-   margin: 4rem 0rem;
+
+.section-margin {
+	margin: 4rem 0rem;
 }
-.section-padding{
-   padding: 1rem 0rem;
+
+.section-padding {
+	padding: 1rem 0rem;
 }

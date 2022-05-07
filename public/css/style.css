@@ -32,8 +32,6 @@ span.completed img {
 	list-style-type: none;
 }
 
-.bcm_register {}
-
 /*------Banner---------*/
 .banner {
 	-webkit-background-size: cover;
@@ -45,11 +43,9 @@ span.completed img {
 
 .carousel-caption {
 	padding-bottom: 250px;
-	/* font-family: poppins */
 }
 
 .carousel-caption h1 {
-	/* font-size: 70px; */
 	text-transform: uppercase;
 	font-weight: bold
 }
@@ -147,7 +143,8 @@ span.completed img {
 .about .icon-box:hover .icon i {
 	color: #fff;
 }
-.about-section-title{
+
+.about-section-title {
 	position: relative;
 }
 
@@ -157,17 +154,19 @@ span.completed img {
 	color: #000;
 	text-align: center;
 }
+
 .about-section-title h2:after {
 	left: 50%;
-    height: 3px;
-    width: 100px;
-    content: " ";
-    top: 5rem;
-    margin-left: -5rem;
-    position: absolute;
-    background: #E30613;
+	height: 3px;
+	width: 100px;
+	content: " ";
+	top: 5rem;
+	margin-left: -5rem;
+	position: absolute;
+	background: #E30613;
 }
-.about-section-title p{
+
+.about-section-title p {
 	margin-top: 4rem;
 	margin-bottom: 3rem;
 }
@@ -230,7 +229,6 @@ span.completed img {
 	border-top: 10px solid transparent;
 	border-bottom: 10px solid transparent;
 	border-left: 15px solid #fff;
-	/* z-index: 100; */
 	transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 
@@ -315,7 +313,6 @@ span.completed img {
 	max-width: 100%;
 	transition: all 0.4s ease-in-out;
 	display: inline-block;
-	/* padding: 15px 0; */
 	filter: grayscale(100);
 }
 
@@ -336,7 +333,6 @@ span.completed img {
 
 .userImage-container {
 	text-align: -webkit-center;
-	/* text-align: -webkit-right; */
 }
 
 img#userimage {
@@ -350,7 +346,6 @@ img#userimage {
 .user-details p b {
 	line-height: 3rem;
 	font-size: 2rem;
-	/* font-family: monospace; */
 	min-width: 12rem;
 	display: inline-block;
 	padding-right: 1rem;
@@ -502,7 +497,6 @@ img#userimage {
 }
 
 .heading-light {
-	/* z-index: 1; */
 	position: relative;
 	text-align: center;
 }
@@ -524,10 +518,6 @@ img#userimage {
 	background: #E30613;
 }
 
-.team-details {
-	/* margin-bottom: 40px !important;	 */
-}
-
 .team-hide {
 	display: none;
 }
@@ -535,12 +525,10 @@ img#userimage {
 /* Stylesheet design for above 992px */
 @media (min-width: 992px) {
 
-	/* 992px */
 	.team-about {
 		min-height: 495px;
 	}
 }
-
 
 /*===========Contact Us================*/
 section.contact-us {
@@ -552,22 +540,22 @@ section.contact-us {
 	color: #fff;
 	position: relative;
 }
+
 .countact-us_header h2 {
 	font-size: 30px;
-    text-align: center; 
-}
-.countact-us_header h2:after {
-    left: 50%;
-    height: 3px;
-    width: 100px;
-    content: " ";
-    bottom: -20px;
-    margin-left: -55px;
-    position: absolute;
-    background: #000;
+	text-align: center;
 }
 
-section.contact-us .bcm-contact-form {}
+.countact-us_header h2:after {
+	left: 50%;
+	height: 3px;
+	width: 100px;
+	content: " ";
+	bottom: -20px;
+	margin-left: -55px;
+	position: absolute;
+	background: #000;
+}
 
 .bcm-contact-form label {
 	color: #fff;
@@ -632,7 +620,6 @@ section.contact-us .bcm-contact-form {}
 }
 
 .card-img-top {
-	/* max-height: 450px; */
 	overflow: hidden;
 }
 
@@ -654,7 +641,6 @@ section.contact-us .bcm-contact-form {}
 
 .card h3 {
 	font-size: 2rem;
-	padding: 1rem 0rem;
 	font-weight: 700;
 }
 
@@ -680,10 +666,8 @@ section.contact-us .bcm-contact-form {}
 }
 
 /*______OWL Carousel_________*/
-.our-amenities-section {
-	
-}
-.amenities-heading{
+
+.amenities-heading {
 	position: relative;
 }
 
@@ -691,15 +675,16 @@ section.contact-us .bcm-contact-form {}
 	font-size: 30px;
 	color: #000;
 }
+
 .amenities-heading h2:after {
-    left: 50%;
-    height: 3px;
-    width: 100px;
-    content: " ";
-    bottom: -20px;
-    margin-left: -55px;
-    position: absolute;
-    background: #E30613;
+	left: 50%;
+	height: 3px;
+	width: 100px;
+	content: " ";
+	bottom: -20px;
+	margin-left: -55px;
+	position: absolute;
+	background: #E30613;
 }
 
 .item {
@@ -1040,16 +1025,17 @@ hr.dotted-border {
 	}
 
 }
+
 .single-event-view {
-    font-size: 1.2rem;
+	font-size: 1.2rem;
 }
+
 .single-event-view i {
 	margin-right: .5rem !important;
 	vertical-align: 0em;
 }
 
 i:not(:root).svg-inline--fa {
-	/* margin-right: .5rem!important; */
 	vertical-align: 0em;
 }
 
@@ -1074,23 +1060,29 @@ i:not(:root).svg-inline--fa {
 .profile-note em span {
 	color: red;
 }
-.register-note{
+
+.register-note {
 	text-align: left;
 	padding-bottom: 1rem;
 }
-.register-note em span{
+
+.register-note em span {
 	color: red;
 }
+
 img.img-responsive.dividerline-img {
-    margin: 3rem 0rem;
+	margin: 3rem 0rem;
 }
-.Active-user{
-	margin:4rem 0rem;
+
+.Active-user {
+	margin: 4rem 0rem;
 }
-.user-token-form h2{
+
+.user-token-form h2 {
 	color: red;
 }
-.activation-block h2{
+
+.activation-block h2 {
 	color: red;
 	text-align: center;
 }
@@ -1125,10 +1117,6 @@ img.img-responsive.dividerline-img {
 	.bcm-brand-logo {
 		max-width: 40%;
 		margin-top: -1rem;
-	}
-
-	.carousel-caption {
-		/* padding-bottom: 120px */
 	}
 
 	.carousel-caption h1 {
@@ -1187,10 +1175,6 @@ img.img-responsive.dividerline-img {
 		margin-top: 5rem;
 	}
 
-	.our-amenities-section {
-		
-	}
-
 	.desktop-view {
 		display: none;
 	}
@@ -1214,15 +1198,18 @@ img.img-responsive.dividerline-img {
 
 	.mobile-view .team-details h4 {
 		font-size: 14px;
-		 margin: 0 0 4px;
-	 }
-	 .mobile-view .team-details span {
-		 font-size: 9px;
-	 }
-	 .mobile-view .team-socials {
-		 display: none;
-	 }
-	 .user-recept-view{
+		margin: 0 0 4px;
+	}
+
+	.mobile-view .team-details span {
+		font-size: 9px;
+	}
+
+	.mobile-view .team-socials {
+		display: none;
+	}
+
+	.user-recept-view {
 		display: block;
 	}
 
@@ -1257,10 +1244,6 @@ img.img-responsive.dividerline-img {
 	.bcm-brand-logo {
 		max-width: 40%;
 		margin-top: -1rem;
-	}
-
-	.carousel-caption {
-		/* padding-bottom: 120px */
 	}
 
 	.carousel-caption h1 {
@@ -1336,17 +1319,21 @@ img.img-responsive.dividerline-img {
 	.mobile-view .heading-light {
 		margin-bottom: 70px;
 	}
+
 	.mobile-view .team-details h4 {
 		font-size: 14px;
-		 margin: 0 0 4px;
-	 }
-	 .mobile-view .team-details span {
-		 font-size: 9px;
-	 }
-	 .mobile-view .team-socials {
-		 display: none;
-	 }
-	 .user-recept-view{
+		margin: 0 0 4px;
+	}
+
+	.mobile-view .team-details span {
+		font-size: 9px;
+	}
+
+	.mobile-view .team-socials {
+		display: none;
+	}
+
+	.user-recept-view {
 		display: block;
 	}
 }
@@ -1418,13 +1405,16 @@ img.img-responsive.dividerline-img {
 	.mobile-view {
 		display: none;
 	}
+
 	.desktop-view .team-details h4 {
 		font-size: 22px;
 		margin: 0 0 10px;
 	}
+
 	.desktop-view .team-details span {
 		font-size: 13px;
 	}
+
 	.desktop-view .team-socials {
 		display: none;
 	}
@@ -1489,13 +1479,16 @@ img.img-responsive.dividerline-img {
 	.mobile-view {
 		display: none;
 	}
+
 	.desktop-view .team-details h4 {
 		font-size: 22px;
 		margin: 0 0 10px;
 	}
+
 	.desktop-view .team-details span {
 		font-size: 13px;
 	}
+
 	.desktop-view .team-socials {
 		display: block;
 	}
@@ -1560,13 +1553,16 @@ img.img-responsive.dividerline-img {
 	.mobile-view {
 		display: none;
 	}
+
 	.desktop-view .team-details h4 {
 		font-size: 22px;
 		margin: 0 0 10px;
 	}
+
 	.desktop-view .team-details span {
 		font-size: 13px;
 	}
+
 	.desktop-view .team-socials {
 		display: block;
 	}
