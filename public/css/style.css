@@ -1016,8 +1016,10 @@ hr.dotted-border {
 	}
 
 }
-
-.single-event-view i:not(:root).svg-inline--fa {
+.single-event-view {
+    font-size: 1.2rem;
+}
+.single-event-view i {
 	margin-right: .5rem !important;
 	vertical-align: 0em;
 }
