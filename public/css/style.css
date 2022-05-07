@@ -48,13 +48,13 @@ span.completed img {
 	/* font-family: poppins */
 }
 
-.carousel-caption h2 {
-	font-size: 70px;
+.carousel-caption h1 {
+	/* font-size: 70px; */
 	text-transform: uppercase;
 	font-weight: bold
 }
 
-.carousel-caption h2 span {
+.carousel-caption h1 span {
 	color: #E30613;
 }
 
@@ -87,14 +87,6 @@ span.completed img {
 	background: #000 !important;
 }
 
-.change-role {
-	margin-top: 2rem;
-}
-
-.change-role h2 {
-	margin-bottom: 2rem;
-}
-
 .add_role-table th,
 .add_role-table td {
 	max-width: 20px;
@@ -104,8 +96,7 @@ span.completed img {
 # About Us
 --------------------------------------------------------------*/
 .about {
-	padding-bottom: 30px;
-	margin-top: 8rem;
+	width: 100%;
 }
 
 .about .about-container {
@@ -160,20 +151,19 @@ span.completed img {
 	position: relative;
 }
 
-.about-section-title h1 {
-	font-size: 32px;
-	font-weight: 500;
-	margin-bottom: 20px;
+.about-section-title h2 {
+	font-size: 30px;
 	padding-bottom: 0;
 	color: #000;
+	text-align: center;
 }
-.about-section-title h1:after {
+.about-section-title h2:after {
 	left: 50%;
     height: 3px;
     width: 100px;
     content: " ";
     top: 5rem;
-    margin-left: -19rem;
+    margin-left: -5rem;
     position: absolute;
     background: #E30613;
 }
@@ -186,8 +176,8 @@ span.completed img {
 	margin-left: 95px;
 	font-weight: 700;
 	margin-bottom: 10px;
-	font-size: 18px;
-	text-transform: uppercase;
+	/* font-size: 18px;
+	text-transform: uppercase; */
 }
 
 .about .icon-box .title a {
@@ -318,7 +308,6 @@ span.completed img {
 # Clients
 --------------------------------------------------------------*/
 .clients {
-	padding: 30px 0px 0px 0px;
 	text-align: center;
 }
 
@@ -374,7 +363,6 @@ img#userimage {
 	z-index: 1;
 	height: auto;
 	overflow: hidden;
-	padding: 80px 0 80px 0;
 	background: url(../images/bg_parallax.jpg) 50% 0 fixed;
 	background-size: cover;
 	background-position: center center;
@@ -517,13 +505,10 @@ img#userimage {
 	/* z-index: 1; */
 	position: relative;
 	text-align: center;
-	margin-bottom: 100px;
 }
 
 .heading-light h2 {
-	/* font-size: 40px; */
-	font-weight: 500;
-	margin: 0 0 20px;
+	font-size: 30px;
 	color: #fff;
 	line-height: 4rem;
 }
@@ -565,6 +550,21 @@ section.contact-us {
 
 .countact-us_header {
 	color: #fff;
+	position: relative;
+}
+.countact-us_header h2 {
+	font-size: 30px;
+    text-align: center; 
+}
+.countact-us_header h2:after {
+    left: 50%;
+    height: 3px;
+    width: 100px;
+    content: " ";
+    bottom: -20px;
+    margin-left: -55px;
+    position: absolute;
+    background: #000;
 }
 
 section.contact-us .bcm-contact-form {}
@@ -652,8 +652,9 @@ section.contact-us .bcm-contact-form {}
 	height: 100%;
 }
 
-.card h4 {
-	padding-top: 25px;
+.card h3 {
+	font-size: 2rem;
+	padding: 1rem 0rem;
 	font-weight: 700;
 }
 
@@ -680,17 +681,17 @@ section.contact-us .bcm-contact-form {}
 
 /*______OWL Carousel_________*/
 .our-amenities-section {
-	padding: 4em 0;
+	
 }
 .amenities-heading{
 	position: relative;
 }
 
-.amenities-heading h1 {
+.amenities-heading h2 {
+	font-size: 30px;
 	color: #000;
-	margin-bottom: 4rem;
 }
-.amenities-heading h1:after {
+.amenities-heading h2:after {
     left: 50%;
     height: 3px;
     width: 100px;
@@ -743,7 +744,6 @@ span.ion-ios-arrow-back {
 
 .show-events h2 {
 	text-align: center;
-	margin-bottom: 3rem;
 }
 
 .show-events ul {
@@ -800,12 +800,6 @@ hr.dotted-border {
 	color: inherit;
 }
 
-.postcard h1,
-.postcard .h1 {
-	margin-bottom: 0.5rem;
-	font-weight: 500;
-	line-height: 1.2;
-}
 
 .postcard .small {
 	font-size: 80%;
@@ -1093,11 +1087,10 @@ img.img-responsive.dividerline-img {
 .Active-user{
 	margin:4rem 0rem;
 }
-.user-token-form h1{
+.user-token-form h2{
 	color: red;
-	margin-bottom: 2rem;
 }
-.activation-block h1{
+.activation-block h2{
 	color: red;
 	text-align: center;
 }
@@ -1138,7 +1131,7 @@ img.img-responsive.dividerline-img {
 		/* padding-bottom: 120px */
 	}
 
-	.carousel-caption h2 {
+	.carousel-caption h1 {
 		font-size: 25px
 	}
 
@@ -1195,11 +1188,7 @@ img.img-responsive.dividerline-img {
 	}
 
 	.our-amenities-section {
-		padding: 2em 0;
-	}
-
-	.our-amenities-section {
-		padding: 4em 0;
+		
 	}
 
 	.desktop-view {
@@ -1208,7 +1197,6 @@ img.img-responsive.dividerline-img {
 
 	.mobile-view {
 		display: block;
-		padding: 50px 0 50px 0;
 	}
 
 	.mobile-view .team-about {
@@ -1275,7 +1263,7 @@ img.img-responsive.dividerline-img {
 		/* padding-bottom: 120px */
 	}
 
-	.carousel-caption h2 {
+	.carousel-caption h1 {
 		font-size: 25px
 	}
 
@@ -1325,18 +1313,6 @@ img.img-responsive.dividerline-img {
 
 	.about .video-box {
 		padding-top: 0rem;
-	}
-
-	.about {
-		margin-top: 5rem;
-	}
-
-	.our-amenities-section {
-		padding: 2em 0;
-	}
-
-	.our-amenities-section {
-		padding: 4em 0;
 	}
 
 	.desktop-view {
@@ -1401,7 +1377,7 @@ img.img-responsive.dividerline-img {
 		padding-bottom: 350px
 	}
 
-	.carousel-caption h2 {
+	.carousel-caption h1 {
 		font-size: 50px
 	}
 
@@ -1429,13 +1405,6 @@ img.img-responsive.dividerline-img {
 		padding-top: 1rem;
 	}
 
-	.about {
-		margin-top: 8rem;
-	}
-
-	.our-amenities-section {
-		padding: 4em 0;
-	}
 
 	.navbar-brand {
 		position: relative;
@@ -1508,14 +1477,6 @@ img.img-responsive.dividerline-img {
 		padding-top: 9rem;
 	}
 
-	.about {
-		margin-top: 8rem;
-	}
-
-	.our-amenities-section {
-		padding: 4em 0;
-	}
-
 	.navbar-brand {
 		position: relative;
 		top: 0rem;
@@ -1559,7 +1520,7 @@ img.img-responsive.dividerline-img {
 		padding-bottom: 350px
 	}
 
-	.carousel-caption h2 {
+	.carousel-caption h1 {
 		font-size: 50px
 	}
 
@@ -1585,14 +1546,6 @@ img.img-responsive.dividerline-img {
 
 	.about .video-box {
 		padding-top: 9rem;
-	}
-
-	.about {
-		margin-top: 8rem;
-	}
-
-	.our-amenities-section {
-		padding: 4em 0;
 	}
 
 	.navbar-brand {

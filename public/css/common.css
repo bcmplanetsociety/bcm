@@ -8,24 +8,32 @@ body {
  input[type=radio] {
     opacity: 1;
  }
- 
- h1 {
-    font-size: 3em;
+ h1{
+	font-weight: 500;
+	line-height: 1.2
  }
- 
- h2 {
-    /* font-size: 2em; */
-    font-size: 32px;
- }
- 
- h3 {
-    font-size: 1.17em;
- }
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+   margin: 2rem 0rem 4rem 0rem;
+	font-weight: 500;
+	line-height: 1.2
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 2rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
  
  a,
  nav ul a {
-    /* font-size: 1.5em; */
-    font-size: 18px;
+     font-size: 1.45em;
  }
  
  p {
@@ -124,4 +132,10 @@ form label:after {
 }
 #successMessage{
    font-size: 1.4rem;
+}
+.section-margin{
+   margin: 4rem 0rem;
+}
+.section-padding{
+   padding: 1rem 0rem;
 }
