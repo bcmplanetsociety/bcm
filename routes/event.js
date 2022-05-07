@@ -5,6 +5,8 @@ const { check, validationResult } = require('express-validator');
 const {superAdminAuthenticated, adminAuthenticated, ensureAuthenticated} = require('../middleware/auth');
 const moment = require('moment');
 moment.suppressDeprecationWarnings = true;
+const Upload  = require("../helpers/upload");
+const cloudinary = require("../helpers/cloudinary");
 
 router.get('/event', adminAuthenticated, async (req, res) => {
     const event = await Event.find({}).lean()  
@@ -59,7 +61,9 @@ router.post('/userView', async(req, res) => {
 
 
 
-router.post('/createEvent',adminAuthenticated, 
+router.post('/createEvent',adminAuthenticated, Upload.single("image", {
+    upload_preset: 'Events'
+   }), 
 [
     check('name', 'The Name must have atleast 3 characters').exists().isLength({ min: 3 }),
     check('description', 'The description must have atleast 3 characters').exists().isLength({ min: 3 }),
@@ -81,14 +85,18 @@ async (req, res) => {
     }
 
     try {
+        const geturl = await cloudinary.uploader.upload(req.file.path);
     const event = new Event({
         name: req.body.name,
         description: req.body.description,
         price: req.body.price,
         location: req.body.location,  
         arragedBy: req.body.arragedBy,
-        time: req.body.time, 
-        uRole: req.user.role
+        time: req.body.time,
+        image: geturl.secure_url, 
+        uRole: req.user.role,
+        uid:req.user._id,
+        public_id: geturl.public_id 
     })
     await event.save()
     req.flash('eventSuccess', 'Event is created successfully!');
@@ -118,11 +126,15 @@ router.post('/completeEvent', adminAuthenticated,async (req, res) => {
 router.post('/deleteEvent', adminAuthenticated, async (req, res) => {
 
     const event = await Event.findByIdAndDelete(req.body.id);
+    let deleteEvent = await Event.findById(req.body.id);
+    await cloudinary.uploader.destroy(deleteEvent.public_id);
 
     res.redirect('/event')
 })
 
-router.post('/updateEvent', adminAuthenticated, 
+router.post('/updateEvent', adminAuthenticated, Upload.single("image",{
+    upload_preset: 'Events'
+   }),
 // [
 //     check('name', 'The Name must have atleast 3 characters').exists().isLength({ min: 3 }),
 //     check('description', 'The description must have atleast 3 characters').exists().isLength({ min: 3 }),
@@ -143,8 +155,12 @@ async (req, res) => {
     // }
 
     try {
+        if (!req.file){return res.send('Please upload a file')} 
         let event = await Event.findById(req.body.id);
-  
+        await cloudinary.uploader.destroy(event.public_id);
+        // Upload image to cloudinary
+        const geturl = await cloudinary.uploader.upload(req.file.path);
+
         const data = {
             name: req.body.name || event.name,
             description: req.body.description || event.description,
@@ -152,6 +168,7 @@ async (req, res) => {
             location: req.body.phone || event.location,  
             arragedBy: req.body.arragedBy || event.arragedBy,
             time: req.body.time || event.time, 
+            image: geturl.secure_url,
         };
         await Event.findByIdAndUpdate(req.body.id, data, {new: true}, function(err, result){
             try {

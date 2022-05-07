@@ -64,6 +64,11 @@ app.use(eventRoutes);
 app.use(indexRoute);
 //app.use(testRoute);
 
+app.use(function(err, req, res, next) {
+  res.status(err.status || 500);
+  res.send(err);
+});
+
 async function start() {
   try {
     await mongoose.connect(

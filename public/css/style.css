@@ -730,7 +730,9 @@ span.ion-ios-arrow-back {
 .show-events h2 {
 	text-align: center;
 }
-
+.show-events p {
+    color: #fff;
+}
 .show-events ul {
 	padding-inline-start: 0px;
 	padding: 0rem 1rem;
@@ -899,6 +901,7 @@ hr.dotted-border {
 	border-right-width: 0;
 	width: 100%;
 	border: 1px solid #ccc;
+	font-size: 1.5rem;
 }
 
 .datetimepicker input[type=time] {
@@ -907,6 +910,7 @@ hr.dotted-border {
 	border-left-width: 0;
 	width: 100%;
 	border: 1px solid #ccc;
+	font-size: 1.5rem;
 }
 
 .datetimepicker span {

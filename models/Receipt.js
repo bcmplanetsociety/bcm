@@ -44,7 +44,8 @@ const schema = new Schema({
     public_id: {
         type: String,
        required: true,
-    }
+    },
+    Date : { type : Date, default: Date.now }
     
 })
 
