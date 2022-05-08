@@ -138,12 +138,8 @@
                                              <input type="text" class="form-control" placeholder="Contact Person" name="arragedBy" value="<%=result.arragedBy%>" required>
                                           </div>
                                           <div class="form-group">
-                                             <div class="datetimepicker">
-                                                <input type="date" class="form-control" name="time" id="date" value="2018-07-03">
-                                                <span></span>
-                                                <input type="time" class="form-control" name="time" id="time" value="08:00">
-                                             </div>   
-                                          </div>
+                                             <input id="party<%=result._id%>" class="form-control" type="datetime-local" name="time">  
+                                          </div> 
                                           <div class="form-group">
                                              <input class="form-control" type="file" name="image" id="image" required>
                                           </div>
@@ -175,13 +171,25 @@
       <% } %>
    </div>
 </div>
-<script>
-   var dateEl = document.getElementById('date');
-var timeEl = document.getElementById('time');
-
-document.getElementById('date-output').innerHTML = dateEl.type === 'date';
-document.getElementById('time-output').innerHTML = timeEl.type === 'time';
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://cdn.kendostatic.com/2013.2.716/js/kendo.all.min.js"></script>
+ 
+<% event.map((result)=>{%>
+ <script>
+$("#datetimepicker<%=result._id%>").kendoDateTimePicker({
+    value: new Date(),
+    dateInput: true,
+    format: "dd/MM/yyyy hh:mm tt"
+  });
 </script>
+<% }) %>
+<% event.map((result)=>{%>
+<script type="text/javascript">
+var now = new Date();
+now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+document.getElementById('party<%=result._id%>').value = now.toISOString().slice(0,16);
+ </script>
+<% }) %>
 <script type="text/javascript">
    setTimeout(function () {
        // Closing the alert
