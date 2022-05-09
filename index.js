@@ -31,8 +31,8 @@ app.set("layout", "./layouts/main");
 app.use(
   session({
     secret: process.env.jwt_secret,
-    saveUninitialized: true,
-    resave: true,
+    saveUninitialized: false,
+    resave: false,
     rolling: true, // forces resetting of max age
     cookie: { maxAge: 60 * 60 * 1000, secure: false }, // 1 hour
   })
