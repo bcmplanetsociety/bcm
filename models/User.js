@@ -28,9 +28,9 @@ var UserSchema = mongoose.Schema({
         default: "https://i.ibb.co/CskQ1h8/profile1.png",
         //default: "https://i.ibb.co/pyYyC4B/profile2.png"
     },
-    activeCode: {
-        type: Number,
-        default:""
+    activeUser: {
+        type: Boolean,
+        default: false
     },
     Date : { type : Date, default: Date.now }
 });

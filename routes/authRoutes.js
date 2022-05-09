@@ -141,16 +141,15 @@ await new Promise(r => setTimeout(r, 2000));
 const lastInsertedUser = await User.findOne().sort({
 '_id': -1
 });
-const activeCode = lastInsertedUser.activeCode;
-const activationCode = Math.floor(1000 + Math.random() * 9000);
+const activeUser = lastInsertedUser.activeUser;
 console.log("lastInsertedUser", lastInsertedUser);
 const mail = {
 //from: data.name,
 to: process.env.EMAIL,
 subject: lastInsertedUser.name + "Registration Request",
-text: `Name: ${lastInsertedUser.name} \n activationCode: ${activationCode} \n UserId: ${lastInsertedUser._id} \n UserEmail: ${lastInsertedUser.email}`,
+text: `Name: ${lastInsertedUser.name}  \n UserId: ${lastInsertedUser._id} \n UserEmail: ${lastInsertedUser.email}`,
 };
-if (activeCode === 0 || activeCode == null || activeCode.length == 0) {
+if (activeUser === false) {
 transporter.sendMail(mail, (err, data) => {
 if (err) {
 console.log(err);
@@ -173,8 +172,8 @@ router.post('/login', async (req, res, next) => {
 const checkActivecode = await User.find({
 username: req.body.username
 });
-const activeCode = checkActivecode.some(active => active.activeCode == 0 || active.activeCode == null || active.activeCode.lenght == 0);
-if (activeCode) {
+const activeUser = checkActivecode.some(active => active.activeUser === false);
+if (activeUser) {
 res.render('pages/user/activation', {
 message: "Your Account is in process , Please wait until Admin not approve"
 });
@@ -193,7 +192,7 @@ res.render('pages/user/activeUser');
 });
 router.post('/activeUser', superAdminAuthenticated, async function (req, res) {
 const data = {
-activeCode: req.body.activeCode
+    activeUser: req.body.activeUser
 };
 await User.findByIdAndUpdate(req.body.UserId, data, {
 new: true

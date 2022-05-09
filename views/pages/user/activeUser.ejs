@@ -1,4 +1,3 @@
-
 <div class="Active-user">
     <div class="container">
         <div class="row">
@@ -10,8 +9,12 @@
                            <input type="text" class="form-control" placeholder="UserId" name="UserId" required>
                         </div>
                         <div class="form-group">
-                           <input type="text" class="form-control" placeholder="activeCode" name="activeCode" required>
-                        </div>
+                            <select class="form-control" name="activeUser" id="activeUser">
+                               <option>Select Status</option>
+                               <option value="true">true</option>
+                               <option value="false">false</option>
+                             </select>
+                         </div>
                         <div class="form-group">
                             <input type="email" class="form-control" placeholder="Email" name="email" required>
                          </div>
