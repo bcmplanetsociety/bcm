@@ -1,3 +1,23 @@
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.2.2/css/fixedHeader.dataTables.min.css">
+<style>
+   td {
+	font-size: 1.4em;
+}
+th.sorting {
+    background: #000000;
+    color: #fff;
+}
+tr.filters {
+    background: #E30613;
+    color: #fff;
+}
+.dataTables_info{
+   font-size: 1.4em;
+}
+</style>
+
 <% if(message.roleUpdateSuccess){ %>
    <div class="alert alert-success" role="alert" id="successMessage">
        <%= message.roleUpdateSuccess %>
@@ -8,7 +28,7 @@
 <div class="change-role">
    <div class="container">
       <h2>Change User Role:</h2>
-      <table class="table table-responsive table-bordered add_role-table">
+      <table class="table table-responsive table-bordered add_role-table" id="viewUser">
          <thead>
             <tr>
                <th>S.no</th>
@@ -96,6 +116,8 @@
       
    </div>
 </div>
+
+
 <script type="text/javascript">
    setTimeout(function () {
        // Closing the alert

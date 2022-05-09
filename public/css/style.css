@@ -83,10 +83,6 @@ span.completed img {
 	background: #000 !important;
 }
 
-.add_role-table th,
-.add_role-table td {
-	max-width: 20px;
-}
 
 /*--------------------------------------------------------------
 # About Us
@@ -1142,6 +1138,13 @@ img.img-responsive.dividerline-img {
 .activation-block h2 {
 	color: red;
 	text-align: center;
+}
+.dataTables_wrapper {
+    max-width: 100%;
+    overflow-x: auto;
+}
+th, td {
+    white-space: nowrap;
 }
 
 /*---------------Media Query----------------------*/
