@@ -9,7 +9,6 @@
    <div class="container">
       <h2>View Receipts:</h2>
       <% if (userReceipt.length) { %>
-         <% userReceipt.map((result)=>{%>
                <table class="table table-responsive table-bordered user-recept-view">
                   <thead>
                      <tr>
@@ -23,6 +22,7 @@
                      </tr>
                   </thead>
                   <tbody>
+                     <% userReceipt.map((result)=>{%>
                      <tr>
                            <td>
                               <span>
@@ -59,9 +59,9 @@
                                  id="image"></span>
                            </td>
                      </tr>
+                     <% }) %>
                   </tbody>
                </table>
-         <% }) %>
       <% } else { %>
       <p>No Receipts!</p>
       <% } %>

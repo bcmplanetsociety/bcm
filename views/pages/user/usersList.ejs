@@ -8,7 +8,6 @@
 <div class="change-role">
    <div class="container">
       <h2>Change User Role:</h2>
-      <% users.map((result, index)=>{%>
       <table class="table table-responsive table-bordered add_role-table">
          <thead>
             <tr>
@@ -20,6 +19,7 @@
             </tr>
          </thead>
          <tbody>
+            <% users.map((result, index)=>{%>
             <tr>
                <td>
                   <span class="">
@@ -69,11 +69,10 @@
                   </div>
                </td>
             </tr>
+            <% }) %>
          </tbody>
       </table>
-      <% }) %>
-      <!-- <% users.map((result2)=>{%> -->
-      <!-- <% }) %> -->
+      
    </div>
 </div>
 <script type="text/javascript">

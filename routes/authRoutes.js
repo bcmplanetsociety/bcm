@@ -306,9 +306,9 @@ console.log(err);
 });
 router.get('/usersList', superAdminAuthenticated, async (req, res) => {
 const users = await User.find({}, {
-_id: 1,
-name: 1,
-role: 1
+// _id: 1,
+// name: 1,
+// role: 1
 });
 res.render('pages/user/usersList', {
 users

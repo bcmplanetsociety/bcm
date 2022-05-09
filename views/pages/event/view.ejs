@@ -3,7 +3,6 @@
       <h2>View Events:</h2>
       <% if (event.length) { %>
       <ul>
-         <% event.map((result)=>{%>
          <li class="todo">
             <label>
                <table class="table table-responsive table-bordered">
@@ -20,6 +19,7 @@
                      </tr>
                   </thead>
                   <tbody>
+                     <% event.map((result)=>{%>
                      <tr>
                         <form action="/completeEvent" method="POST">
                            <% if (result.completed) { %>
@@ -98,11 +98,12 @@
                            </td>
                         </form>
                      </tr>
+                     <% }) %>
                   </tbody>
                </table>
             </label>
          </li>
-         <% }) %>
+         
       </ul>
       <% } else { %>
       <p>No Events Currently!</p>

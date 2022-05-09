@@ -3,7 +3,6 @@
       <h2>View Receipts:</h2>
       <% if (todos.length) { %>
       <ul>
-         <% todos.map((result)=>{%>
          <li class="todo">
             <label>
                <table class="table table-responsive table-bordered">
@@ -21,6 +20,7 @@
                      </tr>
                   </thead>
                   <tbody>
+                     <% todos.map((result)=>{%>
                      <tr>
                         <form action="/complete" method="POST">
                            <% if (result.completed) { %>
@@ -107,11 +107,11 @@
                            </td>
                         </form>
                      </tr>
+                     <% }) %>
                   </tbody>
                </table>
             </label>
          </li>
-         <% }) %>
       </ul>
       <% } else { %>
       <p>No Receipts!</p>
