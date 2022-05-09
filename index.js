@@ -28,15 +28,22 @@ app.use(express.static(path.join(__dirname, "public")));
 app.set("views", path.join(__dirname, "views"));
 app.set("layout", "./layouts/main");
 
-app.use(
-  session({
-    secret: process.env.jwt_secret,
-    saveUninitialized: false,
-    resave: false,
-    rolling: true, // forces resetting of max age
-    cookie: { maxAge: 60 * 60 * 1000, secure: false }, // 1 hour
-  })
-);
+// app.use(
+//   session({
+//     secret: process.env.jwt_secret,
+//     saveUninitialized: false,
+//     resave: false,
+//     rolling: true, // forces resetting of max age
+//     cookie: { maxAge: 60 * 60 * 1000, secure: false }, // 1 hour
+//   })
+// );
+app.set('trust proxy', 1) // trust first proxy
+app.use(session({
+  secret: process.env.jwt_secret,
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: true }
+}))
 
 app.use(passport.initialize());
 app.use(passport.session());
