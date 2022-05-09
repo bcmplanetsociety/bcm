@@ -1,7 +1,7 @@
 <div class="bcm_view-recipt">
    <div class="container">
       <h2>View Receipts:</h2>
-      <% if (todos.length) { %>
+      <% if (todos.length >0) { %>
       <ul>
          <li class="todo">
             <label class="table-responsive">
@@ -133,6 +133,9 @@
                                           </div>
                                           <div class="form-group">
                                              <input type="text" class="form-control" placeholder="Occasion" name="occasion" value="<%=result.occasion%>" required>
+                                          </div>
+                                          <div class="form-group">
+                                             <input type="text" class="form-control" placeholder="Family Members" name="familyMembers" value="<%=result.familyMembers%>" required>
                                           </div>
                                           <div class="form-group">
                                              <input class="form-control" type="file" name="image" id="image" required>

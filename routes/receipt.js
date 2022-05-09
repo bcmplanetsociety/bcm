@@ -57,15 +57,14 @@ check('fullName', 'The Full Name must have atleast 3 characters').exists().isLen
 check('address', 'The address must have atleast 3 characters').exists().isLength({ min: 3 }),
 check('amount', 'The amount must have atleast 3 numbers numbers only').exists().isLength({ min: 3 }).isNumeric(),
 check('occasion', 'The occasion must have atleast 3 characters').exists().isLength({ min: 3 }),
+check('familyMembers', 'The family Members must have atleast 1 numbers numbers only').exists().isLength({ min: 1 }).isNumeric(),
 check('phone').custom(phone => {
     if(phone.match(/^^[6-9]\d{9}$$/)) {
       return true;
     }
   }).withMessage("Please enter valid phone number."),
-  check('familyMembers').not().isEmpty() 
 ],
-async (req, res) => {
-    try {
+async (req, res) => {  
     const errors = validationResult(req)
     if(!errors.isEmpty()) {
         // return res.status(422).jsonp(errors.array())
@@ -75,6 +74,7 @@ async (req, res) => {
         })
     }
     else{
+        try {
     const geturl = await cloudinary.uploader.upload(req.file.path);
     
     const todo = new Todo({
@@ -91,10 +91,11 @@ async (req, res) => {
     await todo.save()
     req.flash('rceiptSuccess', 'Receipt created successfully!');
     res.redirect('/userReceipt')
-}
+
      } catch (error) {
             console.error(error);
           }
+        }
 })
 
 router.post('/complete', adminAuthenticated,async (req, res) => {

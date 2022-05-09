@@ -31,7 +31,7 @@ const schema = new Schema({
        required: true,
     },
     familyMembers:{
-        type: Number,
+        type: String,
         required: true,
      },
      uid:{

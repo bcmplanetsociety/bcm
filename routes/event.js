@@ -83,7 +83,7 @@ async (req, res) => {
             alert
         })
     }
-
+    else{
     try {
         const geturl = await cloudinary.uploader.upload(req.file.path);
     const event = new Event({
@@ -104,6 +104,7 @@ async (req, res) => {
      } catch (error) {
             console.error(error);
           }
+        }
 })
 
 router.post('/completeEvent', adminAuthenticated,async (req, res) => {
