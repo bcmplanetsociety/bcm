@@ -43,7 +43,7 @@ router.get('/viewEvent',adminAuthenticated, async (req, res) => {
     })
 })
 
-router.get('/createEvent', adminAuthenticated,(req, res) => {
+router.get('/create', adminAuthenticated,(req, res) => {
     req.flash('eventFails', 'Something went wrong');
     res.render('pages/event/create', {
     isCreate: true,
@@ -62,7 +62,7 @@ router.post('/userView', async(req, res) => {
 
 
 
-router.post('/createEvent',adminAuthenticated, Upload.single("image", {
+router.post('/create',adminAuthenticated, Upload.single("image", {
     upload_preset: 'Events'
    }), 
 [
