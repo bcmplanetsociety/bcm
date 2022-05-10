@@ -4,6 +4,7 @@
        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
          <span aria-hidden="true">×</span>
    </div>
+   <% } else { %>
    <% } %>
 <% if (profile.length >0) { %>
    <% profile.map((result)=>{%>
@@ -27,8 +28,8 @@
              <input type="text" class="form-control" placeholder="Occasion" name="occasion" >
           </div>
           <div class="form-group">
-            <select class="form-control" name="familyMembers" id="familyMembers">
-               <option>Select Members</option>
+            <select class="form-control" name="familyMembers">
+               <option value="0">Select Members</option>
                <option value="1">1</option>
                <option value="2">2</option>
                <option value="3">3</option>
@@ -47,13 +48,13 @@
  </div>
  <% }) %>
  <% } else { %>
-
+   <% user.map((result)=>{%>
    <div class="create_receipt">
       <div class="container">
          <form action="/create" method="POST" enctype="multipart/form-data">
             <h2>Create a new Recipt:</h2>
             <div class="form-group">
-               <input type="text" class="form-control" placeholder="Full Name" name="fullName" >
+               <input type="text" class="form-control" placeholder="Full Name" value="<%=result.name%>" name="fullName" >
             </div>
             <div class="form-group">
                <input type="text" class="form-control" placeholder="Amount" name="amount" >
@@ -67,6 +68,17 @@
             <div class="form-group">
                <input type="text" class="form-control" placeholder="Occasion" name="occasion" >
             </div>
+            <div class="form-group">
+               <select class="form-control" name="familyMembers">
+                  <option value="0">Select Members</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                </select>
+            </div>
             <div class="form-group from-group-label-right">
                <input class="form-control" type="file" name="image" id="image"required>
                <label for="image">Only png & jpg is allowed</label>
@@ -75,7 +87,7 @@
          </form>
       </div>
    </div>
-
+   <% }) %>
  <% } %>
  <script type="text/javascript">
    setTimeout(function () {

@@ -7,6 +7,7 @@ const cloudinary = require("../helpers/cloudinary");
 const { check, validationResult } = require('express-validator');
 const {superAdminAuthenticated, adminAuthenticated, ensureAuthenticated} = require('../middleware/auth');
 const UserProfile = require('../models/Profile');
+const User = require('../models/User');
 
 router.get('/receipt', adminAuthenticated, async (req, res) => {
     const todos = await Todo.find({}).lean()
@@ -42,13 +43,17 @@ router.get('/userReceipt',ensureAuthenticated, async (req, res) => {
 })
 
 router.get('/create', ensureAuthenticated, async(req, res) => {
-    const profile = await UserProfile.find({ uid: req.user._id});
+    const profile = await UserProfile.find({
+        uid: req.user._id
+        });
+    const user = await User.find({ _id: req.user._id});
     req.flash('receiptFails', 'Something went wrong');
     res.render('pages/receipt/create', {
     fullName: 'Create a new task page...',
     fname: 'Create a new task page...',
     isCreate: true,
-    profile
+    profile,
+    user
     })
 })
 
@@ -66,6 +71,8 @@ check('phone').custom(phone => {
   }).withMessage("Please enter valid phone number."),
 ],
 async (req, res) => {  
+console.log(req.body);
+
     const errors = validationResult(req)
     if(!errors.isEmpty()) {
         // return res.status(422).jsonp(errors.array())

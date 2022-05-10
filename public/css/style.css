@@ -1392,10 +1392,6 @@ th, td {
 	.mobile-view .team-socials {
 		display: none;
 	}
-
-	.user-recept-view {
-		display: block;
-	}
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
