@@ -43,6 +43,7 @@ router.get('/userReceipt',ensureAuthenticated, async (req, res) => {
 
 router.get('/create', ensureAuthenticated, async(req, res) => {
     const profile = await UserProfile.find({ uid: req.user._id});
+    req.flash('receiptFails', 'Something went wrong');
     res.render('pages/receipt/create', {
     fullName: 'Create a new task page...',
     fname: 'Create a new task page...',

@@ -44,6 +44,7 @@ router.get('/viewEvent',adminAuthenticated, async (req, res) => {
 })
 
 router.get('/createEvent', adminAuthenticated,(req, res) => {
+    req.flash('eventFails', 'Something went wrong');
     res.render('pages/event/create', {
     isCreate: true,
     })

@@ -173,18 +173,7 @@
       <% } %>
    </div>
 </div>
-<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script src="http://cdn.kendostatic.com/2013.2.716/js/kendo.all.min.js"></script>
- 
-<% event.map((result)=>{%>
- <script>
-$("#datetimepicker<%=result._id%>").kendoDateTimePicker({
-    value: new Date(),
-    dateInput: true,
-    format: "dd/MM/yyyy hh:mm tt"
-  });
-</script>
-<% }) %>
+
 <% event.map((result)=>{%>
 <script type="text/javascript">
 var now = new Date();
