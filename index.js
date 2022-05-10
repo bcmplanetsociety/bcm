@@ -11,6 +11,7 @@ const session = require("express-session");
 const passport = require("passport");
 const expressLayouts = require("express-ejs-layouts");
 const flash = require('connect-flash');
+const MemoryStore = require('memorystore')(session)
 
 const PORT = process.env.PORT || 5000;
 
@@ -42,7 +43,10 @@ app.use(session({
   secret: process.env.jwt_secret,
   resave: false,
   saveUninitialized: true,
-  cookie: {maxAge: 60 * 60 * 1000, secure: true }
+  cookie: { maxAge: 86400000, secure: true  },
+    store: new MemoryStore({
+      checkPeriod: 86400000 // prune expired entries every 24h
+    }),
 }))
 
 app.use(passport.initialize());
