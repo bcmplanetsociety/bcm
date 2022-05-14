@@ -1147,6 +1147,8 @@ th, td {
     white-space: nowrap;
 }
 
+
+
 /*---------------Media Query----------------------*/
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 360px) {
