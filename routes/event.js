@@ -43,9 +43,8 @@ router.get('/viewEvent',adminAuthenticated, async (req, res) => {
     })
 })
 
-router.get('/create', adminAuthenticated,(req, res) => {
-    req.flash('eventFails', 'Something went wrong');
-    res.render('pages/event/create', {
+router.get('/createEvents', adminAuthenticated,(req, res) => {
+    res.render('pages/event/createEvents', {
     isCreate: true,
     })
 })
@@ -62,7 +61,7 @@ router.post('/userView', async(req, res) => {
 
 
 
-router.post('/create',adminAuthenticated, Upload.single("image", {
+router.post('/createEvents',adminAuthenticated, Upload.single("image", {
     upload_preset: 'Events'
    }), 
 [
@@ -80,7 +79,7 @@ async (req, res) => {
     if(!errors.isEmpty()) {
         // return res.status(422).jsonp(errors.array())
         const alert = errors.array()
-        res.render('pages/event/create', {
+        res.render('pages/event/createEvents', {
             alert
         })
     }

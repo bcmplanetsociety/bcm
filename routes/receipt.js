@@ -14,8 +14,6 @@ router.get('/receipt', adminAuthenticated, async (req, res) => {
     const getNotCompletedCount =  await Todo.aggregate([{ $match: {completed:false} }, { $group: { _id: null, TotalSum: { $sum: "$amount" } } } ]);
     const getAllCount =  await Todo.aggregate([ { $group: { _id: null, TotalSum: { $sum: "$amount" } } } ]); 
     res.render('pages/receipt/receipt', {
-    fullName: 'Tasks list page...',
-    fname: 'Tasks list page...',
     isIndex: true,
     todos,
     getNotCompletedCount,
@@ -25,8 +23,6 @@ router.get('/receipt', adminAuthenticated, async (req, res) => {
 router.get('/view',adminAuthenticated, async (req, res) => {
     const todos = await Todo.find({}).lean()  
     res.render('pages/receipt/view', {
-    fullName: 'Tasks list page...',
-    fname: 'Tasks list page...',
     isIndex: true,
     todos
     })
@@ -35,29 +31,25 @@ router.get('/view',adminAuthenticated, async (req, res) => {
 router.get('/userReceipt',ensureAuthenticated, async (req, res) => {
     const userReceipt = await Todo.find({ uid: req.user._id}).lean()  
     res.render('pages/receipt/userReceipt', {
-    fullName: 'Tasks list page...',
-    fname: 'Tasks list page...',
     isIndex: true,
     userReceipt
     })
 })
 
-router.get('/create', ensureAuthenticated, async(req, res) => {
+router.get('/createReceipt', ensureAuthenticated, async(req, res) => {
     const profile = await UserProfile.find({
         uid: req.user._id
         });
     const user = await User.find({ _id: req.user._id});
     req.flash('receiptFails', 'Something went wrong');
-    res.render('pages/receipt/create', {
-    fullName: 'Create a new task page...',
-    fname: 'Create a new task page...',
+    res.render('pages/receipt/createReceipt', {
     isCreate: true,
     profile,
     user
     })
 })
 
-router.post('/create',ensureAuthenticated, Upload.single("image"),
+router.post('/createReceipt',ensureAuthenticated, Upload.single("image"),
 [
 check('fullName', 'The Full Name must have atleast 3 characters').exists().isLength({ min: 3 }),
 check('address', 'The address must have atleast 3 characters').exists().isLength({ min: 3 }),
@@ -77,7 +69,7 @@ console.log(req.body);
     if(!errors.isEmpty()) {
         // return res.status(422).jsonp(errors.array())
         const alert = errors.array()
-        res.render('pages/receipt/create', {
+        res.render('pages/receipt/createReceipt', {
             alert
         })
     }
