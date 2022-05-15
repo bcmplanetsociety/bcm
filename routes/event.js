@@ -43,11 +43,11 @@ router.get('/viewEvent',adminAuthenticated, async (req, res) => {
     })
 })
 
-router.get('/createEvents', adminAuthenticated,(req, res) => {
-    res.render('./pages/event/createEvents', {
-    isCreate: true,
-    })
-})
+// router.get('/createEvents', adminAuthenticated,(req, res) => {
+//     res.render('./pages/event/createEvents', {
+//     isCreate: true,
+//     })
+// })
 
 router.post('/userView', async(req, res) => {
     //console.log(req.body.id);
@@ -59,7 +59,14 @@ router.post('/userView', async(req, res) => {
      })
 })
 
-
+router.get('/createEvents', ensureAuthenticated, async(req, res) => {
+    const event = await Event.find({ uid: req.user._id}).lean()  
+    req.flash('eventsFails', 'Something went wrong');
+    res.render('pages/event/createEvents',{
+        isCreate: true,
+        event
+    })
+})
 
 router.post('/createEvents',adminAuthenticated, Upload.single("image", {
     upload_preset: 'Events'
