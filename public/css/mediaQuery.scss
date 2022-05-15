@@ -1,0 +1,44 @@
+@mixin very-small-mobile {
+    @media (max-width: 320px) {
+      @content;
+    }
+  }
+  @mixin small-mobile {
+    @media (max-width: 360px) {
+      @content;
+    }
+  }
+  @mixin normal-mobile {
+    @media (min-width: 361px) {
+      @content;
+    }
+  }
+  @mixin tab {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+  @mixin laptop {
+    @media (min-width: 992px) {
+      @content;
+    }
+  }
+  @mixin desktop {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+  .content {
+    @include very-small-mobile() {
+    }
+    @include small-mobile() {
+    }
+    @include normal-mobile {
+    }
+    @include tab {
+    }
+    @include laptop {
+    }
+    @include desktop {
+    }
+}
