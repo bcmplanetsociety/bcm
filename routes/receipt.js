@@ -34,14 +34,14 @@ router.get('/userReceipt',ensureAuthenticated, async (req, res) => {
 })
 
 router.get('/createReceipt', ensureAuthenticated, async(req, res) => {
-    const profile = await UserProfile.find({
+    const receiptProfile = await UserProfile.find({
         uid: req.user._id
         }).lean();
-    const user = await User.find({ _id: req.user._id});
+    const userInfo = await User.find({ _id: req.user._id});
     req.flash('receiptFails', 'Something went wrong');
     res.render('pages/receipt/create', {
-    profile,
-    user
+    receiptProfile,
+    userInfo
     })
 })
 
