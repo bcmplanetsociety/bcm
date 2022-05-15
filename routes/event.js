@@ -50,7 +50,7 @@ router.post('/userView', async(req, res) => {
 })
 
 router.get('/create', adminAuthenticated, async(req, res) => {
-    const event = await Event.find({ uid: req.user._id}).lean()  
+    const event = await Event.find({ uid: req.user._id}).lean();  
     req.flash('eventsFails', 'Something went wrong');
     res.render('pages/event/create',{
         event,

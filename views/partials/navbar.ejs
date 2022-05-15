@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-default bcm-navbar">
    <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -15,29 +14,74 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
          <ul class="nav navbar-nav pullright" >
             <% if (user) { %>
-            <li id="home"><a href="/">Home</a></li>
-            <li class="dropdown">
-               <a class="dropdown-toggle" data-toggle="dropdown" href="#">Receipts
-               <span class="caret"></span></a>
-               <ul class="dropdown-menu bcm-dropdown-menu">
-                  <li class="receipt"><a href="/receipt">update Receipts</a></li>
-                  <li class="view"><a href="/view">Completed Receipts</a></li>
-                  <li class="createReceipt"><a href="/createReceipt">Create Receipts</a></li>
-                  <li class="userReceipt"><a href="/userReceipt">View your Receipts</a></li>
-               </ul>
-            </li>
-            <li class="dropdown">
-               <a class="dropdown-toggle" data-toggle="dropdown" href="#">Events
-               <span class="caret"></span></a>
-               <ul class="dropdown-menu bcm-dropdown-menu">
-                  <li class="receipt"><a href="/event">Update Events</a></li>
-                  <li class="create"><a href="/create">Create Events</a></li>
-               </ul>
-            </li>
-            <li class="usersList"><a href="/usersList">Change Role</a></li>
-            <li class="profile"><a href="/activeUser">Active User</a></li>
-            <li class="profile"><a href="/profile">Profile</a></li>
-            <li class="logout"><a href="/logout">Logout</a></li>
+
+               <% switch (user.role) {
+         case 0 : %>
+         <li id="home"><a href="/">Home</a></li>
+         <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Receipts
+            <span class="caret"></span></a>
+            <ul class="dropdown-menu bcm-dropdown-menu">
+               <li class="receipt"><a href="/receipt">update Receipts</a></li>
+               <li class="view"><a href="/view">Completed Receipts</a></li>
+               <li class="createReceipt"><a href="/createReceipt">Create Receipts</a></li>
+               <li class="userReceipt"><a href="/userReceipt">View your Receipts</a></li>
+            </ul>
+         </li>
+         <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Events
+            <span class="caret"></span></a>
+            <ul class="dropdown-menu bcm-dropdown-menu">
+               <li class="receipt"><a href="/event">Update Events</a></li>
+               <li class="create"><a href="/create">Create Events</a></li>
+            </ul>
+         </li>
+         <li class="usersList"><a href="/usersList">Change Role</a></li>
+         <li class="profile"><a href="/activeUser">Active User</a></li>
+         <li class="profile"><a href="/profile">Profile</a></li>
+         <li class="logout"><a href="/logout">Logout</a></li>
+                 <% break;
+         
+         case 1 : %>
+         <li id="home"><a href="/">Home</a></li>
+         <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Receipts
+            <span class="caret"></span></a>
+            <ul class="dropdown-menu bcm-dropdown-menu">
+               <li class="receipt"><a href="/receipt">update Receipts</a></li>
+               <li class="view"><a href="/view">Completed Receipts</a></li>
+               <li class="createReceipt"><a href="/createReceipt">Create Receipts</a></li>
+               <li class="userReceipt"><a href="/userReceipt">View your Receipts</a></li>
+            </ul>
+         </li>
+         <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Events
+            <span class="caret"></span></a>
+            <ul class="dropdown-menu bcm-dropdown-menu">
+               <li class="receipt"><a href="/event">Update Events</a></li>
+               <li class="create"><a href="/create">Create Events</a></li>
+            </ul>
+         </li>
+         <li class="profile"><a href="/profile">Profile</a></li>
+         <li class="logout"><a href="/logout">Logout</a></li>
+                 <% break;
+         
+         default : %>
+         <li id="home"><a href="/">Home</a></li>
+         <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Receipts
+            <span class="caret"></span></a>
+            <ul class="dropdown-menu bcm-dropdown-menu">
+               <li class="createReceipt"><a href="/createReceipt">Create Receipts</a></li>
+               <li class="userReceipt"><a href="/userReceipt">View your Receipts</a></li>
+            </ul>
+         </li>
+         <li class="profile"><a href="/profile">Profile</a></li>
+         <li class="logout"><a href="/logout">Logout</a></li>
+                 <% break;
+         
+         } %>
+            
             <% } else { %>
             <li id="home"><a href="/">Home</a></li>
             <li class="login"><a href="/login">Login</a></li>

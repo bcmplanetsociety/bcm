@@ -36,10 +36,10 @@ router.get('/userReceipt',ensureAuthenticated, async (req, res) => {
 router.get('/createReceipt', ensureAuthenticated, async(req, res) => {
     const profile = await UserProfile.find({
         uid: req.user._id
-        });
+        }).lean();
     const user = await User.find({ _id: req.user._id});
     req.flash('receiptFails', 'Something went wrong');
-    res.render('pages/receipt/createReceipt', {
+    res.render('pages/receipt/create', {
     profile,
     user
     })
@@ -65,7 +65,7 @@ console.log(req.body);
     if(!errors.isEmpty()) {
         // return res.status(422).jsonp(errors.array())
         const alert = errors.array()
-        res.render('pages/receipt/createReceipt', {
+        res.render('pages/receipt/create', {
             alert
         })
     }
