@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
 	font-size: 1em;
 	font-family: "Raleway", sans-serif;
@@ -52,15 +53,6 @@ p {
 	margin: auto;
 }
 
-td {
-	font-size: 1.2em;
-	font-weight: normal;
-}
-
-th {
-	font-size: 1.4em;
-}
-
 label {
 	font-size: 1.5em;
 }
@@ -76,7 +68,9 @@ label {
 	color: #fff;
 }
 
+/*--------------------------------------------------------------------*/
 /*Default Table CSS*/
+/*--------------------------------------------------------------------*/
 
 table {
     width: 100%;
@@ -94,12 +88,15 @@ table {
             padding: 8px;
 	        line-height: 1.42857143;
 	        vertical-align: top;
+			font-size: 1.4em;
            }
            td{
             padding: 8px;
             line-height: 1.42857143;
             vertical-align: top;
             border-top: 1px solid #ddd;
+			font-size: 1.2em;
+	        font-weight: normal;
             span{
                 #image{
                     width: 200px;
@@ -156,4 +153,58 @@ form label:after {
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
+}
+
+/*--------------------------------------------------------------------*/
+/*Page Top Scroller*/
+/*--------------------------------------------------------------------*/
+
+.ptsBox {
+    bottom: 20px;
+    opacity: 0;
+    position: fixed;
+    right: 20px;
+    transition: all 0.3s ease;
+    visibility: hidden;
+    z-index: 9999;
+	a{
+		img{
+		   display: block;
+           object-fit: contain;
+		}
+		.arrowUp {
+			-webkit-align-items: center;
+			align-items: center;
+			background-color: rgba(0, 0, 0, 0.6);
+			border-radius: 50%;
+			display: flex;
+			height: 64px;
+			-moz-justify-content: center;
+			-webkit-justify-content: center;
+			justify-content: center;
+			position: relative;
+			width: 64px;
+		}
+		.arrowUp::before {
+			border: solid #fff;
+			border-width: 5px 5px 0 0;
+			content: '';
+			display: block;
+			height: 10px;
+			position: relative;
+			top: 2px;
+			-moz-transform: rotate(-45deg);
+			-webkit-transform: rotate(-45deg);
+			transform: rotate(-45deg);
+			width: 10px;
+		}
+	}
+}
+.ptsBox:hover {
+    cursor: pointer;
+    opacity: 0.6 !important;
+}
+.ptsBox.active {
+    opacity: 1;
+    visibility: visible;
 }
