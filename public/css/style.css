@@ -1,7 +1,9 @@
 .bcm {
 	margin-bottom: 11rem;
 }
-
+table{
+	display: block;
+}
 span.completed,
 span.completed img {
 	text-decoration: line-through;
