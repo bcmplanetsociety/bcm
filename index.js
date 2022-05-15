@@ -12,10 +12,8 @@ const session = require("cookie-session");
 const passport = require("passport");
 const expressLayouts = require("express-ejs-layouts");
 const flash = require('connect-flash');
-// const sass = require('node-sass');
-// var connect = require('connect');
-//const MemoryStore = require('memorystore')(session)
 const sassMiddleware = require('node-sass-middleware');
+var cors = require('cors');
 
 const PORT = process.env.PORT || 5000;
 
@@ -26,13 +24,6 @@ app.use(expressLayouts);
 //setting template engine
 app.set("view engine", "ejs");
 
-app.use(require('node-sass-middleware')({
-  src: path.join(__dirname, 'public'),
-  dest: path.join(__dirname, 'public'),
-  indentedSyntax: false,
-  sourceMap: true,
-}));
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -41,7 +32,18 @@ app.use(express.static(path.join(__dirname, "public")));
 app.set("views", path.join(__dirname, "views"));
 app.set("layout", "./layouts/main");
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
+app.use(require('node-sass-middleware')({
+  src: path.join(__dirname, 'public'),
+  dest: path.join(__dirname, 'public'),
+  indentedSyntax: false,
+  sourceMap: true,
+}));
 
 app.set('trust proxy', 1) // trust first proxy
 app.use(session({

@@ -44,7 +44,7 @@ router.get('/viewEvent',adminAuthenticated, async (req, res) => {
 })
 
 router.get('/createEvents', adminAuthenticated,(req, res) => {
-    res.render('pages/event/createEvents', {
+    res.render('./pages/event/createEvents', {
     isCreate: true,
     })
 })
