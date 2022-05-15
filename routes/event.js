@@ -49,15 +49,15 @@ router.post('/userView', async(req, res) => {
      })
 })
 
-router.get('/createEvents', adminAuthenticated, async(req, res) => {
+router.get('/create', adminAuthenticated, async(req, res) => {
     const event = await Event.find({ uid: req.user._id}).lean()  
     req.flash('eventsFails', 'Something went wrong');
-    res.render('pages/event/createEvents',{
-        event
+    res.render('pages/event/create',{
+        event,
     })
 })
 
-router.post('/createEvents',adminAuthenticated, Upload.single("image", {
+router.post('/create',adminAuthenticated, Upload.single("image", {
     upload_preset: 'Events'
    }), 
 [
@@ -75,7 +75,7 @@ async (req, res) => {
     if(!errors.isEmpty()) {
         // return res.status(422).jsonp(errors.array())
         const alert = errors.array()
-        res.render('pages/event/createEvents', {
+        res.render('pages/event/create', {
             alert
         })
     }

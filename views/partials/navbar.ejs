@@ -20,31 +20,22 @@
                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Receipts
                <span class="caret"></span></a>
                <ul class="dropdown-menu bcm-dropdown-menu">
-                  <% if ((user.role === 0) || (user.role === 1)) { %>
                   <li class="receipt"><a href="/receipt">update Receipts</a></li>
                   <li class="view"><a href="/view">Completed Receipts</a></li>
-                  <% } else { %>
-                  <% } %>
                   <li class="createReceipt"><a href="/createReceipt">Create Receipts</a></li>
                   <li class="userReceipt"><a href="/userReceipt">View your Receipts</a></li>
                </ul>
             </li>
-            <% if ((user.role === 0) || (user.role === 1)) { %>
             <li class="dropdown">
                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Events
                <span class="caret"></span></a>
                <ul class="dropdown-menu bcm-dropdown-menu">
                   <li class="receipt"><a href="/event">Update Events</a></li>
-                  <li class="createEvents"><a href="/createEvents">Create Events</a></li>
+                  <li class="create"><a href="/create">Create Events</a></li>
                </ul>
             </li>
-            <% } else { %>
-            <% } %>
-            <% if (user.role === 0) { %>
             <li class="usersList"><a href="/usersList">Change Role</a></li>
             <li class="profile"><a href="/activeUser">Active User</a></li>
-            <% } else { %>
-            <% } %>
             <li class="profile"><a href="/profile">Profile</a></li>
             <li class="logout"><a href="/logout">Logout</a></li>
             <% } else { %>

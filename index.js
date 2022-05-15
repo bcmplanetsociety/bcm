@@ -7,13 +7,12 @@ const eventRoutes = require("./routes/event");
 const indexRoute = require("./routes/index");
 //const testRoute = require("./routes/test");
 require("dotenv").config();
-const session = require("cookie-session");
-//const session = require("express-session");
+//const session = require("cookie-session");
+const session = require("express-session");
 const passport = require("passport");
 const expressLayouts = require("express-ejs-layouts");
 const flash = require('connect-flash');
-const sassMiddleware = require('node-sass-middleware');
-var cors = require('cors');
+const cors = require('cors');
 
 const PORT = process.env.PORT || 5000;
 
@@ -23,7 +22,8 @@ const app = express();
 app.use(expressLayouts);
 //setting template engine
 app.set("view engine", "ejs");
-
+app.use(cors());
+app.options('*', cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -45,12 +45,18 @@ app.use(require('node-sass-middleware')({
   sourceMap: true,
 }));
 
-app.set('trust proxy', 1) // trust first proxy
+
+// app.use(session({
+//   secret: process.env.jwt_secret,
+//   resave: false,
+//   saveUninitialized: true,
+//   cookie: { maxAge: 86400000, secure: true  },
+// }))
 app.use(session({
   secret: process.env.jwt_secret,
   resave: false,
   saveUninitialized: true,
-  cookie: { maxAge: 86400000, secure: true  },
+  cookie: { maxAge: 60 * 60 * 1000 } // 1 hour
 }))
 
 app.use(passport.initialize());
@@ -61,13 +67,6 @@ app.use(function(req, res, next){
   res.locals.message = req.flash();
   next();
 });
-
-// app.use(function(req, res, next) {
-//   // before every route, attach the flash messages and current user to res.locals
-//   res.locals.alerts = req.flash();
-//   res.locals.currentUser = req.user;
-//   next();
-// });
 
 app.use(function (req, res, next) {
   res.locals.user = req.user || null;
