@@ -2,21 +2,10 @@
 	margin-bottom: 11rem;
 }
 
-a:focus,
-a:hover {
-	color: #fff;
-	text-decoration: none;
-}
-
 span.completed,
 span.completed img {
 	text-decoration: line-through;
 	opacity: 0.5;
-}
-
-.modal {
-	background: transparent;
-	box-shadow: none;
 }
 
 [type="checkbox"]:not(:checked),

@@ -43,9 +43,13 @@ h6 {
 }
 
 
-a,
-nav ul a {
+a {
 	font-size: 1.45em;
+}
+a:focus,
+a:hover {
+	color: #fff;
+	text-decoration: none;
 }
 
 p {
@@ -153,4 +157,8 @@ form label:after {
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
+}
+.modal {
+	background: transparent;
+	box-shadow: none;
 }
