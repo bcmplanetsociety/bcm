@@ -14,7 +14,6 @@ router.get('/receipt', adminAuthenticated, async (req, res) => {
     const getNotCompletedCount =  await Todo.aggregate([{ $match: {completed:false} }, { $group: { _id: null, TotalSum: { $sum: "$amount" } } } ]);
     const getAllCount =  await Todo.aggregate([ { $group: { _id: null, TotalSum: { $sum: "$amount" } } } ]); 
     res.render('pages/receipt/receipt', {
-    isIndex: true,
     todos,
     getNotCompletedCount,
     getAllCount
@@ -23,7 +22,6 @@ router.get('/receipt', adminAuthenticated, async (req, res) => {
 router.get('/view',adminAuthenticated, async (req, res) => {
     const todos = await Todo.find({}).lean()  
     res.render('pages/receipt/view', {
-    isIndex: true,
     todos
     })
 })
@@ -31,7 +29,6 @@ router.get('/view',adminAuthenticated, async (req, res) => {
 router.get('/userReceipt',ensureAuthenticated, async (req, res) => {
     const userReceipt = await Todo.find({ uid: req.user._id}).lean()  
     res.render('pages/receipt/userReceipt', {
-    isIndex: true,
     userReceipt
     })
 })
@@ -43,7 +40,6 @@ router.get('/createReceipt', ensureAuthenticated, async(req, res) => {
     const user = await User.find({ _id: req.user._id});
     req.flash('receiptFails', 'Something went wrong');
     res.render('pages/receipt/createReceipt', {
-    isCreate: true,
     profile,
     user
     })

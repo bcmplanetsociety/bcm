@@ -11,7 +11,6 @@ const cloudinary = require("../helpers/cloudinary");
 router.get('/event', adminAuthenticated, async (req, res) => {
     const event = await Event.find({}).lean()  
     res.render('pages/event/event', {
-    isIndex: true,
     event,
     moment
     })
@@ -20,7 +19,6 @@ router.get('/userView', async (req, res) => {
     const eventbyId = await Event.findById(req.body.id)
     console.log(eventbyId);
     res.render('pages/event/userView', {
-             isIndex: true,
              moment,
              eventbyId
              })
@@ -38,32 +36,23 @@ router.get('/userView', async (req, res) => {
 router.get('/viewEvent',adminAuthenticated, async (req, res) => {
     const event = await Event.find({}).lean()  
     res.render('pages/event/view', {
-    isIndex: true,
     event
     })
 })
-
-// router.get('/createEvents', adminAuthenticated,(req, res) => {
-//     res.render('./pages/event/createEvents', {
-//     isCreate: true,
-//     })
-// })
 
 router.post('/userView', async(req, res) => {
     //console.log(req.body.id);
     const eventbyId = await Event.findById(req.body.id)
      res.render('./pages/event/userView', {
-     isCreate: true,
      eventbyId,
      moment
      })
 })
 
-router.get('/createEvents', ensureAuthenticated, async(req, res) => {
+router.get('/createEvents', adminAuthenticated, async(req, res) => {
     const event = await Event.find({ uid: req.user._id}).lean()  
     req.flash('eventsFails', 'Something went wrong');
     res.render('pages/event/createEvents',{
-        isCreate: true,
         event
     })
 })
