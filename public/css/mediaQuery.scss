@@ -1,878 +1,861 @@
-@mixin very-small-mobile {
-  @media (max-width: 320px) {
-    @content; 
-  }
-}
-@mixin small-mobile {
-  @media (max-width: 360px) {
-    @content;
-  }
-}
-@mixin normal-mobile {
-  @media (min-width: 361px) {
-    @content;
-  }
-}
-@mixin tab {
-  @media (min-width: 768px) {
-    @content;
-  }
-}
-@mixin laptop {
-  @media (min-width: 992px) {
-    @content;
-  }
-}
-@mixin desktop {
-  @media (min-width: 1200px) {
-    @content;
-  }
+$very-small-mobile: 320px;
+$small-mobile: 360px;
+$normal-mobile: 361px;
+$tab: 768px;
+$desktop: 992px;
+$mobile: 1200px;
+
+@media (max-width: $very-small-mobile) {
+  
 }
 
-  @include very-small-mobile() {
-  }
-  @include small-mobile() {
-    /*-----------Navbar-------------*/
-    .bcm-navbar {
-      .navbar-header {
-        .navbar-brand {
-          margin-top: -2.5rem;
-          height: 20px;
-          .bcm-brand-logo {
-            max-width: 40%;
-            margin-top: -1rem;
-          }
-        }
-        a {
-          padding-left: 1rem;
+@media (max-width: $small-mobile) {
+   /*-----------Navbar-------------*/
+   .bcm-navbar {
+    .navbar-header {
+      .navbar-brand {
+        margin-top: -2.5rem;
+        height: 20px;
+        .bcm-brand-logo {
+          max-width: 40%;
+          margin-top: -1rem;
         }
       }
-      .navbar-collapse {
+      a {
+        padding-left: 1rem;
+      }
+    }
+    .navbar-collapse {
+      margin: 0;
+      padding: 0;
+      .navbar-nav {
         margin: 0;
-        padding: 0;
-        .navbar-nav {
-          margin: 0;
-          li {
-            a {
-              padding-left: 1rem;
-            }
-          }
-        }
-        .open {
-          .bcm-dropdown-menu {
-            padding-bottom: 1rem;
-            font-size: 1.1rem;
+        li {
+          a {
+            padding-left: 1rem;
           }
         }
       }
-      .in {
-        .pullright {
-          float: left;
-          width: 100%;
+      .open {
+        .bcm-dropdown-menu {
+          padding-bottom: 1rem;
+          font-size: 1.1rem;
         }
       }
     }
-    /*----------Home Slider--------------*/
-    .carousel {
-      .carousel-inner {
-        .item {
-          .carousel-caption {
-            h1 {
-              font-size: 25px;
-            }
-            h3 {
-              font-size: 18px;
-            }
-            p {
-              a {
-                padding: 10px 25px;
-              }
-            }
-          }
-        }
-      }
-    }
-    /*----------Footer--------------*/
-    .bcm-footer {
-      .footer-center {
-        ul {
-          display: contents;
-          li {
-            p {
-              line-height: 1.2em;
-              padding-top: 1em;
-              text-align: center;
-              padding-bottom: 1em;
-            }
-          }
-        }
-      }
-      .footer-right {
-        display: flex;
-        justify-content: center;
-        ul {
-          padding-inline-start: 0px;
-          padding-bottom: 1em;
-        }
-      }
-    }
-    /*-----------About Section-------------*/
-    .about-section {
-      .main-body {
-        .about {
-          margin-top: 5rem;
-          .about-container {
-            .video-box {
-              padding-top: 0rem;
-              img {
-                width: 30rem;
-              }
-            }
-          }
-        }
-      }
-      .show-events {
-        min-height: 35rem;
-        margin-top: 0rem;
-        margin-bottom: 2rem;
-      }
-    }
-    /*-----------Teams Section-------------*/
-    .team {
-      .desktop-view {
-        display: none;
-      }
-      .mobile-view {
-        display: block;
-        .heading-light {
-          margin-bottom: 70px;
-        }
-        .col-xs-6 {
-          padding-right: 5px;
-          padding-left: 5px;
-        }
-        .profile {
-          .team-members {
-            .team-desc {
-              .team-socials {
-                display: none;
-              }
-            }
-          }
-        }
-        .team-about {
-          min-height: 100px;
-          padding: 10px;
-          .team-details {
-            h4 {
-              font-size: 14px;
-              margin: 0 0 4px;
-            }
-            span {
-              font-size: 9px;
-            }
-          }
-        }
-      }
-    }
-    /*----------View Receipt --------------*/
-    .bcm_view-recipt {
-      .user-recept-view {
-        display: block;
-      }
-    }
-    /*----------Clients logo --------------*/
-    .clients {
-      img {
-        max-width: 40%;
-      }
-    }
-  }
-  @include normal-mobile() {
-    /*-----------Navbar-------------*/
-    .bcm-navbar {
-      .navbar-header {
-        .navbar-brand {
-          margin-top: -2.5rem;
-          height: 20px;
-          .bcm-brand-logo {
-            max-width: 40%;
-            margin-top: -1rem;
-          }
-        }
-        a {
-          padding-left: 1rem;
-        }
-      }
-      .navbar-collapse {
-        margin: 0;
-        padding: 0;
-        .navbar-nav {
-          margin: 0;
-          li {
-            a {
-              padding-left: 1rem;
-            }
-          }
-        }
-        .open {
-          .bcm-dropdown-menu {
-            padding-bottom: 1rem;
-            font-size: 1.1rem;
-          }
-        }
-      }
-      .in {
-        .pullright {
-          float: left;
-          width: 100%;
-        }
-      }
-    }
-    /*----------Home Slider--------------*/
-    .carousel {
-      .carousel-inner {
-        .item {
-          .carousel-caption {
-            h1 {
-              font-size: 25px;
-            }
-            h3 {
-              font-size: 18px;
-            }
-            p {
-              a {
-                padding: 10px 25px;
-              }
-            }
-          }
-        }
-      }
-    }
-    /*----------Footer--------------*/
-    .bcm-footer {
-      .footer-center {
-        ul {
-          display: contents;
-          li {
-            p {
-              line-height: 1.2em;
-              padding-top: 1em;
-              text-align: center;
-              padding-bottom: 1em;
-            }
-          }
-        }
-      }
-      .footer-right {
-        display: flex;
-        justify-content: center;
-        ul {
-          padding-inline-start: 0px;
-          padding-bottom: 1em;
-        }
-      }
-    }
-    /*-----------About Section-------------*/
-    .about-section {
-      .main-body {
-        .about {
-          margin-top: 5rem;
-          .about-container {
-            .video-box {
-              padding-top: 0rem;
-              img {
-                width: 30rem;
-              }
-            }
-          }
-        }
-      }
-      .show-events {
-        min-height: 35rem;
-        margin-top: 0rem;
-        margin-bottom: 2rem;
-      }
-    }
-    /*-----------Teams Section-------------*/
-    .team {
-      .desktop-view {
-        display: none;
-      }
-      .mobile-view {
-        display: block;
-        padding: 50px 0 50px 0;
-        .heading-light {
-          margin-bottom: 70px;
-        }
-        .col-xs-6 {
-          padding-right: 5px;
-          padding-left: 5px;
-        }
-        .profile {
-          .team-members {
-            .team-desc {
-              .team-socials {
-                display: none;
-              }
-            }
-          }
-        }
-        .team-about {
-          min-height: 100px;
-          padding: 10px;
-          .team-details {
-            h4 {
-              font-size: 14px;
-              margin: 0 0 4px;
-            }
-            span {
-              font-size: 9px;
-            }
-          }
-        }
-      }
-    }
-    /*----------Clients logo --------------*/
-    .clients {
-      img {
-        max-width: 40%;
-      }
-    }
-  }
-  @include tab() {
-    /*-----------Navbar-------------*/
-    .bcm-navbar {
-      .navbar-header {
-        .navbar-brand {
-          position: relative;
-          top: 4rem;
-          .bcm-brand-logo {
-            max-width: 25%;
-            height: auto;
-          }
-        }
-      }
-      .navbar-collapse {
-        margin: 0;
-        padding: 0;
-        float: right;
-        .navbar-nav {
-          margin: 0;
-        }
-        .pullright {
-          float: right;
-          width: 100%;
-        }
-      }
-    }
-    /*----------Home Slider--------------*/
-    .carousel {
-      .carousel-inner {
-        .item {
-          .carousel-caption {
-            padding-bottom: 350px;
-            h1 {
-              font-size: 50px;
-            }
-            h3 {
-              font-size: 18px;
-            }
-            p {
-              a {
-                padding: 10px 25px;
-              }
-            }
-          }
-        }
-      }
-    }
-    /*----------Footer--------------*/
-    .bcm-footer {
-      .footer-center {
-        ul {
-          display: contents;
-          justify-content: end;
-          padding-top: 1em;
-          li {
-            p {
-              line-height: 1.2em;
-              padding-top: 1em;
-              text-align: center;
-              padding-bottom: 1em;
-            }
-          }
-        }
-      }
-      .footer-right {
-        display: flex;
-        padding-top: 1em;
-        ul {
-          padding-inline-start: 0px;
-          padding-bottom: 1em;
-        }
-      }
-    }
-    /*-----------About Section-------------*/
-    .about-section {
-      .main-body {
-        .about {
-          margin-top: 5rem;
-          .about-container {
-            .video-box {
-              padding-top: 1rem;
-              img {
-                width: 95%;
-              }
-            }
-          }
-        }
-      }
-      .show-events {
-        min-height: 50rem;
-        margin-top: 2rem;
-      }
-    }
-    /*-----------Teams Section-------------*/
-    .team {
-      .desktop-view {
-        display: block;
-        .team-about {
-          min-height: 100px;
-          padding: 10px;
-          .team-details {
-            h4 {
-              font-size: 22px;
-              margin: 0 0 10px;
-            }
-            span {
-              font-size: 13px;
-            }
-          }
-        }
-        .profile {
-          .team-members {
-            .team-desc {
-              .team-socials {
-                display: none;
-              }
-            }
-          }
-        }
-      }
-      .mobile-view {
-        display: none;
-      }
-    }
-
-    /*----------Clients logo --------------*/
-    .clients {
-      img {
-        max-width: 60%;
-      }
-    }
-    /*-------Event Postcard---------*/
-    .postcard {
-      .postcard__img_link {
-        .postcard__img {
-          max-width: 300px;
-          max-height: 100%;
-          transition: transform 0.3s ease;
-        }
-      }
-      .postcard__text {
-        padding: 3rem;
+    .in {
+      .pullright {
+        float: left;
         width: 100%;
-        .postcard__title {
-          font-size: 2rem;
-        }
-        .postcard__tagbox {
-          justify-content: start;
-        }
       }
-    }
-    .postcard:hover {
-      .postcard__img_link {
-        .postcard__img {
-          transform: scale(1.1);
-        }
-      }
-    }
-    .postcard:nth-child(2n + 1) {
-      flex-direction: row;
-      .postcard__text::before {
-        left: -30px !important;
-        transform: rotate(4deg);
-      }
-    }
-    .postcard:nth-child(2n + 0) {
-      flex-direction: row-reverse;
-      .postcard__text::before {
-        right: -30px !important;
-        transform: rotate(-4deg);
-      }
-    }
-    .red::before {
-      background-image: linear-gradient(
-        -80deg,
-        rgba(227, 6, 19, 0.1),
-        transparent 50%
-      );
-    }
-    .red:nth-child(2n)::before {
-      background-image: linear-gradient(
-        80deg,
-        rgba(189, 21, 11, 0.1),
-        transparent 50%
-      );
     }
   }
-  @include laptop() {
-    /*-----------Navbar-------------*/
-    .bcm-navbar {
-      .navbar-header {
-        .navbar-brand {
-          position: relative;
-          top: 4rem;
-          .bcm-brand-logo {
-            margin: 0;
-            position: relative;
-            top: 130%;
+  /*----------Home Slider--------------*/
+  .carousel {
+    .carousel-inner {
+      .item {
+        .carousel-caption {
+          h1 {
+            font-size: 25px;
           }
-        }
-      }
-      .navbar-collapse {
-        .pullright {
-          float: right;
-        }
-      }
-    }
-    /*----------Home Slider--------------*/
-    .carousel {
-      .carousel-inner {
-        .item {
-          .carousel-caption {
-            padding-bottom: 350px;
-            h1 {
-              font-size: 50px;
-            }
-            h3 {
-              font-size: 18px;
-            }
-            p {
-              a {
-                padding: 10px 25px;
-              }
+          h3 {
+            font-size: 18px;
+          }
+          p {
+            a {
+              padding: 10px 25px;
             }
           }
         }
       }
     }
-    /*----------Footer--------------*/
-    .bcm-footer {
-      .footer-center {
-        ul {
-          display: contents;
-          justify-content: end;
-          padding-top: 1em;
-          li {
-            p {
-              line-height: 1.2em;
-              padding-top: 1em;
-              text-align: center;
-              padding-bottom: 1em;
+  }
+  /*----------Footer--------------*/
+  .bcm-footer {
+    .footer-center {
+      ul {
+        display: contents;
+        li {
+          p {
+            line-height: 1.2em;
+            padding-top: 1em;
+            text-align: center;
+            padding-bottom: 1em;
+          }
+        }
+      }
+    }
+    .footer-right {
+      display: flex;
+      justify-content: center;
+      ul {
+        padding-inline-start: 0px;
+        padding-bottom: 1em;
+      }
+    }
+  }
+  /*-----------About Section-------------*/
+  .about-section {
+    .main-body {
+      .about {
+        margin-top: 5rem;
+        .about-container {
+          .video-box {
+            padding-top: 0rem;
+            img {
+              width: 30rem;
             }
           }
         }
       }
-      .footer-right {
-        display: block;
+    }
+    .show-events {
+      min-height: 35rem;
+      margin-top: 0rem;
+      margin-bottom: 2rem;
+    }
+  }
+  /*-----------Teams Section-------------*/
+  .team {
+    .desktop-view {
+      display: none;
+    }
+    .mobile-view {
+      display: block;
+      .heading-light {
+        margin-bottom: 70px;
+      }
+      .col-xs-6 {
+        padding-right: 5px;
+        padding-left: 5px;
+      }
+      .profile {
+        .team-members {
+          .team-desc {
+            .team-socials {
+              display: none;
+            }
+          }
+        }
+      }
+      .team-about {
+        min-height: 100px;
+        padding: 10px;
+        .team-details {
+          h4 {
+            font-size: 14px;
+            margin: 0 0 4px;
+          }
+          span {
+            font-size: 9px;
+          }
+        }
+      }
+    }
+  }
+  /*----------View Receipt --------------*/
+  .bcm_view-recipt {
+    .user-recept-view {
+      display: block;
+    }
+  }
+  /*----------Clients logo --------------*/
+  .clients {
+    img {
+      max-width: 40%;
+    }
+  }
+}
+
+@media (min-width: $normal-mobile) {
+   /*-----------Navbar-------------*/
+   .bcm-navbar {
+    .navbar-header {
+      .navbar-brand {
+        margin-top: -2.5rem;
+        height: 20px;
+        .bcm-brand-logo {
+          max-width: 40%;
+          margin-top: -1rem;
+        }
+      }
+      a {
+        padding-left: 1rem;
+      }
+    }
+    .navbar-collapse {
+      margin: 0;
+      padding: 0;
+      .navbar-nav {
+        margin: 0;
+        li {
+          a {
+            padding-left: 1rem;
+          }
+        }
+      }
+      .open {
+        .bcm-dropdown-menu {
+          padding-bottom: 1rem;
+          font-size: 1.1rem;
+        }
+      }
+    }
+    .in {
+      .pullright {
+        float: left;
+        width: 100%;
+      }
+    }
+  }
+  /*----------Home Slider--------------*/
+  .carousel {
+    .carousel-inner {
+      .item {
+        .carousel-caption {
+          h1 {
+            font-size: 25px;
+          }
+          h3 {
+            font-size: 18px;
+          }
+          p {
+            a {
+              padding: 10px 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+  /*----------Footer--------------*/
+  .bcm-footer {
+    .footer-center {
+      ul {
+        display: contents;
+        li {
+          p {
+            line-height: 1.2em;
+            padding-top: 1em;
+            text-align: center;
+            padding-bottom: 1em;
+          }
+        }
+      }
+    }
+    .footer-right {
+      display: flex;
+      justify-content: center;
+      ul {
+        padding-inline-start: 0px;
+        padding-bottom: 1em;
+      }
+    }
+  }
+  /*-----------About Section-------------*/
+  .about-section {
+    .main-body {
+      .about {
+        margin-top: 5rem;
+        .about-container {
+          .video-box {
+            padding-top: 0rem;
+            img {
+              width: 30rem;
+            }
+          }
+        }
+      }
+    }
+    .show-events {
+      min-height: 35rem;
+      margin-top: 0rem;
+      margin-bottom: 2rem;
+    }
+  }
+  /*-----------Teams Section-------------*/
+  .team {
+    .desktop-view {
+      display: none;
+    }
+    .mobile-view {
+      display: block;
+      padding: 50px 0 50px 0;
+      .heading-light {
+        margin-bottom: 70px;
+      }
+      .col-xs-6 {
+        padding-right: 5px;
+        padding-left: 5px;
+      }
+      .profile {
+        .team-members {
+          .team-desc {
+            .team-socials {
+              display: none;
+            }
+          }
+        }
+      }
+      .team-about {
+        min-height: 100px;
+        padding: 10px;
+        .team-details {
+          h4 {
+            font-size: 14px;
+            margin: 0 0 4px;
+          }
+          span {
+            font-size: 9px;
+          }
+        }
+      }
+    }
+  }
+  /*----------Clients logo --------------*/
+  .clients {
+    img {
+      max-width: 40%;
+    }
+  }
+}
+
+@media (min-width: $tab) {
+  /*-----------Navbar-------------*/
+  .bcm-navbar {
+    .navbar-header {
+      .navbar-brand {
+        position: relative;
+        top: 4rem;
+        .bcm-brand-logo {
+          max-width: 25%;
+          height: auto;
+        }
+      }
+    }
+    .navbar-collapse {
+      margin: 0;
+      padding: 0;
+      float: right;
+      .navbar-nav {
+        margin: 0;
+      }
+      .pullright {
+        float: right;
+        width: 100%;
+      }
+    }
+  }
+  /*----------Home Slider--------------*/
+  .carousel {
+    .carousel-inner {
+      .item {
+        .carousel-caption {
+          padding-bottom: 350px;
+          h1 {
+            font-size: 50px;
+          }
+          h3 {
+            font-size: 18px;
+          }
+          p {
+            a {
+              padding: 10px 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+  /*----------Footer--------------*/
+  .bcm-footer {
+    .footer-center {
+      ul {
+        display: contents;
+        justify-content: end;
         padding-top: 1em;
-        ul {
-          padding-inline-start: 0px;
-          padding-bottom: 1em;
-        }
-      }
-    }
-    /*-----------About Section-------------*/
-    .about-section {
-      .main-body {
-        .about {
-          margin-top: 5rem;
-          .about-container {
-            .video-box {
-              padding-top: 9rem;
-              img {
-                width: 90%;
-              }
-            }
+        li {
+          p {
+            line-height: 1.2em;
+            padding-top: 1em;
+            text-align: center;
+            padding-bottom: 1em;
           }
         }
       }
-      .show-events {
-        min-height: 50rem;
-        margin-top: 13rem;
-      }
     }
-    /*-----------Teams Section-------------*/
-    .team {
-      .desktop-view {
-        display: block;
-        .team-about {
-          min-height: 495px;
-          padding: 10px;
-          .team-details {
-            h4 {
-              font-size: 22px;
-              margin: 0 0 10px;
-            }
-            span {
-              font-size: 13px;
-            }
-          }
-        }
-        .profile {
-          .team-members {
-            .team-desc {
-              .team-socials {
-                display: block;
-              }
-            }
-          }
-        }
+    .footer-right {
+      display: flex;
+      padding-top: 1em;
+      ul {
+        padding-inline-start: 0px;
+        padding-bottom: 1em;
       }
-      .mobile-view {
-        display: none;
-      }
-    }
-
-    /*----------Clients logo --------------*/
-    .clients {
-      img {
-        max-width: 60%;
-      }
-    }
-    /*-------Event Postcard---------*/
-    .postcard {
-      .postcard__text {
-        padding: 2rem 3.5rem;
-        .postcard__tagbox {
-          .red {
-            .play:hover {
-              background: #e30613;
-            }
-          }
-        }
-        .postcard__bar {
-          background-color: #e30613;
-        }
-      }
-      .postcard__text:before {
-        content: "";
-        position: absolute;
-        display: block;
-        top: -20%;
-        height: 130%;
-        width: 55px;
-      }
-    }
-    .light {
-      .postcard__text:before {
-        background: #e1e5ea;
-      }
-    }
-    .red {
-      .postcard__title:hover {
-        color: #e30613;
-      }
-    }
-    .red::before {
-      background-image: linear-gradient(
-        -30deg,
-        rgba(227, 6, 19, 0.1),
-        transparent 50%
-      );
-    }
-    .red:nth-child(2n)::before {
-      background-image: linear-gradient(
-        30deg,
-        rgba(227, 6, 19, 0.1),
-        transparent 50%
-      );
     }
   }
-  @include desktop() {
-    /*-----------Navbar-------------*/
-    .bcm-navbar {
-      .navbar-header {
-        .navbar-brand {
+  /*-----------About Section-------------*/
+  .about-section {
+    .main-body {
+      .about {
+        margin-top: 5rem;
+        .about-container {
+          .video-box {
+            padding-top: 1rem;
+            img {
+              width: 95%;
+            }
+          }
+        }
+      }
+    }
+    .show-events {
+      min-height: 50rem;
+      margin-top: 2rem;
+    }
+  }
+  /*-----------Teams Section-------------*/
+  .team {
+    .desktop-view {
+      display: block;
+      .team-about {
+        min-height: 100px;
+        padding: 10px;
+        .team-details {
+          h4 {
+            font-size: 22px;
+            margin: 0 0 10px;
+          }
+          span {
+            font-size: 13px;
+          }
+        }
+      }
+      .profile {
+        .team-members {
+          .team-desc {
+            .team-socials {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+    .mobile-view {
+      display: none;
+    }
+  }
+
+  /*----------Clients logo --------------*/
+  .clients {
+    img {
+      max-width: 60%;
+    }
+  }
+  /*-------Event Postcard---------*/
+  .postcard {
+    .postcard__img_link {
+      .postcard__img {
+        max-width: 300px;
+        max-height: 100%;
+        transition: transform 0.3s ease;
+      }
+    }
+    .postcard__text {
+      padding: 3rem;
+      width: 100%;
+      .postcard__title {
+        font-size: 2rem;
+      }
+      .postcard__tagbox {
+        justify-content: start;
+      }
+    }
+  }
+  .postcard:hover {
+    .postcard__img_link {
+      .postcard__img {
+        transform: scale(1.1);
+      }
+    }
+  }
+  .postcard:nth-child(2n + 1) {
+    flex-direction: row;
+    .postcard__text::before {
+      left: -30px !important;
+      transform: rotate(4deg);
+    }
+  }
+  .postcard:nth-child(2n + 0) {
+    flex-direction: row-reverse;
+    .postcard__text::before {
+      right: -30px !important;
+      transform: rotate(-4deg);
+    }
+  }
+  .red::before {
+    background-image: linear-gradient(
+      -80deg,
+      rgba(227, 6, 19, 0.1),
+      transparent 50%
+    );
+  }
+  .red:nth-child(2n)::before {
+    background-image: linear-gradient(
+      80deg,
+      rgba(189, 21, 11, 0.1),
+      transparent 50%
+    );
+  }
+}
+
+@media (min-width: $laptop) {
+   /*-----------Navbar-------------*/
+   .bcm-navbar {
+    .navbar-header {
+      .navbar-brand {
+        position: relative;
+        top: 4rem;
+        .bcm-brand-logo {
+          margin: 0;
           position: relative;
-          top: 4rem;
-          .bcm-brand-logo {
-            margin: 0;
-            position: relative;
-            top: 130%;
-          }
-        }
-      }
-      .navbar-collapse {
-        .pullright {
-          float: right;
+          top: 130%;
         }
       }
     }
-    /*----------Home Slider--------------*/
-    .carousel {
-      .carousel-inner {
-        .item {
-          .carousel-caption {
-            padding-bottom: 350px;
-            h1 {
-              font-size: 50px;
-            }
-            h3 {
-              font-size: 18px;
-            }
-            p {
-              a {
-                padding: 10px 25px;
-              }
+    .navbar-collapse {
+      .pullright {
+        float: right;
+      }
+    }
+  }
+  /*----------Home Slider--------------*/
+  .carousel {
+    .carousel-inner {
+      .item {
+        .carousel-caption {
+          padding-bottom: 350px;
+          h1 {
+            font-size: 50px;
+          }
+          h3 {
+            font-size: 18px;
+          }
+          p {
+            a {
+              padding: 10px 25px;
             }
           }
         }
       }
     }
-    /*----------Footer--------------*/
-    .bcm-footer {
-      .footer-center {
-        ul {
-          display: contents;
-          justify-content: end;
-          padding-top: 1em;
-          li {
-            p {
-              line-height: 1.2em;
-              padding-top: 1em;
-              text-align: center;
-              padding-bottom: 1em;
-            }
-          }
-        }
-      }
-      .footer-right {
-        display: block;
+  }
+  /*----------Footer--------------*/
+  .bcm-footer {
+    .footer-center {
+      ul {
+        display: contents;
+        justify-content: end;
         padding-top: 1em;
-        ul {
-          padding-inline-start: 0px;
-          padding-bottom: 1em;
+        li {
+          p {
+            line-height: 1.2em;
+            padding-top: 1em;
+            text-align: center;
+            padding-bottom: 1em;
+          }
         }
       }
     }
-    /*-----------About Section-------------*/
-    .about-section {
-      .main-body {
-        .about {
-          margin-top: 5rem;
-          .about-container {
-            .video-box {
-              padding-top: 9rem;
-              img {
-                width: 90%;
-              }
+    .footer-right {
+      display: block;
+      padding-top: 1em;
+      ul {
+        padding-inline-start: 0px;
+        padding-bottom: 1em;
+      }
+    }
+  }
+  /*-----------About Section-------------*/
+  .about-section {
+    .main-body {
+      .about {
+        margin-top: 5rem;
+        .about-container {
+          .video-box {
+            padding-top: 9rem;
+            img {
+              width: 90%;
             }
           }
         }
       }
-      .show-events {
-        min-height: 50rem;
-        margin-top: 13rem;
-      }
     }
-    /*-----------Teams Section-------------*/
-    .team {
-      .desktop-view {
-        display: block;
-        .team-about {
-          min-height: 495px;
-          padding: 10px;
-          .team-details {
-            h4 {
-              font-size: 22px;
-              margin: 0 0 10px;
-            }
-            span {
-              font-size: 13px;
-            }
+    .show-events {
+      min-height: 50rem;
+      margin-top: 13rem;
+    }
+  }
+  /*-----------Teams Section-------------*/
+  .team {
+    .desktop-view {
+      display: block;
+      .team-about {
+        min-height: 495px;
+        padding: 10px;
+        .team-details {
+          h4 {
+            font-size: 22px;
+            margin: 0 0 10px;
           }
-        }
-        .profile {
-          .team-members {
-            .team-desc {
-              .team-socials {
-                display: block;
-              }
-            }
+          span {
+            font-size: 13px;
           }
         }
       }
-      .mobile-view {
-        display: none;
-      }
-    }
-
-    /*----------Clients logo --------------*/
-    .clients {
-      img {
-        max-width: 60%;
-      }
-    }
-    /*-------Event Postcard---------*/
-    .postcard {
-      .postcard__text {
-        padding: 2rem 3.5rem;
-        .postcard__tagbox {
-          .red {
-            .play:hover {
-              background: #e30613;
+      .profile {
+        .team-members {
+          .team-desc {
+            .team-socials {
+              display: block;
             }
           }
         }
-        .postcard__bar {
-          background-color: #e30613;
-        }
-      }
-      .postcard__text:before {
-        content: "";
-        position: absolute;
-        display: block;
-        top: -20%;
-        height: 130%;
-        width: 55px;
       }
     }
-    .light {
-      .postcard__text:before {
-        background: #e1e5ea;
-      }
-    }
-    .red {
-      .postcard__title:hover {
-        color: #e30613;
-      }
-    }
-    .red::before {
-      background-image: linear-gradient(
-        -30deg,
-        rgba(227, 6, 19, 0.1),
-        transparent 50%
-      );
-    }
-    .red:nth-child(2n)::before {
-      background-image: linear-gradient(
-        30deg,
-        rgba(227, 6, 19, 0.1),
-        transparent 50%
-      );
+    .mobile-view {
+      display: none;
     }
   }
 
+  /*----------Clients logo --------------*/
+  .clients {
+    img {
+      max-width: 60%;
+    }
+  }
+  /*-------Event Postcard---------*/
+  .postcard {
+    .postcard__text {
+      padding: 2rem 3.5rem;
+      .postcard__tagbox {
+        .red {
+          .play:hover {
+            background: #e30613;
+          }
+        }
+      }
+      .postcard__bar {
+        background-color: #e30613;
+      }
+    }
+    .postcard__text:before {
+      content: "";
+      position: absolute;
+      display: block;
+      top: -20%;
+      height: 130%;
+      width: 55px;
+    }
+  }
+  .light {
+    .postcard__text:before {
+      background: #e1e5ea;
+    }
+  }
+  .red {
+    .postcard__title:hover {
+      color: #e30613;
+    }
+  }
+  .red::before {
+    background-image: linear-gradient(
+      -30deg,
+      rgba(227, 6, 19, 0.1),
+      transparent 50%
+    );
+  }
+  .red:nth-child(2n)::before {
+    background-image: linear-gradient(
+      30deg,
+      rgba(227, 6, 19, 0.1),
+      transparent 50%
+    );
+  }
+}
+
+@media (min-width: $desktop) {
+   /*-----------Navbar-------------*/
+   .bcm-navbar {
+    .navbar-header {
+      .navbar-brand {
+        position: relative;
+        top: 4rem;
+        .bcm-brand-logo {
+          margin: 0;
+          position: relative;
+          top: 130%;
+        }
+      }
+    }
+    .navbar-collapse {
+      .pullright {
+        float: right;
+      }
+    }
+  }
+  /*----------Home Slider--------------*/
+  .carousel {
+    .carousel-inner {
+      .item {
+        .carousel-caption {
+          padding-bottom: 350px;
+          h1 {
+            font-size: 50px;
+          }
+          h3 {
+            font-size: 18px;
+          }
+          p {
+            a {
+              padding: 10px 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+  /*----------Footer--------------*/
+  .bcm-footer {
+    .footer-center {
+      ul {
+        display: contents;
+        justify-content: end;
+        padding-top: 1em;
+        li {
+          p {
+            line-height: 1.2em;
+            padding-top: 1em;
+            text-align: center;
+            padding-bottom: 1em;
+          }
+        }
+      }
+    }
+    .footer-right {
+      display: block;
+      padding-top: 1em;
+      ul {
+        padding-inline-start: 0px;
+        padding-bottom: 1em;
+      }
+    }
+  }
+  /*-----------About Section-------------*/
+  .about-section {
+    .main-body {
+      .about {
+        margin-top: 5rem;
+        .about-container {
+          .video-box {
+            padding-top: 9rem;
+            img {
+              width: 90%;
+            }
+          }
+        }
+      }
+    }
+    .show-events {
+      min-height: 50rem;
+      margin-top: 13rem;
+    }
+  }
+  /*-----------Teams Section-------------*/
+  .team {
+    .desktop-view {
+      display: block;
+      .team-about {
+        min-height: 495px;
+        padding: 10px;
+        .team-details {
+          h4 {
+            font-size: 22px;
+            margin: 0 0 10px;
+          }
+          span {
+            font-size: 13px;
+          }
+        }
+      }
+      .profile {
+        .team-members {
+          .team-desc {
+            .team-socials {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+    .mobile-view {
+      display: none;
+    }
+  }
+
+  /*----------Clients logo --------------*/
+  .clients {
+    img {
+      max-width: 60%;
+    }
+  }
+  /*-------Event Postcard---------*/
+  .postcard {
+    .postcard__text {
+      padding: 2rem 3.5rem;
+      .postcard__tagbox {
+        .red {
+          .play:hover {
+            background: #e30613;
+          }
+        }
+      }
+      .postcard__bar {
+        background-color: #e30613;
+      }
+    }
+    .postcard__text:before {
+      content: "";
+      position: absolute;
+      display: block;
+      top: -20%;
+      height: 130%;
+      width: 55px;
+    }
+  }
+  .light {
+    .postcard__text:before {
+      background: #e1e5ea;
+    }
+  }
+  .red {
+    .postcard__title:hover {
+      color: #e30613;
+    }
+  }
+  .red::before {
+    background-image: linear-gradient(
+      -30deg,
+      rgba(227, 6, 19, 0.1),
+      transparent 50%
+    );
+  }
+  .red:nth-child(2n)::before {
+    background-image: linear-gradient(
+      30deg,
+      rgba(227, 6, 19, 0.1),
+      transparent 50%
+    );
+  }
+}
+
+  
