@@ -142,4 +142,10 @@ dist
 # SvelteKit build / generate output
 .svelte-kit
 
+# Ignore SASS config files
+.sass-cache
+
+# Ignore SASS map file
+.css.map
+
 # End of https://www.toptal.com/developers/gitignore/api/node
