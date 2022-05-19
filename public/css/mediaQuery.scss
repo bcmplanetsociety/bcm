@@ -345,7 +345,7 @@ $desktop: 1200px;
     /*----------Clients logo --------------*/
     .clients {
       img {
-        max-width: 40%;
+        max-width: 60%;
       }
     }
   }
@@ -482,6 +482,7 @@ $desktop: 1200px;
     }
     /*-------Event Postcard---------*/
     .postcard {
+      flex-wrap: inherit;
       .postcard__img_link {
         .postcard__img {
           max-width: 300px;
@@ -662,6 +663,7 @@ $desktop: 1200px;
     }
     /*-------Event Postcard---------*/
     .postcard {
+      flex-wrap: inherit;
       .postcard__text {
         padding: 2rem 3.5rem;
         .postcard__tagbox {
@@ -835,8 +837,14 @@ $desktop: 1200px;
     }
     /*-------Event Postcard---------*/
     .postcard {
+      flex-wrap: inherit;
       .postcard__text {
         padding: 2rem 3.5rem;
+        .postcard__title{
+            h1{
+              color:inherit;
+            }
+        }
         .postcard__tagbox {
           .red {
             .play:hover {
