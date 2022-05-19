@@ -142,7 +142,7 @@ $desktop: 1200px;
       }
       .show-events {
         min-height: 35rem;
-        margin-top: 0rem;
+        margin-top: 5rem;
         margin-bottom: 2rem;
       }
     }
@@ -195,6 +195,13 @@ $desktop: 1200px;
       img {
         max-width: 40%;
       }
+    }
+    /*------------common ---------------*/
+    .section-margin {
+      margin: 2rem 0rem;
+    }
+    .bcm-mr-bottom{
+      margin-bottom: 12rem;
     }
   }
   @include normal-mobile {
@@ -347,6 +354,13 @@ $desktop: 1200px;
       img {
         max-width: 60%;
       }
+    }
+    /*------------common ---------------*/
+    .section-margin {
+      margin: 2rem 0rem;
+    }
+    .bcm-mr-bottom{
+      margin-bottom: 12rem;
     }
   }
   @include tab {
@@ -536,6 +550,13 @@ $desktop: 1200px;
         transparent 50%
       );
     }
+    /*------------common ---------------*/
+    .section-margin {
+      margin: 4rem 0rem;
+    }
+    .bcm-mr-bottom{
+      margin-bottom: 4rem;
+    }
   }
   @include laptop {
     /*-----------Navbar-------------*/
@@ -709,6 +730,13 @@ $desktop: 1200px;
         rgba(227, 6, 19, 0.1),
         transparent 50%
       );
+    }
+    /*------------common ---------------*/
+    .section-margin {
+      margin: 4rem 0rem;
+    }
+    .bcm-mr-bottom{
+      margin-bottom: 4rem;
     }
   }
   @include desktop {
@@ -888,6 +916,13 @@ $desktop: 1200px;
         rgba(227, 6, 19, 0.1),
         transparent 50%
       );
+    }
+    /*------------common ---------------*/
+    .section-margin {
+      margin: 4rem 0rem;
+    }
+    .bcm-mr-bottom{
+      margin-bottom: 4rem;
     }
   }
 

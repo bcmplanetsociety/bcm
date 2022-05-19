@@ -65,7 +65,7 @@
               position: relative;
               padding-right: calc(var(--bs-gutter-x) * 0.5);
               padding-left: 3rem;
-              padding-top: 9rem;
+              padding-top: 1rem;
               img {
                 padding: 15px 0;
               }
@@ -238,7 +238,6 @@
       .show-events {
         background-color: #000;
         min-height: 50rem;
-        margin-top: 13rem;
         padding: 1rem;
         border-radius: 10px;
         h2 {
