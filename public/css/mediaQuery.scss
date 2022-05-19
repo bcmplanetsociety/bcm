@@ -196,6 +196,10 @@ $desktop: 1200px;
         max-width: 40%;
       }
     }
+    /*-------Event Postcard---------*/
+    .postcard {
+      flex-wrap: wrap;
+    }
     /*------------common ---------------*/
     .section-margin {
       margin: 2rem 0rem;
@@ -354,6 +358,10 @@ $desktop: 1200px;
       img {
         max-width: 60%;
       }
+    }
+    /*-------Event Postcard---------*/
+    .postcard {
+      flex-wrap: wrap;
     }
     /*------------common ---------------*/
     .section-margin {
