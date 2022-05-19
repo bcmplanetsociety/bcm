@@ -651,6 +651,9 @@
             flex-direction: column;
             .small {
               font-size: 80%;
+              .single-event-view{
+                font-size:1.2rem;
+              }
             }
             .postcard__title {
               font-size: 1.75rem;
