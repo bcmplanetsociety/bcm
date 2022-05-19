@@ -133,11 +133,16 @@ form label:after {
 	content: '*';
 	padding-left: 0.2rem;
 }
-
-.ptsBox .arrowUp {
-	background: #000;
-	width: 55px;
-	height: 55px;
+/*---------Page ScrollUp---------*/
+.ptsBox{
+	a{
+		.arrowUp {
+			background: #000;
+			color: #fff;
+			width: 55px;
+			height: 55px;
+		}
+	}
 }
 
 #successMessage {
