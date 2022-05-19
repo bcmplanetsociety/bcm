@@ -496,14 +496,15 @@
       .bcm .bcm_events .view-events .postcard .postcard__text .small {
         font-size: 80%; }
       .bcm .bcm_events .view-events .postcard .postcard__text .postcard__title {
-        font-size: 1.75rem; }
-      .bcm .bcm_events .view-events .postcard .postcard__text .postcard__bar {
+        font-size: 1.75rem;
         width: 50px;
         height: 10px;
         margin: 10px 0;
         border-radius: 5px;
         background-color: #424242;
         transition: width 0.2s ease; }
+        .bcm .bcm_events .view-events .postcard .postcard__text .postcard__title a {
+          color: inherit; }
       .bcm .bcm_events .view-events .postcard .postcard__text .postcard__preview-txt {
         overflow: hidden;
         text-overflow: ellipsis;

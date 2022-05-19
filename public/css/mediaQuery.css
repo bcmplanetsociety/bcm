@@ -158,7 +158,7 @@
         font-size: 9px; }
   /*----------Clients logo --------------*/
   .clients img {
-    max-width: 40%; } }
+    max-width: 60%; } }
 
 @media (min-width: 768px) {
   /*-----------Navbar-------------*/
@@ -231,17 +231,19 @@
   .clients img {
     max-width: 60%; }
   /*-------Event Postcard---------*/
-  .postcard .postcard__img_link .postcard__img {
-    max-width: 300px;
-    max-height: 100%;
-    transition: transform 0.3s ease; }
-  .postcard .postcard__text {
-    padding: 3rem;
-    width: 100%; }
-    .postcard .postcard__text .postcard__title {
-      font-size: 2rem; }
-    .postcard .postcard__text .postcard__tagbox {
-      justify-content: start; }
+  .postcard {
+    flex-wrap: inherit; }
+    .postcard .postcard__img_link .postcard__img {
+      max-width: 300px;
+      max-height: 100%;
+      transition: transform 0.3s ease; }
+    .postcard .postcard__text {
+      padding: 3rem;
+      width: 100%; }
+      .postcard .postcard__text .postcard__title {
+        font-size: 2rem; }
+      .postcard .postcard__text .postcard__tagbox {
+        justify-content: start; }
   .postcard:hover .postcard__img_link .postcard__img {
     transform: scale(1.1); }
   .postcard:nth-child(2n + 1) {
@@ -323,19 +325,21 @@
   .clients img {
     max-width: 60%; }
   /*-------Event Postcard---------*/
-  .postcard .postcard__text {
-    padding: 2rem 3.5rem; }
-    .postcard .postcard__text .postcard__tagbox .red .play:hover {
-      background: #e30613; }
-    .postcard .postcard__text .postcard__bar {
-      background-color: #e30613; }
-  .postcard .postcard__text:before {
-    content: "";
-    position: absolute;
-    display: block;
-    top: -20%;
-    height: 130%;
-    width: 55px; }
+  .postcard {
+    flex-wrap: inherit; }
+    .postcard .postcard__text {
+      padding: 2rem 3.5rem; }
+      .postcard .postcard__text .postcard__tagbox .red .play:hover {
+        background: #e30613; }
+      .postcard .postcard__text .postcard__bar {
+        background-color: #e30613; }
+    .postcard .postcard__text:before {
+      content: "";
+      position: absolute;
+      display: block;
+      top: -20%;
+      height: 130%;
+      width: 55px; }
   .light .postcard__text:before {
     background: #e1e5ea; }
   .red .postcard__title:hover {
@@ -409,19 +413,23 @@
   .clients img {
     max-width: 60%; }
   /*-------Event Postcard---------*/
-  .postcard .postcard__text {
-    padding: 2rem 3.5rem; }
-    .postcard .postcard__text .postcard__tagbox .red .play:hover {
-      background: #e30613; }
-    .postcard .postcard__text .postcard__bar {
-      background-color: #e30613; }
-  .postcard .postcard__text:before {
-    content: "";
-    position: absolute;
-    display: block;
-    top: -20%;
-    height: 130%;
-    width: 55px; }
+  .postcard {
+    flex-wrap: inherit; }
+    .postcard .postcard__text {
+      padding: 2rem 3.5rem; }
+      .postcard .postcard__text .postcard__title h1 {
+        color: inherit; }
+      .postcard .postcard__text .postcard__tagbox .red .play:hover {
+        background: #e30613; }
+      .postcard .postcard__text .postcard__bar {
+        background-color: #e30613; }
+    .postcard .postcard__text:before {
+      content: "";
+      position: absolute;
+      display: block;
+      top: -20%;
+      height: 130%;
+      width: 55px; }
   .light .postcard__text:before {
     background: #e1e5ea; }
   .red .postcard__title:hover {
