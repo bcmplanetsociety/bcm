@@ -625,7 +625,7 @@
     .bcm_events {
       .view-events {
         .postcard {
-          flex-wrap: wrap;
+          // flex-wrap: wrap;
           display: flex;
           box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
           border-radius: 10px;
@@ -637,7 +637,7 @@
             color: inherit;
             display: contents;
             .postcard__img {
-              max-height: 180px;
+              // max-height: 180px;
               width: 100%;
               object-fit: cover;
               position: relative;

@@ -497,6 +497,7 @@ $desktop: 1200px;
     /*-------Event Postcard---------*/
     .postcard {
       flex-wrap: inherit;
+      margin-bottom: 8rem;
       .postcard__img_link {
         .postcard__img {
           max-width: 300px;
@@ -685,6 +686,7 @@ $desktop: 1200px;
     /*-------Event Postcard---------*/
     .postcard {
       flex-wrap: inherit;
+      margin-bottom: 8rem;
       .postcard__text {
         padding: 2rem 3.5rem;
         .postcard__tagbox {
