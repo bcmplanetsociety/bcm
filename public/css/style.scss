@@ -710,7 +710,7 @@
           right: 0;
           bottom: 0;
           left: 0;
-          background-image: linear-gradient(-70deg, #424242, transparent 50%);
+          //background-image: linear-gradient(-70deg, #424242, transparent 50%);
           opacity: 1;
           border-radius: 10px;
         }
@@ -721,6 +721,9 @@
         }
         .light {
           background-color: #e1e5ea;
+        }
+        .red:nth-child(2n)::before{
+          background-image: linear-gradient(30deg, rgba(227, 6, 19, 0.1), transparent 50%);
         }
       }
     }
