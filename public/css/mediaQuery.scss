@@ -210,10 +210,13 @@ $desktop: 1200px;
     /*----------------- Login Page ---------------------------*/
 .bcm_login{
   ul{
+    margin: 0;
+    text-align: -webkit-center;
+    padding: 0;
     li{
       a{
-         text-align:center;
-		 justify-content:center;
+    //      text-align:center;
+		//  justify-content:center;
       }
     }
   }
@@ -383,10 +386,13 @@ $desktop: 1200px;
     }
     .bcm_login{
       ul{
+        margin: 0;
+        text-align: -webkit-center;
+        padding: 0;
         li{
           a{
-             text-align:center;
-         justify-content:center;
+        //      text-align:center;
+        //  justify-content:center;
           }
         }
       }
@@ -587,6 +593,19 @@ $desktop: 1200px;
     .bcm-mr-bottom{
       margin-bottom: 4rem;
     }
+    .bcm_login{
+      ul{
+        margin: 0;
+        text-align: -webkit-auto;
+        padding: 0rem 2rem 0rem 5rem;
+        li{
+          a{
+        //      text-align:center;
+        //  justify-content:center;
+          }
+        }
+      }
+      }
   }
   @include laptop {
     /*-----------Navbar-------------*/
@@ -769,6 +788,19 @@ $desktop: 1200px;
     .bcm-mr-bottom{
       margin-bottom: 4rem;
     }
+    .bcm_login{
+      ul{
+        margin: 0;
+        text-align: -webkit-auto;
+        padding: 0rem 2rem 0rem 5rem;
+        li{
+          a{
+        //      text-align:center;
+        //  justify-content:center;
+          }
+        }
+      }
+      }
   }
   @include desktop {
     /*-----------Navbar-------------*/
@@ -955,5 +987,18 @@ $desktop: 1200px;
     .bcm-mr-bottom{
       margin-bottom: 4rem;
     }
+    .bcm_login{
+      ul{
+        margin: 0;
+        text-align: -webkit-auto;
+        padding: 0rem 2rem 0rem 5rem;
+        li{
+          a{
+        //      text-align:center;
+        //  justify-content:center;
+          }
+        }
+      }
+      }
   }
 
