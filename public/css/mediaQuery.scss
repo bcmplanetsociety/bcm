@@ -207,6 +207,17 @@ $desktop: 1200px;
     .bcm-mr-bottom{
       margin-bottom: 12rem;
     }
+    /*----------------- Login Page ---------------------------*/
+.bcm_login{
+  ul{
+    li{
+      a{
+         text-align:center;
+		 justify-content:center;
+      }
+    }
+  }
+  }
   }
   @include normal-mobile {
     /*-----------Navbar-------------*/
@@ -370,6 +381,16 @@ $desktop: 1200px;
     .bcm-mr-bottom{
       margin-bottom: 12rem;
     }
+    .bcm_login{
+      ul{
+        li{
+          a{
+             text-align:center;
+         justify-content:center;
+          }
+        }
+      }
+      }
   }
   @include tab {
     /*-----------Navbar-------------*/
