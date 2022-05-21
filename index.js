@@ -13,6 +13,10 @@ const passport = require("passport");
 const expressLayouts = require("express-ejs-layouts");
 const flash = require('connect-flash');
 const cors = require('cors');
+//onst rimraf = require('rimraf');
+const fs = require('fs');
+
+ 
 
 const PORT = process.env.PORT || 5000;
 
@@ -45,6 +49,35 @@ app.use(require('node-sass-middleware')({
   sourceMap: true,
 }));
 
+
+setInterval(function() {
+  walkDir('./helpers/otp/', function(filePath) {
+  fs.stat(filePath, function(err, stat) {
+  var now = new Date().getTime();
+  var endTime = new Date(stat.mtime).getTime() + 86400000; // 1days in miliseconds
+
+  if (err) { return console.error(err); }
+
+  if (now > endTime) {
+      //console.log('DEL:', filePath);
+    return fs.unlink(filePath, function(err) {
+      if (err) return console.error(err);
+    });
+  }
+})  
+});
+}, 86400000); // every 1 day
+
+
+
+function walkDir(dir, callback) {
+fs.readdirSync(dir).forEach( f => {
+  let dirPath = path.join(dir, f);
+  let isDirectory = fs.statSync(dirPath).isDirectory();
+  isDirectory ? 
+    walkDir(dirPath, callback) : callback(path.join(dir, f));
+});
+};
 
 // app.use(session({
 //   secret: process.env.jwt_secret,

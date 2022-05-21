@@ -781,7 +781,7 @@
       margin-left: 0.25rem;
       border-right: 1px solid #ddd;
     }
-    /*-------------------------------------------
+  /*-------------------------------------------
   Other
   ---------------------------------------------*/
     table {
@@ -805,5 +805,46 @@
     .bcm_view-recipt ul li {
       list-style-type: none;
     }
+
+ /*-------------------------------------------
+  Login Page
+  ---------------------------------------------*/
+.bcm_login{
+  .login-options{
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab,#ff8a00, #e52e71);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 15vh;
+  margin-top: 2rem;
+  ul{
+    li{
+      display: -webkit-inline-box;
+      list-style-type: none;
+      a{
+        color:#fff;
+        line-height: 5rem;
+      }
+    }
+    .li-position-right{
+      float:right;
+      position: relative;
+      padding-right: 4rem;
+    }
+  }
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  }
+}
+
+
   }
   

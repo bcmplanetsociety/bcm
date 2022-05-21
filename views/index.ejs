@@ -5,6 +5,13 @@
          <span aria-hidden="true">×</span>
    </div>
    <% } %>
+   <% if(message.PasswordChangeSuccess){ %>
+      <div class="alert alert-success" role="alert" id="successMessage">
+          <%= message.PasswordChangeSuccess %>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">×</span>
+      </div>
+      <% } %>
    <style>
       @media (min-width: 1500px) {
       .bcm-container {
