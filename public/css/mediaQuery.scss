@@ -209,6 +209,8 @@ $desktop: 1200px;
     }
     /*----------------- Login Page ---------------------------*/
 .bcm_login{
+  .login-options{
+    height: 15vh;
   ul{
     margin: 0;
     text-align: -webkit-center;
@@ -221,6 +223,7 @@ $desktop: 1200px;
     }
   }
   }
+}
   }
   @include normal-mobile {
     /*-----------Navbar-------------*/
@@ -385,6 +388,8 @@ $desktop: 1200px;
       margin-bottom: 12rem;
     }
     .bcm_login{
+      .login-options{
+        height: 15vh;
       ul{
         margin: 0;
         text-align: -webkit-center;
@@ -397,6 +402,7 @@ $desktop: 1200px;
         }
       }
       }
+    }
   }
   @include tab {
     /*-----------Navbar-------------*/
@@ -594,6 +600,8 @@ $desktop: 1200px;
       margin-bottom: 4rem;
     }
     .bcm_login{
+      .login-options{
+        height: 8vh;
       ul{
         margin: 0;
         text-align: -webkit-auto;
@@ -605,6 +613,7 @@ $desktop: 1200px;
           }
         }
       }
+    }
       }
   }
   @include laptop {
@@ -789,6 +798,8 @@ $desktop: 1200px;
       margin-bottom: 4rem;
     }
     .bcm_login{
+      .login-options{
+        height: 8vh;
       ul{
         margin: 0;
         text-align: -webkit-auto;
@@ -799,6 +810,7 @@ $desktop: 1200px;
         //  justify-content:center;
           }
         }
+      }
       }
       }
   }
@@ -988,6 +1000,8 @@ $desktop: 1200px;
       margin-bottom: 4rem;
     }
     .bcm_login{
+      .login-options{
+        height: 8vh;
       ul{
         margin: 0;
         text-align: -webkit-auto;
@@ -1000,5 +1014,6 @@ $desktop: 1200px;
         }
       }
       }
+    }
   }
 
