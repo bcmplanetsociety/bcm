@@ -207,6 +207,9 @@ $desktop: 1200px;
     .bcm-mr-bottom{
       margin-bottom: 12rem;
     }
+    table {
+      display: block;
+    }
     /*----------------- Login Page ---------------------------*/
 .bcm_login{
   .login-options{
@@ -386,6 +389,9 @@ $desktop: 1200px;
     }
     .bcm-mr-bottom{
       margin-bottom: 12rem;
+    }
+    table {
+      display: block;
     }
     .bcm_login{
       .login-options{
@@ -599,6 +605,9 @@ $desktop: 1200px;
     .bcm-mr-bottom{
       margin-bottom: 4rem;
     }
+    table {
+      display: inline-table;
+  }
     .bcm_login{
       .login-options{
         height: 8vh;
@@ -798,6 +807,9 @@ $desktop: 1200px;
     .bcm-mr-bottom{
       margin-bottom: 4rem;
     }
+    table {
+      display: inline-table;
+  }
     .bcm_login{
       .login-options{
         height: 8vh;
@@ -1001,6 +1013,9 @@ $desktop: 1200px;
     .bcm-mr-bottom{
       margin-bottom: 4rem;
     }
+    table {
+      display: inline-table;
+  }
     .bcm_login{
       .login-options{
         height: 8vh;
