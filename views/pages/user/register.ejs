@@ -1,4 +1,4 @@
-
+<%- include('../../partials/header'); %> 
      <% if(typeof alert != 'undefined') { %>
         <% alert.forEach(function(error) { %>
             <div class="alert alert-warning" id ="alertMessage" role="alert">
@@ -39,7 +39,7 @@
        </form>
     </div>
  </div>
-
+ <%- include('../../partials/footer'); %>
 <script type="text/javascript">
    setTimeout(function () {
        // Closing the alert

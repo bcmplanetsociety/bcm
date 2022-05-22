@@ -1,3 +1,4 @@
+<%- include('../../partials/header'); %>
 <% if(message.signupSuccess){ %>
     <div class="alert alert-success" role="alert" id="successMessage">
         <%= message.signupSuccess %>
@@ -17,6 +18,7 @@
         </div>
     </div>
 </div>
+<%- include('../../partials/footer'); %>
 <script type="text/javascript">
     setTimeout(function () {
         // Closing the alert

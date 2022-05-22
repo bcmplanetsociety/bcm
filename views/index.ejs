@@ -1,3 +1,4 @@
+<%- include('./partials/header'); %> 
 <% if(message.loginSuccess){ %>
    <div class="alert alert-success" role="alert" id="successMessage">
        <%= message.loginSuccess %>
@@ -587,6 +588,7 @@
    </section>
    <div class="section-margin bcm-mr-bottom"></div>
    <!-- End Clients Section -->
+   <%- include('./partials/footer'); %>
    <script type="text/javascript">
       setTimeout(function () {
           // Closing the alert

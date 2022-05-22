@@ -1,3 +1,4 @@
+<%- include('../partials/header'); %> 
  <% if(message.eventFails){ %>
    <div class="alert alert-danger" role="alert" id="errorMessage">
        <%= message.eventFails %>
@@ -50,3 +51,4 @@
           $(' #errorMessage').alert('close');
       },3000);
    </script> 
+   <%- include('../../partials/footer'); %>

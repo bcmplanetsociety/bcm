@@ -1,3 +1,4 @@
+<%- include('../../partials/header'); %> 
 <% if(message.profileSuccess){ %>
    <div class="alert alert-success" role="alert" id="successMessage">
       <%= message.profileSuccess %>
@@ -133,6 +134,7 @@
       </div>
    </div>
    <% } %>
+   <%- include('../../partials/footer'); %>
    <script type="text/javascript">
       setTimeout(function () {
           // Closing the alert

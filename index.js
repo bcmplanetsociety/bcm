@@ -1,27 +1,17 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
-const authRoutes = require("./routes/authRoutes");
-const receiptRoutes = require("./routes/receipt");
-const eventRoutes = require("./routes/event");
-const indexRoute = require("./routes/index");
-//const testRoute = require("./routes/test");
 require("dotenv").config();
-//const session = require("cookie-session");
 const session = require("express-session");
 const passport = require("passport");
 const expressLayouts = require("express-ejs-layouts");
 const flash = require('connect-flash');
 const cors = require('cors');
-//onst rimraf = require('rimraf');
 const fs = require('fs');
-
- 
 
 const PORT = process.env.PORT || 5000;
 
 const app = express();
-
 
 app.use(expressLayouts);
 //setting template engine
@@ -49,7 +39,7 @@ app.use(require('node-sass-middleware')({
   sourceMap: true,
 }));
 
-
+//Empty otp folder files after 24 hours.
 setInterval(function() {
   walkDir('./helpers/otp/', function(filePath) {
   fs.stat(filePath, function(err, stat) {
@@ -66,9 +56,7 @@ setInterval(function() {
   }
 })  
 });
-}, 86400000); // every 1 day
-
-
+}, 18000000); // run script every 5 hours
 
 function walkDir(dir, callback) {
 fs.readdirSync(dir).forEach( f => {
@@ -79,12 +67,7 @@ fs.readdirSync(dir).forEach( f => {
 });
 };
 
-// app.use(session({
-//   secret: process.env.jwt_secret,
-//   resave: false,
-//   saveUninitialized: true,
-//   cookie: { maxAge: 86400000, secure: true  },
-// }))
+//Express Session
 app.use(session({
   secret: process.env.jwt_secret,
   resave: false,
@@ -105,10 +88,19 @@ app.use(function (req, res, next) {
   res.locals.user = req.user || null;
   next();
 });
+
+//routes
+const authRoutes = require("./routes/authRoutes");
+const receiptRoutes = require("./routes/receipt");
+const eventRoutes = require("./routes/event");
+const indexRoute = require("./routes/index");
+const helpRoute = require("./routes/helping");
+//const testRoute = require("./routes/test");
 app.use(receiptRoutes);
 app.use(authRoutes);
 app.use(eventRoutes);
 app.use(indexRoute);
+app.use(helpRoute);
 //app.use(testRoute);
 
 app.get('/error', async (req, res) => {

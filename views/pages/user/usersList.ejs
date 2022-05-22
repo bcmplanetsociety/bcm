@@ -1,9 +1,9 @@
-
+<%- include('../../partials/header'); %> 
 <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.2.2/css/fixedHeader.dataTables.min.css">
 <style>
-   td {
-	font-size: 1.4em;
+   td, input, th {
+      font-size: inherit !important;
 }
 th.sorting {
     background: #e30613;
@@ -117,11 +117,15 @@ th.sorting {
             <% }) %>
          </tbody>
       </table>
-      
    </div>
 </div>
-
-
+<%- include('../../partials/footer'); %>
+<script>
+          //#viewUser
+          $(document).ready(function () {
+    $('#viewUser').DataTable();
+});
+      </script>
 <script type="text/javascript">
    setTimeout(function () {
        // Closing the alert
