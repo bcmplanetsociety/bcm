@@ -148,4 +148,7 @@ dist
 # Ignore SASS map file
 .css.map
 
+# Ignore CSS file
+.css
+
 # End of https://www.toptal.com/developers/gitignore/api/node
