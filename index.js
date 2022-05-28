@@ -94,12 +94,14 @@ const receiptRoutes = require("./routes/receipt");
 const eventRoutes = require("./routes/event");
 const indexRoute = require("./routes/index");
 const helpRoute = require("./routes/helping");
+const userRelated = require("./routes/userRelated");
 //const testRoute = require("./routes/test");
 app.use(receiptRoutes);
 app.use(authRoutes);
 app.use(eventRoutes);
 app.use(indexRoute);
 app.use(helpRoute);
+app.use(userRelated);
 //app.use(testRoute);
 
 app.get('/error', async (req, res) => {

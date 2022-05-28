@@ -42,7 +42,7 @@
          float: right;
        }
        .open{
-          a{
+          a, a:hover,a:active, a:focus{
             background-color:#000;
             color:#fff;
           }

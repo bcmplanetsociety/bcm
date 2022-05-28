@@ -1,0 +1,136 @@
+<%- include('../../partials/header'); %>
+<style>
+   .slide3-label {
+   margin-bottom: 4rem;
+   font-weight: 600;
+   }
+   .nav-tabs>li.active>a {
+   color: #e30613;
+   }
+   .nav-tabs>li>a {
+   color: #000;
+   }
+</style>
+<section class="service-form">
+   <div class="container">
+   <ul class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="#tab1"><span class="round-tabs one">
+         <i class="fas fa-store"></i>
+         Requirement
+         </span></a>
+      </li>
+      <li><a data-toggle="tab" href="#tab2"><span class="round-tabs two">
+         <i class="fas fa-users-cog"></i>
+         Service
+         </span></a>
+      </li>
+   </ul>
+   <div class="tab-content">
+      <div id="tab1" class="tab-pane fade in active">
+         <form action="/createRequirement" method="POST">
+            <h2>Create a Requirement:</h2>
+            <div class="form-group">
+               <input type="text" class="form-control" placeholder="Product Name"
+                  name="productName">
+            </div>
+            <div class="form-group">
+               <input type="text" class="form-control" placeholder="Product Quantity"
+                  name="productQuantity">
+            </div>
+            <div class="form-group">
+               <input type="text" class="form-control" placeholder="product Color"
+                  name="productColor">
+            </div>
+            <div class="form-group">
+               <label for="slider3" class="slide3-label">Budget (in RS)</label>
+               <div class="slider-container">
+                  <input type="text" id="slider3" class="slider" name="budget" />
+               </div>
+            </div>
+            <div class="form-group">
+               <textarea class="form-control" rows="3" placeholder="Description"
+                  name="description"></textarea>
+            </div>
+            <button type="submit" class="btn bcm-btn-red">Create</button>
+         </form>
+      </div>
+      <div id="tab2" class="tab-pane fade">
+         <form action="/createService" method="POST">
+            <h2>Create Service:</h2>
+            <div class="form-group">
+               <input type="text" class="form-control" placeholder="Service Name"
+                  name="serviceName">
+            </div>
+            <% if (profile.length>0) { %>
+            <% profile.map((result)=>{%>
+            <div class="form-group">
+               <input type="text" class="form-control" placeholder="Address"
+                  name="address" value="<%=result.address%>">
+            </div>
+            <div class="form-group">
+               <input type="text" class="form-control"
+                  placeholder="Mobile Number" name="phone"
+                  value="<%=result.phone%>">
+            </div>
+            <% }) %>
+            <% } else { %>
+            <div class="form-group">
+               <input type="text" class="form-control"
+                  placeholder="Address" name="address">
+            </div>
+            <div class="form-group">
+               <input type="text" class="form-control"
+                  placeholder="Mobile Number" name="phone">
+               <% } %>
+               <div class="form-group">
+                  <textarea class="form-control" rows="3"
+                     placeholder="Description"
+                     name="description"></textarea>
+               </div>
+               <button type="submit"
+                  class="btn bcm-btn-red">Create</button>
+         </form>
+         </div>
+      </div>
+   </div>
+</section>
+<%- include('../../partials/footer'); %>
+<script>
+   $(function () {
+       'use strict';
+       //Show hide forms
+       $('#requirementSelection').change(function () {
+           $('.requirementType').hide();
+           $('#' + $(this).val()).show();
+       });
+   });
+   
+   $(document).ready(function () {
+       $('#requirementSelection').on('change', function () {
+           var demovalue = $(this).val();
+           $("div.requirementType").hide();
+           $("#show" + demovalue).show();
+       });
+   });
+</script>
+<script>
+   (function () {
+       'use strict';
+   
+       var init = function () {
+           var slider3 = new rSlider({
+               target: '#slider3',
+               values: { min: 0, max: 5000 },
+               step: 10,
+               range: true,
+               set: [50, 500],
+               scale: true,
+               labels: false,
+               onChange: function (vals) {
+                   console.log(vals);
+               }
+           });
+       };
+       window.onload = init;
+   })();
+</script>

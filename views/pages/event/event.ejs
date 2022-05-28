@@ -1,4 +1,4 @@
-<%- include('../partials/header'); %> 
+<%- include('../../partials/header'); %> 
 <% if(message.eventSuccess){ %>
    <div class="alert alert-success" role="alert" id="successMessage">
        <%= message.eventSuccess %>
@@ -6,12 +6,18 @@
          <span aria-hidden="true">×</span>
    </div>
    <% } %>
+   <style>
+      td,
+   input,
+   th {
+   font-size: inherit !important;
+   }
+   </style>
 <div class="bcm_view-recipt">
    <div class="container">
       <h2>View Event:</h2>
       <% if (event.length >0) { %>
       <ul>
-         
          <li class="todo">
             <label class="table-responsive">
                <table class="table table-bordered">
