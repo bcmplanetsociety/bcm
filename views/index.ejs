@@ -1,624 +1,659 @@
 <%- include('./partials/header'); %> 
 <% if(message.loginSuccess){ %>
-   <div class="alert alert-success" role="alert" id="successMessage">
-       <%= message.loginSuccess %>
-       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-         <span aria-hidden="true">×</span>
-   </div>
-   <% } %>
-   <% if(message.PasswordChangeSuccess){ %>
-      <div class="alert alert-success" role="alert" id="successMessage">
-          <%= message.PasswordChangeSuccess %>
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">×</span>
-      </div>
-      <% } %>
-   <style>
-      @media (min-width: 1500px) {
-      .bcm-container {
-      width: 1400px;
-      padding-left: 0;
-      /* margin-right: 0; */
-      }
-      .about-container {
-      width: 1000px;
-      padding-left: 0;
-      /* margin-right: 0; */
-      }
-      }
-   </style>
-   <%- include('./components/homeSlider'); %>
-   <div class="section-margin"></div>
-   <section class="about-section">
-      <div class="container-fluid bcm-container">
+<div class="alert alert-success" role="alert" id="successMessage">
+   <%= message.loginSuccess %>
+   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">×</span>
+</div>
+<% } %>
+<% if(message.PasswordChangeSuccess){ %>
+<div class="alert alert-success" role="alert" id="successMessage">
+<%= message.PasswordChangeSuccess %>
+<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+<span aria-hidden="true">×</span>
+</div>
+<% } %>
+<style>
+@media (min-width: 1500px) {
+.bcm-container {
+width: 1400px;
+padding-left: 0;
+/* margin-right: 0; */
+}
+.about-container {
+width: 1000px;
+padding-left: 0;
+/* margin-right: 0; */
+}
+}
+</style>
+<%- include('./components/homeSlider'); %>
+<div class="section-margin"></div>
+<section class="about-section">
+<div class="container-fluid bcm-container">
+<div class="row">
+<div class="col-md-9 col-sm-12">
+<div class="main-body">
+<!-- ======= About Us Section ======= -->
+<section id="about" class="about">
+<div class="about-container" data-aos="fade-up">
+<div class="row no-gutters">
+<div class="col-lg-6 video-box">
+<img src="./images/about.jpg" class="img-responsive" alt="">
+<a href="#myModal" class="venobox play-btn mb-4" data-toggle="modal" data-vbtype="video" data-autoplay="true"></a>
+<div id="myModal" class="modal fade">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title bcm-modal-video-title">BCM Planet</h4>
+<button type="button" class="close" data-dismiss="modal">&times;</button>
+</div>
+<div class="modal-body">
+<div class="embed-responsive embed-responsive-16by9">
+<iframe id="cartoonVideo" class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/pqJbaRxS1VA" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-6 d-flex flex-column justify-content-center about-content">
+<div class="about-section-title">
+<h2>ABOUT US</h2>
+<p>"BCM Planet" is a famous soceity in Indore, in the state of Madhya Pradesh in India. It was started in the year 2018. The BCM group is focused on innovative design, superior standards of construction, customer service and Community values. BCM Projects Pvt Ltd take pride that we are not only fulfill dreams of millions of individuals with our aesthetically designed residential and commercial solutions, but we also create memories. 
+</p>
+</div>
+<div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+<div class="icon"><i class="fas fa-laptop-code"></i></div>
+<h4 class="title"><a href="">Real estate developers</a></h4>
+<p class="description">We are one of the leading real estate developers, we know that the integrity and reputation of our business rest not only on us delivering quality homes and business environments.</p>
+</div>
+<div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+<div class="icon"><i class="fas fa-map-marked-alt"></i></div>
+<h4 class="title"><a href="">Our locations</a></h4>
+<p class="description">Today, the BCM group is present in more then 11 locations in indre namely Nipania, Vijay Nagar, Navlakha, Pipliya Kumar, Bypass road Hi-Tech Townships, Integrated Townships, Group Housing, Shopping Malls, Office Spaces.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- End About Us Section -->
+<div class="section-margin"></div>
+<section class="our-amenities-section">
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-12 col-sm-12">
+<div class="text-center amenities-heading">
+<h2>OUR AMENITIES</h2>
+</div>
+<div class="featured-carousel owl-carousel">
+<div class="item">
+<div class="card">
+<div class="card-img-top">
+<img src="./images/owl/society-gym.jpg" alt="">
+</div>
+<div class="card-block">
+<h3 class="card-title">Gym</h3>
+<p class="card-text">There are many variations of passages of Lorem Ipsum available...There are many variations of passages of Lorem Ipsum available...</p>
+<a href="#" class="btn bcm-btn-red card-footer">Read More</a>
+</div>
+</div>
+</div>
+<div class="item">
+<div class="card">
+<div class="card-img-top">
+<img src="./images/owl/swimming-pool.jpg" alt=""> 
+</div>
+<div class="card-block">
+<h3 class="card-title">Swimming Pool</h3>
+<p class="card-text">There are many variations of passages of Lorem Ipsum available...There are many variations of passages of Lorem Ipsum available...</p>
+<a href="#" class="btn bcm-btn-red card-footer">Read More</a>
+</div>
+</div>
+</div>
+<div class="item">
+<div class="card">
+<div class="card-img-top">                               
+<img src="./images/owl/home-garden.jpg" alt="">
+</div>
+<div class="card-block">
+<h3 class="card-title">Garden</h3>
+<p class="card-text">There are many variations of passages of Lorem Ipsum available...There are many variations of passages of Lorem Ipsum available...</p>
+<a href="#" class="btn bcm-btn-red card-footer">Read More</a>
+</div>
+</div>
+</div>
+<div class="item">
+<div class="card">
+<div class="card-img-top">                               
+<img src="./images/owl/club-house.jpg" alt="">
+</div>
+<div class="card-block">
+<h3 class="card-title">Club House</h3>
+<p class="card-text">There are many variations of passages of Lorem Ipsum available...There are many variations of passages of Lorem Ipsum available...</p>
+<a href="#" class="btn bcm-btn-red card-footer">Read More</a>
+</div>
+</div>
+</div>
+<div class="item">
+<div class="card">
+<div class="card-img-top">                               
+<img src="./images/owl/kids-play-area.jpg" alt="">
+</div>
+<div class="card-block">
+<h4 class="card-title">Kids Play Area</h3>
+<p class="card-text">There are many variations of passages of Lorem Ipsum available...There are many variations of passages of Lorem Ipsum available...</p>
+<a href="#" class="btn bcm-btn-red card-footer">Read More</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<div class="col-md-3 col-sm-12">
+<div class="show-events">
+<h2 class="bcm-heading-red">Upcoming Events</h2>
+<% if (upcomingEvent.length) { %>
+<ul>
+<% upcomingEvent.map((result)=>{%>
+<form action="/userView" method="POST">
+<input type="hidden" value="<%=result._id%>" name="id">
+<button class="eventIndex"><%=result.name%></button>
+<hr class="dotted-border">
+</form>
+<% }) %>
+</ul>
+<% } else { %>
+<p>No Events Currently!</p>
+<% } %>
+<!-------Old Events----------->
+<img class="img-responsive dividerline-img" src="./images/divider/divider1.png" />
+<h2 class="bcm-heading-red">Old Events</h2>
+<% if (OldEvent.length) { %>
+<ul>
+<% OldEvent.map((result)=>{%>
+<form action="/userView" method="POST">
+<input type="hidden" value="<%=result._id%>" name="id">
+<button class="eventIndex"><%=result.name%></button>
+<hr class="dotted-border">
+</form>
+<% }) %>
+</ul>
+<% } else { %>
+<p>No Any old Events!</p>
+<% } %>
+<div class="section-padding"></div>
+</div>
+<!-----Requirement-------->
+<div class="show-events">
+<h2 class="bcm-heading-red">Requirement</h2>
+<% if (Requirements.length) { %>
+<ul>
+<% Requirements.map((result)=>{%>
+<button class="eventIndex"><%=result.productName%></button>
+<hr class="dotted-border">
+<% }) %>
+</ul>
+<% } else { %>
+<p>No Requirements Currently!</p>
+<% } %>
+<!-------Old Events----------->
+<img class="img-responsive dividerline-img" src="./images/divider/divider1.png" />
+<h2 class="bcm-heading-red">Servives</h2>
+<% if (Services.length) { %>
+<ul>
+<% Services.map((result)=>{%>
+<button class="eventIndex"><%=result.serviceName%></button>
+<hr class="dotted-border">
+<% }) %>
+</ul>
+<% } else { %>
+<p>No Any service Available!</p>
+<% } %>
+<div class="section-padding"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="section-margin"></div>
+<!-- BEGIN TEAM SECTION -->
+<section class="team">
+   <!-- Team BEGIN -->
+   <div class="team-bg parallax desktop-view">
+      <div class="container">
+         <div class="heading-light">
+            <h2>OUR BCM EXPERTS</h2>
+         </div>
+         <!-- //end heading -->
          <div class="row">
-            <div class="col-md-9 col-sm-12">
-               <div class="main-body">
-                  <!-- ======= About Us Section ======= -->
-                  <section id="about" class="about">
-                     <div class="about-container" data-aos="fade-up">
-                        <div class="row no-gutters">
-                           <div class="col-lg-6 video-box">
-                              <img src="./images/about.jpg" class="img-responsive" alt="">
-                              <a href="#myModal" class="venobox play-btn mb-4" data-toggle="modal" data-vbtype="video" data-autoplay="true"></a>
-                              <div id="myModal" class="modal fade">
-                                 <div class="modal-dialog">
-                                    <div class="modal-content">
-                                       <div class="modal-header">
-                                          <h4 class="modal-title bcm-modal-video-title">BCM Planet</h4>
-                                          <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                       </div>
-                                       <div class="modal-body">
-                                          <div class="embed-responsive embed-responsive-16by9">
-                                             <iframe id="cartoonVideo" class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/pqJbaRxS1VA" allowfullscreen></iframe>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
+            <div class="col-md-8 col-sm-8">
+               <div class="row">
+                  <div class="col-md-4 col-sm-4">
+                     <div class="profile" onclick="divVisibility('Div1')">
+                        <div class="team-members">
+                           <div class="team-avatar">
+                              <img class="img-responsive" src="../images/member/member1.png" alt="">
                            </div>
-                           <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
-                              <div class="about-section-title">
-                                 <h2>ABOUT US</h2>
-                                 <p>"BCM Planet" is a famous soceity in Indore, in the state of Madhya Pradesh in India. It was started in the year 2018. The BCM group is focused on innovative design, superior standards of construction, customer service and Community values. BCM Projects Pvt Ltd take pride that we are not only fulfill dreams of millions of individuals with our aesthetically designed residential and commercial solutions, but we also create memories. 
-                                 </p>
+                           <div class="team-desc">
+                              <div class="team-details">
+                                 <h4>John Doe</h4>
+                                 <span>Marketing</span>
                               </div>
-                              <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                                 <div class="icon"><i class="fas fa-laptop-code"></i></div>
-                                 <h4 class="title"><a href="">Real estate developers</a></h4>
-                                 <p class="description">We are one of the leading real estate developers, we know that the integrity and reputation of our business rest not only on us delivering quality homes and business environments.</p>
-                              </div>
-                              <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                                 <div class="icon"><i class="fas fa-map-marked-alt"></i></div>
-                                 <h4 class="title"><a href="">Our locations</a></h4>
-                                 <p class="description">Today, the BCM group is present in more then 11 locations in indre namely Nipania, Vijay Nagar, Navlakha, Pipliya Kumar, Bypass road Hi-Tech Townships, Integrated Townships, Group Housing, Shopping Malls, Office Spaces.</p>
-                              </div>
+                              <ul class="team-socials">
+                                 <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                              </ul>
                            </div>
                         </div>
                      </div>
-                  </section>
-                  <!-- End About Us Section -->
+                  </div>
+                  <div class="col-md-4 col-sm-4">
+                     <div class="profile" onclick="divVisibility('Div2')">
+                        <div class="team-members">
+                           <div class="team-avatar">
+                              <img class="img-responsive" src="../images/member/member2.png" alt="">
+                           </div>
+                           <div class="team-desc">
+                              <div class="team-details">
+                                 <h4>Melisa Doe</h4>
+                                 <span>Founder</span>
+                              </div>
+                              <ul class="team-socials">
+                                 <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-4 col-sm-4">
+                     <div class="profile" onclick="divVisibility('Div3')">
+                        <div class="team-members" >
+                           <div class="team-avatar">
+                              <img class="img-responsive" src="../images/member/member3.png" alt="">
+                           </div>
+                           <div class="team-desc">
+                              <div class="team-details">
+                                 <h4>Alex Atkinson</h4>
+                                 <span>Director</span>
+                              </div>
+                              <ul class="team-socials">
+                                 <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-4 col-sm-4">
+                     <div class="profile" onclick="divVisibility('Div4')">
+                        <div class="team-members">
+                           <div class="team-avatar">
+                              <img class="img-responsive" src="../images/member/member4.png" alt="">
+                           </div>
+                           <div class="team-desc">
+                              <div class="team-details">
+                                 <h4>John Doe</h4>
+                                 <span>Marketing</span>
+                              </div>
+                              <ul class="team-socials">
+                                 <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-4 col-sm-4">
+                     <div class="profile" onclick="divVisibility('Div5')">
+                        <div class="team-members">
+                           <div class="team-avatar">
+                              <img class="img-responsive" src="../images/member/member5.png" alt="">
+                           </div>
+                           <div class="team-desc">
+                              <div class="team-details">
+                                 <h4>Melisa Doe</h4>
+                                 <span>Founder</span>
+                              </div>
+                              <ul class="team-socials">
+                                 <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-4 col-sm-4">
+                     <div class="profile" onclick="divVisibility('Div6')">
+                        <div class="team-members">
+                           <div class="team-avatar">
+                              <img class="img-responsive" src="../images/member/member6.png" alt="">
+                           </div>
+                           <div class="team-desc">
+                              <div class="team-details">
+                                 <h4>Alex Atkinson</h4>
+                                 <span>Director</span>
+                              </div>
+                              <ul class="team-socials">
+                                 <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
                </div>
             </div>
-            <div class="col-md-3 col-sm-12">
-               <div class="show-events">
-                  <h2 class="bcm-heading-red">Upcoming Events</h2>
-                  <% if (upcomingEvent.length) { %>
-                  <ul>
-                     <% upcomingEvent.map((result)=>{%>
-                     <form action="/userView" method="POST">
-                        <input type="hidden" value="<%=result._id%>" name="id">
-                        <button class="eventIndex"><%=result.name%></button>
-                        <hr class="dotted-border">
-                     </form>
-                     <% }) %>
-                  </ul>
-                  <% } else { %>
-                  <p>No Events Currently!</p>
-                  <% } %>
-                  <!-------Old Events----------->
-                  <img class="img-responsive dividerline-img" src="./images/divider/divider1.png" />
-                  <h2 class="bcm-heading-red">Old Events</h2>
-                  <% if (OldEvent.length) { %>
-                  <ul>
-                     <% OldEvent.map((result)=>{%>
-                     <form action="/userView" method="POST">
-                        <input type="hidden" value="<%=result._id%>" name="id">
-                        <button class="eventIndex"><%=result.name%></button>
-                        <hr class="dotted-border">
-                     </form>
-                     <% }) %>
-                  </ul>
-                  <% } else { %>
-                  <p>No Any old Events!</p>
-                  <% } %>
-                  <div class="section-padding"></div>
+            <div class="col-md-4 col-sm-4">
+               <div class="team-about">
+                  <div class="team-details" id="Div1">
+                     <h3>Built with bootstrap</h3>
+                     <p>Lorem niam ipsum dolor sit ammet adipiscing et suitem elit et nonuy nibh elit niam dolor suit elit amet nonummy nibh dolore onec placerat interdum purus.</p>
+                  </div>
+                  <div class="team-details team-hide" id="Div2">
+                     <h3>AngularJS Support</h3>
+                     <p>Etiam aliquam ex pulvinar odio dictum commodo. Nulla dui risus, egestas sit amet nisi et, eleifend cursus odio.</p>
+                  </div>
+                  <div class="team-details team-hide" id="Div3">
+                     <h3>and WOW Features</h3>
+                     <p>Donec placerat interdum purus, at finibus enim aliquam non. Etiam congue fringilla pharetra. Vestibulum facilisis lectus eros. Etiam congue fringilla pharetra. Lorem niam ipsum dolor sit ammet adipiscing e</p>
+                  </div>
+                  <div class="team-details team-hide" id="Div4">
+                     <h3>and WOW Features</h3>
+                     <p>Etiam aliquam ex pulvinar odio dictum commodo. Nulla dui risus, egestas sit amet nisi et, eleifend cursus odio.</p>
+                  </div>
+                  <div class="team-details team-hide" id="Div5">
+                     <h3>and WOW Features</h3>
+                     <p>Donec placerat interdum purus, at finibus enim aliquam non. Etiam congue fringilla pharetra. Vestibulum facilisis lectus eros. Etiam congue fringilla pharetra. Lorem niam ipsum dolor sit ammet adipiscing e</p>
+                  </div>
+                  <div class="team-details team-hide" id="Div6">
+                     <h3>and WOW Features</h3>
+                     <p>Lorem niam ipsum dolor sit ammet adipiscing et suitem elit et nonuy nibh elit niam dolor suit elit amet nonummy nibh dolore onec placerat interdum purus.</p>
+                  </div>
                </div>
             </div>
+         </div>
+         <div class="arrow bounce">
+            <a href="#" class="down-arrow read-more-icon"><i class="fas fa-angle-double-down"></i></a>
          </div>
       </div>
-   </section>
-   <div class="section-margin"></div>
-   <section class="our-amenities-section">
-      <div class="container">
-         <div class="text-center amenities-heading">
-            <h2>OUR AMENITIES</h2>
-         </div>
-         <div class="featured-carousel owl-carousel">
-            <div class="item">
-               <div class="card">
-                  <div class="card-img-top">
-                     <img src="./images/owl/society-gym.jpg" alt="">
-                  </div>
-                  <div class="card-block">
-                     <h3 class="card-title">Gym</h3>
-                     <p class="card-text">There are many variations of passages of Lorem Ipsum available...There are many variations of passages of Lorem Ipsum available...</p>
-                     <a href="#" class="btn bcm-btn-red card-footer">Read More</a>
-                  </div>
-               </div>
-            </div>
-            <div class="item">
-               <div class="card">
-                  <div class="card-img-top">
-                     <img src="./images/owl/swimming-pool.jpg" alt=""> 
-                  </div>
-                  <div class="card-block">
-                     <h3 class="card-title">Swimming Pool</h3>
-                     <p class="card-text">There are many variations of passages of Lorem Ipsum available...There are many variations of passages of Lorem Ipsum available...</p>
-                     <a href="#" class="btn bcm-btn-red card-footer">Read More</a>
-                  </div>
-               </div>
-            </div>
-            <div class="item">
-               <div class="card">
-                  <div class="card-img-top">                               
-                     <img src="./images/owl/home-garden.jpg" alt="">
-                  </div>
-                  <div class="card-block">
-                     <h3 class="card-title">Garden</h3>
-                     <p class="card-text">There are many variations of passages of Lorem Ipsum available...There are many variations of passages of Lorem Ipsum available...</p>
-                     <a href="#" class="btn bcm-btn-red card-footer">Read More</a>
-                  </div>
-               </div>
-            </div>
-            <div class="item">
-               <div class="card">
-                  <div class="card-img-top">                               
-                     <img src="./images/owl/club-house.jpg" alt="">
-                  </div>
-                  <div class="card-block">
-                     <h3 class="card-title">Club House</h3>
-                     <p class="card-text">There are many variations of passages of Lorem Ipsum available...There are many variations of passages of Lorem Ipsum available...</p>
-                     <a href="#" class="btn bcm-btn-red card-footer">Read More</a>
-                  </div>
-               </div>
-            </div>
-            <div class="item">
-               <div class="card">
-                  <div class="card-img-top">                               
-                     <img src="./images/owl/kids-play-area.jpg" alt="">
-                  </div>
-                  <div class="card-block">
-                     <h4 class="card-title">Kids Play Area</h3>
-                     <p class="card-text">There are many variations of passages of Lorem Ipsum available...There are many variations of passages of Lorem Ipsum available...</p>
-                     <a href="#" class="btn bcm-btn-red card-footer">Read More</a>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </section>
-   <div class="section-margin"></div>
-   <!-- BEGIN TEAM SECTION -->
-   <section class="team">
-      <!-- Team BEGIN -->
-      <div class="team-bg parallax desktop-view">
-         <div class="container">
-            <div class="heading-light">
-               <h2>OUR BCM EXPERTS</h2>
-            </div>
-            <!-- //end heading -->
-            <div class="row">
-               <div class="col-md-8 col-sm-8">
-                  <div class="row">
-                     <div class="col-md-4 col-sm-4">
-                        <div class="profile" onclick="divVisibility('Div1')">
-                           <div class="team-members">
-                              <div class="team-avatar">
-                                 <img class="img-responsive" src="../images/member/member1.png" alt="">
-                              </div>
-                              <div class="team-desc">
-                                 <div class="team-details">
-                                    <h4>John Doe</h4>
-                                    <span>Marketing</span>
-                                 </div>
-                                 <ul class="team-socials">
-                                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                 </ul>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-md-4 col-sm-4">
-                        <div class="profile" onclick="divVisibility('Div2')">
-                           <div class="team-members">
-                              <div class="team-avatar">
-                                 <img class="img-responsive" src="../images/member/member2.png" alt="">
-                              </div>
-                              <div class="team-desc">
-                                 <div class="team-details">
-                                    <h4>Melisa Doe</h4>
-                                    <span>Founder</span>
-                                 </div>
-                                 <ul class="team-socials">
-                                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                 </ul>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-md-4 col-sm-4">
-                        <div class="profile" onclick="divVisibility('Div3')">
-                           <div class="team-members" >
-                              <div class="team-avatar">
-                                 <img class="img-responsive" src="../images/member/member3.png" alt="">
-                              </div>
-                              <div class="team-desc">
-                                 <div class="team-details">
-                                    <h4>Alex Atkinson</h4>
-                                    <span>Director</span>
-                                 </div>
-                                 <ul class="team-socials">
-                                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                 </ul>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="row">
-                     <div class="col-md-4 col-sm-4">
-                        <div class="profile" onclick="divVisibility('Div4')">
-                           <div class="team-members">
-                              <div class="team-avatar">
-                                 <img class="img-responsive" src="../images/member/member4.png" alt="">
-                              </div>
-                              <div class="team-desc">
-                                 <div class="team-details">
-                                    <h4>John Doe</h4>
-                                    <span>Marketing</span>
-                                 </div>
-                                 <ul class="team-socials">
-                                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                 </ul>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-md-4 col-sm-4">
-                        <div class="profile" onclick="divVisibility('Div5')">
-                           <div class="team-members">
-                              <div class="team-avatar">
-                                 <img class="img-responsive" src="../images/member/member5.png" alt="">
-                              </div>
-                              <div class="team-desc">
-                                 <div class="team-details">
-                                    <h4>Melisa Doe</h4>
-                                    <span>Founder</span>
-                                 </div>
-                                 <ul class="team-socials">
-                                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                 </ul>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-md-4 col-sm-4">
-                        <div class="profile" onclick="divVisibility('Div6')">
-                           <div class="team-members">
-                              <div class="team-avatar">
-                                 <img class="img-responsive" src="../images/member/member6.png" alt="">
-                              </div>
-                              <div class="team-desc">
-                                 <div class="team-details">
-                                    <h4>Alex Atkinson</h4>
-                                    <span>Director</span>
-                                 </div>
-                                 <ul class="team-socials">
-                                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                 </ul>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-4 col-sm-4">
-                  <div class="team-about">
-                     <div class="team-details" id="Div1">
-                        <h3>Built with bootstrap</h3>
-                        <p>Lorem niam ipsum dolor sit ammet adipiscing et suitem elit et nonuy nibh elit niam dolor suit elit amet nonummy nibh dolore onec placerat interdum purus.</p>
-                     </div>
-                     <div class="team-details team-hide" id="Div2">
-                        <h3>AngularJS Support</h3>
-                        <p>Etiam aliquam ex pulvinar odio dictum commodo. Nulla dui risus, egestas sit amet nisi et, eleifend cursus odio.</p>
-                     </div>
-                     <div class="team-details team-hide" id="Div3">
-                        <h3>and WOW Features</h3>
-                        <p>Donec placerat interdum purus, at finibus enim aliquam non. Etiam congue fringilla pharetra. Vestibulum facilisis lectus eros. Etiam congue fringilla pharetra. Lorem niam ipsum dolor sit ammet adipiscing e</p>
-                     </div>
-                     <div class="team-details team-hide" id="Div4">
-                        <h3>and WOW Features</h3>
-                        <p>Etiam aliquam ex pulvinar odio dictum commodo. Nulla dui risus, egestas sit amet nisi et, eleifend cursus odio.</p>
-                     </div>
-                     <div class="team-details team-hide" id="Div5">
-                        <h3>and WOW Features</h3>
-                        <p>Donec placerat interdum purus, at finibus enim aliquam non. Etiam congue fringilla pharetra. Vestibulum facilisis lectus eros. Etiam congue fringilla pharetra. Lorem niam ipsum dolor sit ammet adipiscing e</p>
-                     </div>
-                     <div class="team-details team-hide" id="Div6">
-                        <h3>and WOW Features</h3>
-                        <p>Lorem niam ipsum dolor sit ammet adipiscing et suitem elit et nonuy nibh elit niam dolor suit elit amet nonummy nibh dolore onec placerat interdum purus.</p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="arrow bounce">
-               <a href="#" class="down-arrow read-more-icon"><i class="fas fa-angle-double-down"></i></a>
-            </div>
-         </div>
-         <div class="section-padding"></div>
-      </div>
-      <div class="team-bg parallax mobile-view">
-         <div class="container">
-            <div class="heading-light">
-               <h2>OUR BCM EXPERTS</h2>
-            </div>
-            <!-- //end heading -->
-            <div class="row">
-               <div class="col-md-7 col-sm-7 col-xs-7">
-                  <div class="row">
-                     <div class="col-md-6 col-sm-6 col-xs-6">
-                        <div class="profile" onclick="divVisibility('Div7')">
-                           <div class="team-members">
-                              <div class="team-avatar">
-                                 <img class="img-responsive" src="../images/member/member1.png" alt="">
-                              </div>
-                              <div class="team-desc">
-                                 <div class="team-details">
-                                    <h4>John Doe</h4>
-                                    <span>Marketing</span>
-                                 </div>
-                                 <ul class="team-socials">
-                                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                 </ul>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-md-6 col-sm-6 col-xs-6">
-                        <div class="profile" onclick="divVisibility('Div8')">
-                           <div class="team-members">
-                              <div class="team-avatar">
-                                 <img class="img-responsive" src="../images/member/member2.png" alt="">
-                              </div>
-                              <div class="team-desc">
-                                 <div class="team-details">
-                                    <h4>Melisa Doe</h4>
-                                    <span>Founder</span>
-                                 </div>
-                                 <ul class="team-socials">
-                                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                 </ul>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="row">
-                     <div class="col-md-6 col-sm-6 col-xs-6">
-                        <div class="profile" onclick="divVisibility('Div9')">
-                           <div class="team-members">
-                              <div class="team-avatar">
-                                 <img class="img-responsive" src="../images/member/member3.png" alt="">
-                              </div>
-                              <div class="team-desc">
-                                 <div class="team-details">
-                                    <h4>Melisa Doe</h4>
-                                    <span>Founder</span>
-                                 </div>
-                                 <ul class="team-socials">
-                                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                 </ul>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-md-6 col-sm-6 col-xs-6">
-                        <div class="profile" onclick="divVisibility('Div10')">
-                           <div class="team-members" >
-                              <div class="team-avatar">
-                                 <img class="img-responsive" src="../images/member/member4.png" alt="">
-                              </div>
-                              <div class="team-desc">
-                                 <div class="team-details">
-                                    <h4>Alex Atkinson</h4>
-                                    <span>Director</span>
-                                 </div>
-                                 <ul class="team-socials">
-                                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                 </ul>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="row">
-                     <div class="col-md-6 col-sm-6 col-xs-6">
-                        <div class="profile" onclick="divVisibility('Div11')">
-                           <div class="team-members">
-                              <div class="team-avatar">
-                                 <img class="img-responsive" src="../images/member/member5.png" alt="">
-                              </div>
-                              <div class="team-desc">
-                                 <div class="team-details">
-                                    <h4>John Doe</h4>
-                                    <span>Marketing</span>
-                                 </div>
-                                 <ul class="team-socials">
-                                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                 </ul>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-md-6 col-sm-6 col-xs-6">
-                        <div class="profile" onclick="divVisibility('Div12')">
-                           <div class="team-members">
-                              <div class="team-avatar">
-                                 <img class="img-responsive" src="../images/member/member6.png" alt="">
-                              </div>
-                              <div class="team-desc">
-                                 <div class="team-details">
-                                    <h4>Melisa Doe</h4>
-                                    <span>Founder</span>
-                                 </div>
-                                 <ul class="team-socials">
-                                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                 </ul>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-5 col-sm-5 col-xs-5">
-                  <div class="team-about">
-                     <div class="team-details" id="Div7">
-                        <h3>Built with bootstrap</h3>
-                        <p>Lorem niam ipsum dolor sit ammet adipiscing et suitem elit et nonuy nibh elit niam dolor suit elit amet nonummy nibh dolore onec placerat interdum purus.</p>
-                     </div>
-                     <div class="team-details team-hide" id="Div8">
-                        <h3>AngularJS Support</h3>
-                        <p>Etiam aliquam ex pulvinar odio dictum commodo. Nulla dui risus, egestas sit amet nisi et, eleifend cursus odio.</p>
-                     </div>
-                     <div class="team-details team-hide" id="Div9">
-                        <h3>and WOW Features</h3>
-                        <p>Donec placerat interdum purus, at finibus enim aliquam non. Etiam congue fringilla pharetra. Vestibulum facilisis lectus eros. Etiam congue fringilla pharetra. Lorem niam ipsum dolor sit ammet adipiscing e</p>
-                     </div>
-                     <div class="team-details team-hide" id="Div10">
-                        <h3>AngularJS Support</h3>
-                        <p>Etiam aliquam ex pulvinar odio dictum commodo. Nulla dui risus, egestas sit amet nisi et, eleifend cursus odio.</p>
-                     </div>
-                     <div class="team-details team-hide" id="Div11">
-                        <h3>Built with bootstrap</h3>
-                        <p>Donec placerat interdum purus, at finibus enim aliquam non. Etiam congue fringilla pharetra. Vestibulum facilisis lectus eros. Etiam congue fringilla pharetra. Lorem niam ipsum dolor sit ammet adipiscing e</p>
-                     </div>
-                     <div class="team-details team-hide" id="Div12">
-                        <h3>and WOW Features</h3>
-                        <p>Lorem niam ipsum dolor sit ammet adipiscing et suitem elit et nonuy nibh elit niam dolor suit elit amet nonummy nibh dolore onec placerat interdum purus.</p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="section-padding"></div>
-      </div>
-   </section>
-   <!-- END TEAM SECTION -->
-   <section class="contact-us" id="contact">
       <div class="section-padding"></div>
+   </div>
+   <div class="team-bg parallax mobile-view">
       <div class="container">
-         <div class="contact-us_header">
-            <h2>Contact Us</h2>
+         <div class="heading-light">
+            <h2>OUR BCM EXPERTS</h2>
+         </div>
+         <!-- //end heading -->
+         <div class="row">
+            <div class="col-md-7 col-sm-7 col-xs-7">
+               <div class="row">
+                  <div class="col-md-6 col-sm-6 col-xs-6">
+                     <div class="profile" onclick="divVisibility('Div7')">
+                        <div class="team-members">
+                           <div class="team-avatar">
+                              <img class="img-responsive" src="../images/member/member1.png" alt="">
+                           </div>
+                           <div class="team-desc">
+                              <div class="team-details">
+                                 <h4>John Doe</h4>
+                                 <span>Marketing</span>
+                              </div>
+                              <ul class="team-socials">
+                                 <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-6 col-sm-6 col-xs-6">
+                     <div class="profile" onclick="divVisibility('Div8')">
+                        <div class="team-members">
+                           <div class="team-avatar">
+                              <img class="img-responsive" src="../images/member/member2.png" alt="">
+                           </div>
+                           <div class="team-desc">
+                              <div class="team-details">
+                                 <h4>Melisa Doe</h4>
+                                 <span>Founder</span>
+                              </div>
+                              <ul class="team-socials">
+                                 <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-6 col-sm-6 col-xs-6">
+                     <div class="profile" onclick="divVisibility('Div9')">
+                        <div class="team-members">
+                           <div class="team-avatar">
+                              <img class="img-responsive" src="../images/member/member3.png" alt="">
+                           </div>
+                           <div class="team-desc">
+                              <div class="team-details">
+                                 <h4>Melisa Doe</h4>
+                                 <span>Founder</span>
+                              </div>
+                              <ul class="team-socials">
+                                 <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-6 col-sm-6 col-xs-6">
+                     <div class="profile" onclick="divVisibility('Div10')">
+                        <div class="team-members" >
+                           <div class="team-avatar">
+                              <img class="img-responsive" src="../images/member/member4.png" alt="">
+                           </div>
+                           <div class="team-desc">
+                              <div class="team-details">
+                                 <h4>Alex Atkinson</h4>
+                                 <span>Director</span>
+                              </div>
+                              <ul class="team-socials">
+                                 <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-6 col-sm-6 col-xs-6">
+                     <div class="profile" onclick="divVisibility('Div11')">
+                        <div class="team-members">
+                           <div class="team-avatar">
+                              <img class="img-responsive" src="../images/member/member5.png" alt="">
+                           </div>
+                           <div class="team-desc">
+                              <div class="team-details">
+                                 <h4>John Doe</h4>
+                                 <span>Marketing</span>
+                              </div>
+                              <ul class="team-socials">
+                                 <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-6 col-sm-6 col-xs-6">
+                     <div class="profile" onclick="divVisibility('Div12')">
+                        <div class="team-members">
+                           <div class="team-avatar">
+                              <img class="img-responsive" src="../images/member/member6.png" alt="">
+                           </div>
+                           <div class="team-desc">
+                              <div class="team-details">
+                                 <h4>Melisa Doe</h4>
+                                 <span>Founder</span>
+                              </div>
+                              <ul class="team-socials">
+                                 <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                                 <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-5 col-sm-5 col-xs-5">
+               <div class="team-about">
+                  <div class="team-details" id="Div7">
+                     <h3>Built with bootstrap</h3>
+                     <p>Lorem niam ipsum dolor sit ammet adipiscing et suitem elit et nonuy nibh elit niam dolor suit elit amet nonummy nibh dolore onec placerat interdum purus.</p>
+                  </div>
+                  <div class="team-details team-hide" id="Div8">
+                     <h3>AngularJS Support</h3>
+                     <p>Etiam aliquam ex pulvinar odio dictum commodo. Nulla dui risus, egestas sit amet nisi et, eleifend cursus odio.</p>
+                  </div>
+                  <div class="team-details team-hide" id="Div9">
+                     <h3>and WOW Features</h3>
+                     <p>Donec placerat interdum purus, at finibus enim aliquam non. Etiam congue fringilla pharetra. Vestibulum facilisis lectus eros. Etiam congue fringilla pharetra. Lorem niam ipsum dolor sit ammet adipiscing e</p>
+                  </div>
+                  <div class="team-details team-hide" id="Div10">
+                     <h3>AngularJS Support</h3>
+                     <p>Etiam aliquam ex pulvinar odio dictum commodo. Nulla dui risus, egestas sit amet nisi et, eleifend cursus odio.</p>
+                  </div>
+                  <div class="team-details team-hide" id="Div11">
+                     <h3>Built with bootstrap</h3>
+                     <p>Donec placerat interdum purus, at finibus enim aliquam non. Etiam congue fringilla pharetra. Vestibulum facilisis lectus eros. Etiam congue fringilla pharetra. Lorem niam ipsum dolor sit ammet adipiscing e</p>
+                  </div>
+                  <div class="team-details team-hide" id="Div12">
+                     <h3>and WOW Features</h3>
+                     <p>Lorem niam ipsum dolor sit ammet adipiscing et suitem elit et nonuy nibh elit niam dolor suit elit amet nonummy nibh dolore onec placerat interdum purus.</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="arrow bounce">
+            <a href="#" class="down-arrow read-more-icon"><i class="fas fa-angle-double-down"></i></a>
+         </div>
+      </div>
+      <div class="section-padding"></div>
+   </div>
+</section>
+<!-- END TEAM SECTION -->
+<section class="contact-us" id="contact">
+   <div class="section-padding"></div>
+   <div class="container">
+      <div class="contact-us_header">
+         <h2>Contact Us</h2>
+      </div>
+      <br />
+      <div class="row">
+         <div class="col-md-6">
+            <div class="bcm-map">
+               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.212043780663!2d75.9200777145119!3d22.75751078508795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39631d5e3df3b7c5%3A0x6e889108b14d5ce5!2sBCM%20Planet!5e0!3m2!1sen!2sin!4v1651118692989!5m2!1sen!2sin"
+                  width="100%" height="538" frameborder="0" style="border:0" allowfullscreen data-aos="fade-left" data-aos-duration="3000"></iframe>
+            </div>
          </div>
          <br />
-         <div class="row">
-            <div class="col-md-6">
-               <div class="bcm-map">
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.212043780663!2d75.9200777145119!3d22.75751078508795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39631d5e3df3b7c5%3A0x6e889108b14d5ce5!2sBCM%20Planet!5e0!3m2!1sen!2sin!4v1651118692989!5m2!1sen!2sin"
-                     width="100%" height="538" frameborder="0" style="border:0" allowfullscreen data-aos="fade-left" data-aos-duration="3000"></iframe>
+         <div class="col-md-6">
+            <form class="bcm-contact-form" action="/contact" method="post" enctype="multipart/form-data" id="contact-form">
+               <div class="form-group">
+                  <label for="form-name">Name</label>
+                  <input type="text" class="form-control" id="form-name" name="name" placeholder="Name" required>
                </div>
-            </div>
-            <br />
-            <div class="col-md-6">
-               <form class="bcm-contact-form" action="/contact" method="post" enctype="multipart/form-data" id="contact-form">
-                  <div class="form-group">
-                     <label for="form-name">Name</label>
-                     <input type="text" class="form-control" id="form-name" name="name" placeholder="Name" required>
-                  </div>
-                  <div class="form-group">
-                     <label for="form-email">Email Address</label>
-                     <input type="email" class="form-control" id="form-email" name="email" placeholder="Email Address" required>
-                  </div>
-                  <div class="form-group">
-                     <label for="form-subject">Subject</label>
-                     <input type="text" class="form-control" id="form-subject" name="subject" placeholder="subject" required>
-                  </div>
-                  <div class="form-group">
-                     <label for="form-message">Email your Message</label>
-                     <textarea class="form-control" id="form-message" name="message" placeholder="Message" required></textarea>
-                  </div>
-                  <button class="btn bcm-btn-black" type="submit">Contact Us</button>                
-               </form>
-               <div class="contact-info">
-                  <ul>
-                     <li><span><i class="fas fa-phone-square-alt"></i></span> <b>Phone: </b>+91 9755247385</li>
-                     <li><span><i class="fas fa-voicemail"></i></span> <b>Email: </b>bcmplanetsociety@gmail.com</li>
-                  </ul>
+               <div class="form-group">
+                  <label for="form-email">Email Address</label>
+                  <input type="email" class="form-control" id="form-email" name="email" placeholder="Email Address" required>
                </div>
+               <div class="form-group">
+                  <label for="form-subject">Subject</label>
+                  <input type="text" class="form-control" id="form-subject" name="subject" placeholder="subject" required>
+               </div>
+               <div class="form-group">
+                  <label for="form-message">Email your Message</label>
+                  <textarea class="form-control" id="form-message" name="message" placeholder="Message" required></textarea>
+               </div>
+               <button class="btn bcm-btn-black" type="submit">Contact Us</button>                
+            </form>
+            <div class="contact-info">
+               <ul>
+                  <li><span><i class="fas fa-phone-square-alt"></i></span> <b>Phone: </b>+91 9755247385</li>
+                  <li><span><i class="fas fa-voicemail"></i></span> <b>Email: </b>bcmplanetsociety@gmail.com</li>
+               </ul>
             </div>
          </div>
       </div>
-      <div class="section-padding"></div>
-   </section>
-   <div class="section-margin"></div>
-   <!-- ======= Clients Section ======= -->
-   <section id="clients" class="clients section-bg">
-      <div class="container">
-         <div class="row">
-            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-               <img src="./images/clients/client-1.png" class="img-responsive" alt="">
-            </div>
-            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-               <img src="./images/clients/client-2.png" class="img-responsive" alt="">
-            </div>
-            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-               <img src="./images/clients/client-3.png" class="img-responsive" alt="">
-            </div>
-            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-               <img src="./images/clients/client-4.png" class="img-responsive" alt="">
-            </div>
-            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-               <img src="./images/clients/client-5.png" class="img-responsive" alt="">
-            </div>
-            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-               <img src="./images/clients/client-6.png" class="img-responsive" alt="">
-            </div>
+   </div>
+   <div class="section-padding"></div>
+</section>
+<div class="section-margin"></div>
+<!-- ======= Clients Section ======= -->
+<section id="clients" class="clients section-bg">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="./images/clients/client-1.png" class="img-responsive" alt="">
+         </div>
+         <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="./images/clients/client-2.png" class="img-responsive" alt="">
+         </div>
+         <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="./images/clients/client-3.png" class="img-responsive" alt="">
+         </div>
+         <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="./images/clients/client-4.png" class="img-responsive" alt="">
+         </div>
+         <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="./images/clients/client-5.png" class="img-responsive" alt="">
+         </div>
+         <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="./images/clients/client-6.png" class="img-responsive" alt="">
          </div>
       </div>
-   </section>
-   <div class="section-margin bcm-mr-bottom"></div>
-   <!-- End Clients Section -->
-   <%- include('./partials/footer'); %>
-   <script type="text/javascript">
-      setTimeout(function () {
-          // Closing the alert
-          $(' #successMessage').alert('close');
-      }, 4000);
-   </script>
-   <script>
-      var divs = ["Div1", "Div2", "Div3", "Div4","Div5","Div6","Div7", "Div8", "Div9", "Div10","Div11","Div12"];
-      var visibleDivId = null;
-      function divVisibility(divId) {
-      if(visibleDivId === divId) {
-       visibleDivId = null;
-      } else {
-       visibleDivId = divId;
-      }
-      hideNonVisibleDivs();
-      }
-      function hideNonVisibleDivs() {
-      var i, divId, div;
-      for(i = 0; i < divs.length; i++) {
-       divId = divs[i];
-       div = document.getElementById(divId);
-       if(visibleDivId === divId) {
-         div.style.display = "block";
-       } else {
-         div.style.display = "none";
-       }
-      }
-      }
-   </script>
+   </div>
+</section>
+<div class="section-margin bcm-mr-bottom"></div>
+<!-- End Clients Section -->
+<%- include('./partials/footer'); %>
+<script type="text/javascript">
+   setTimeout(function () {
+       // Closing the alert
+       $(' #successMessage').alert('close');
+   }, 4000);
+</script>
+<script>
+   var divs = ["Div1", "Div2", "Div3", "Div4","Div5","Div6","Div7", "Div8", "Div9", "Div10","Div11","Div12"];
+   var visibleDivId = null;
+   function divVisibility(divId) {
+   if(visibleDivId === divId) {
+    visibleDivId = null;
+   } else {
+    visibleDivId = divId;
+   }
+   hideNonVisibleDivs();
+   }
+   function hideNonVisibleDivs() {
+   var i, divId, div;
+   for(i = 0; i < divs.length; i++) {
+    divId = divs[i];
+    div = document.getElementById(divId);
+    if(visibleDivId === divId) {
+      div.style.display = "block";
+    } else {
+      div.style.display = "none";
+    }
+   }
+   }
+</script>
